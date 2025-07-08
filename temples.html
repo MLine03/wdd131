@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="A responsive Temple Album featuring various temples with images and captions." />
-  <meta name="author" content="Meline" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Temple Album – Hawaii and Other Temples</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles/temples.css" />
-  <link rel="stylesheet" href="styles/temples-large.css" />
-  
-  <!-- JavaScript -->
-  <script defer src="scripts/temples.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Album</title>
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <script src="scripts/temples.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Temple Album</h1>
-    <button id="hamburger" aria-label="Toggle menu">☰</button>
-    <nav id="nav-menu" class="nav-menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Old</a></li>
-        <li><a href="#">New</a></li>
-        <li><a href="#">Large</a></li>
-        <li><a href="#">Small</a></li>
-      </ul>
+    <button id="menu">&#9776;</button>
+    <nav id="nav">
+      <a href="#">Home</a>
+      <a href="#">Old</a>
+      <a href="#">New</a>
+      <a href="#">Large</a>
+      <a href="#">Small</a>
     </nav>
   </header>
 
   <main>
-    <h2>Featured Temples</h2>
-    <section class="container">
-      <figure>
-        <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" />
-        <figcaption>Laie Hawaii Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/kahului-temple.jpg" alt="Kahului Hawaii Temple" />
-        <figcaption>Kahului Hawaii Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/kona-temple.jpg" alt="Kona Hawaii Temple" />
-        <figcaption>Kona Hawaii Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/kansas-city-temple.jpg" alt="Kansas City Missouri Temple" />
-        <figcaption>Kansas City Missouri Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/suva-temple.jpg" alt="Suva Fiji Temple" />
-        <figcaption>Suva Fiji Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/port-vila-temple.jpg" alt="Port Vila Vanuatu Temple" />
-        <figcaption>Port Vila Vanuatu Temple</figcaption>
-      </figure>
-    </section>
+    <h1>Temple Gallery</h1>
+
+    <figure>
+      <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple">
+      <figcaption>Laie Hawaii Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/apia-temple.jpg" alt="Apia Samoa Temple">
+      <figcaption>Apia Samoa Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/tokyo-temple.jpg" alt="Tokyo Japan Temple">
+      <figcaption>Tokyo Japan Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple">
+      <figcaption>Salt Lake Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/phoenix-temple.jpg" alt="Phoenix Arizona Temple">
+      <figcaption>Phoenix Arizona Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/cedar-city-temple.jpg" alt="Cedar City Utah Temple">
+      <figcaption>Cedar City Utah Temple</figcaption>
+    </figure>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Meline</p>
-    <p>Last Modified: <span id="lastModified"></span></p>
+    <p>&copy; <span id="year"></span> | Your Name | WDD 131 | Last Modified: <span id="lastModified"></span></p>
   </footer>
 </body>
 </html>

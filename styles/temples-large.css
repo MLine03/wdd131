@@ -1,43 +1,16 @@
-@media (min-width: 700px) {
-
-  #hamburger {
-    display: none; /* Hide hamburger on larger screens */
+@media (min-width: 768px) {
+  #menu {
+    display: none;
   }
 
-  .nav-menu {
-    display: block !important;
-    width: auto;
-    background: none;
-  }
-
-  .nav-menu ul {
-    display: flex;
+  nav {
+    display: flex !important;
+    flex-direction: row;
     justify-content: center;
-    gap: 2rem;
-  }
-
-  .nav-menu li {
-    border: none;
-  }
-
-  .nav-menu li a {
-    padding: 0.5rem 0;
-    color: #004080;
-    font-weight: 600;
-  }
-
-  .nav-menu li a:hover,
-  .nav-menu li a:focus {
-    color: #0073e6;
-    text-decoration: underline;
+    gap: 1.5rem;
   }
 
   main {
-    max-width: 1000px;
-  }
-
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }

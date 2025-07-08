@@ -1,0 +1,20 @@
+@media only screen and (min-width: 600px) {
+  #hamburger {
+    display: none; /* hide hamburger on larger screens */
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  main {
+    max-width: 900px;
+  }
+
+  figure {
+    max-width: 400px;
+    margin: 2rem auto;
+  }
+}

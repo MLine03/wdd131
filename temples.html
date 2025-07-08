@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temple Album</title>
+
+  <!-- Google Fonts example -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- Mobile first CSS -->
+  <link rel="stylesheet" href="styles/temples.css" />
+
+  <!-- Larger screen CSS -->
+  <link rel="stylesheet" href="styles/temples-large.css" />
+
+  <!-- Deferred JavaScript -->
+  <script defer src="scripts/temples.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Temple Album</h1>
+
+    <button id="hamburger" aria-label="Toggle menu">☰</button>
+
+    <nav id="nav-menu" class="nav-menu">
+      <a href="#">Home</a>
+      <a href="#">Old</a>
+      <a href="#">New</a>
+      <a href="#">Large</a>
+      <a href="#">Small</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Laie Hawaii Temple</h1>
+
+    <figure>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Laie_Hawaii_Temple_2016.jpg"
+        alt="Laie Hawaii Temple"
+        loading="lazy"
+      />
+      <figcaption>Laie Hawaii Temple, Hawaii, USA</figcaption>
+    </figure>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> My Temple Album</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>

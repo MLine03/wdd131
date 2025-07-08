@@ -2,63 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Temple Album</title>
-
-  <!-- Google Fonts example -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans&display=swap" rel="stylesheet" />
-
-  <!-- Mobile-first CSS -->
+  <meta name="description" content="A responsive Temple Album featuring Laie Hawaii Temple and other temples with images and captions." />
+  <meta name="author" content="Your Name Here" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temple Album – Laie Hawaii and Other Temples</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/temples.css" />
-  <!-- Larger screen CSS -->
   <link rel="stylesheet" href="styles/temples-large.css" />
-
-  <!-- Deferred JS -->
+  
+  <!-- JavaScript -->
   <script defer src="scripts/temples.js"></script>
 </head>
 <body>
   <header>
-    <h2>Temple Album</h2>
-
-    <button id="hamburger" aria-label="Toggle menu">&#9776;</button>
-    
+    <h1>Temple Album</h1>
+    <button id="hamburger" aria-label="Toggle menu">☰</button>
     <nav id="nav-menu" class="nav-menu">
-      <a href="#">Home</a>
-      <a href="#">Old</a>
-      <a href="#">New</a>
-      <a href="#">Large</a>
-      <a href="#">Small</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Old</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Large</a></li>
+        <li><a href="#">Small</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Temple Album</h1>
-
-    <figure>
-      <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" />
-      <figcaption>Laie Hawaii Temple</figcaption>
-    </figure>
-
-    <figure>
-      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" />
-      <figcaption>Salt Lake Temple</figcaption>
-    </figure>
-
-    <figure>
-      <img src="images/cedar-city-temple.jpg" alt="Cedar City Temple" />
-      <figcaption>Cedar City Temple</figcaption>
-    </figure>
-
-    <figure>
-      <img src="images/phoenix-temple.jpg" alt="Phoenix Arizona Temple" />
-      <figcaption>Phoenix Arizona Temple</figcaption>
-    </figure>
-
-    <!-- Add more figure blocks here if you want -->
+    <h2>Featured Temples</h2>
+    <section class="container">
+      <figure>
+        <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" />
+        <figcaption>Laie Hawaii Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" />
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/cedar-city-temple.jpg" alt="Cedar City Temple" />
+        <figcaption>Cedar City Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/phoenix-temple.jpg" alt="Phoenix Arizona Temple" />
+        <figcaption>Phoenix Arizona Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/apia-temple.jpg" alt="Apia Samoa Temple" />
+        <figcaption>Apia Samoa Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/hawaii-temple.jpg" alt="Hawaii Temple" />
+        <figcaption>Hawaii Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple1.jpg" alt="Temple 1" />
+        <figcaption>Temple 1</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple2.jpg" alt="Temple 2" />
+        <figcaption>Temple 2</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple3.jpg" alt="Temple 3" />
+        <figcaption>Temple 3</figcaption>
+      </figure>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Your Name. Last updated: <span id="last-modified"></span></p>
+    <p>&copy; <span id="year"></span> Your Name Here</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
 </body>
 </html>

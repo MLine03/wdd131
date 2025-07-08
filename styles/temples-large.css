@@ -1,19 +1,31 @@
-/* Larger screen styles */
-@media (min-width: 768px) {
-  /* Show nav menu horizontally and always visible */
+@media (min-width: 600px) {
   #hamburger {
-    display: none;
+    display: none; /* Hide hamburger on larger screens */
   }
-  .nav-menu {
+  
+  .nav-menu ul {
     display: flex !important;
+    position: static;
     flex-direction: row;
-    gap: 2rem;
-    margin-top: 0;
+    background: none;
+    width: auto;
   }
 
-  /* Main grid with 3 columns */
-  main {
-    max-width: 900px;
-    grid-template-columns: repeat(3, 1fr);
+  .nav-menu li {
+    border: none;
+  }
+
+  .nav-menu a {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-menu a:hover,
+  .nav-menu a:focus {
+    background-color: #003366;
+  }
+
+  /* Grid changes */
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }

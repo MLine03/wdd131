@@ -1,19 +1,19 @@
-// Hamburger menu toggle
+// Hamburger toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
-  const navList = navMenu.querySelector('ul');
-  navList.classList.toggle('show');
-
-  // Change hamburger to X when open
-  if (navList.classList.contains('show')) {
-    hamburger.textContent = '✖';
+  navMenu.classList.toggle('active');
+  if (navMenu.classList.contains('active')) {
+    hamburger.textContent = '✕'; // Change to X to close
   } else {
-    hamburger.textContent = '☰';
+    hamburger.textContent = '☰'; // Hamburger icon
   }
 });
 
-// Set dynamic year and last modified date in footer
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
+// Dynamic footer info
+const yearSpan = document.getElementById('year');
+const lastModifiedSpan = document.getElementById('lastModified');
+
+yearSpan.textContent = new Date().getFullYear();
+lastModifiedSpan.textContent = document.lastModified;

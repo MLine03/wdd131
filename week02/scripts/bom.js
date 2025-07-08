@@ -3,21 +3,36 @@ const input = document.querySelector('#favchap');
 const button = document.querySelector('button');
 const list = document.querySelector('#list');
 
-// DOM Manipulation (no event listeners yet)
+// Add click event listener to the Add Chapter button
+button.addEventListener('click', () => {
+  if (input.value.trim() !== '') {
+    // Create list item and delete button
+    const li = document.createElement('li');
+    const deleteButton = document.createElement('button');
 
-// Create list item and delete button as an example
-const li = document.createElement('li');
-const deleteButton = document.createElement('button');
+    // Set the li content
+    li.textContent = input.value;
 
-// Set li text from input value
-li.textContent = input.value;  // Note: value is empty initially
+    // Set the delete button properties
+    deleteButton.textContent = '❌';
+    deleteButton.setAttribute('aria-label', `Remove ${input.value}`);
 
-// Setup delete button
-deleteButton.textContent = '❌';
-deleteButton.setAttribute('aria-label', `Remove ${input.value}`);
+    // Add delete button to li
+    li.appendChild(deleteButton);
 
-// Append button to list item
-li.append(deleteButton);
+    // Add li to the list
+    list.appendChild(li);
 
-// Append list item to list
-list.append(li);
+    // Add event listener to delete button
+    deleteButton.addEventListener('click', () => {
+      list.removeChild(li);
+    });
+
+    // Clear the input field
+    input.value = '';
+  }
+
+  // Always return focus to the input field
+  input.focus();
+});
+

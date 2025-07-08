@@ -1,90 +1,65 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Temple Album - Picture Gallery</title>
-  <meta name="description" content="A responsive picture album of temples including Laie, Salt Lake, Phoenix, Cedar City, and Tokyo temples." />
-  <meta name="author" content="Your Full Name" />
+  <meta name="description" content="A responsive picture album of temples including Laie, Salt Lake, Phoenix, Cedar City, Suva, and Tokyo temples.">
+  <meta name="author" content="meline">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <!-- Mobile First CSS -->
-  <link rel="stylesheet" href="styles/temples.css" />
-  <!-- Larger Screen CSS -->
-  <link rel="stylesheet" href="styles/temples-large.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css" media="screen and (min-width: 600px)">
   
   <script src="scripts/temples.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Temple Gallery</h1>
-    <nav id="nav-menu">
-      <button id="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
-      <ul id="nav-links" class="hidden">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Old</a></li>
-        <li><a href="#">New</a></li>
-        <li><a href="#">Large</a></li>
-        <li><a href="#">Small</a></li>
-      </ul>
+    <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
+    <nav id="nav-menu" class="nav-menu">
+      <a href="#">Home</a>
+      <a href="#">Old</a>
+      <a href="#">New</a>
+      <a href="#">Large</a>
+      <a href="#">Small</a>
     </nav>
   </header>
 
   <main>
-    <h2>Featured Temples</h2>
-    
-    <figure>
-      <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" loading="lazy" />
-      <figcaption>Laie Hawaii Temple</figcaption>
-    </figure>
-    
-    <figure>
-      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy" />
-      <figcaption>Salt Lake Temple</figcaption>
-    </figure>
-    
-    <figure>
-      <img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple" loading="lazy" />
-      <figcaption>Phoenix Arizona Temple</figcaption>
-    </figure>
-    
-    <figure>
-      <img src="images/cedar-city-utah-temple.jpg" alt="Cedar City Utah Temple" loading="lazy" />
-      <figcaption>Cedar City Utah Temple</figcaption>
-    </figure>
-    
-    <figure>
-      <img src="images/tokyo-japan-temple.jpg" alt="Tokyo Japan Temple" loading="lazy" />
-      <figcaption>Tokyo Japan Temple</figcaption>
-    </figure>
-
-    <figure>
-      <img src="images/suva-fiji-temple.jpg" alt="Suva Fiji Temple" loading="lazy" />
-      <figcaption>Suva Fiji Temple</figcaption>
-    </figure>
-
-    <!-- Add 3 more figures (use placeholder if needed) -->
-    <figure>
-      <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" loading="lazy" />
-      <figcaption>Laie Hawaii Temple (Duplicate)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy" />
-      <figcaption>Salt Lake Temple (Duplicate)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple" loading="lazy" />
-      <figcaption>Phoenix Arizona Temple (Duplicate)</figcaption>
-    </figure>
-
+    <h2>Our Temple Collection</h2>
+    <section class="album-grid">
+      <figure>
+        <img src="images/cedar-city-utah-temple.jpg" alt="Cedar City Utah Temple" loading="lazy" width="300" height="200">
+        <figcaption>Cedar City Utah Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" loading="lazy" width="300" height="200">
+        <figcaption>Laie Hawaii Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple" loading="lazy" width="300" height="200">
+        <figcaption>Phoenix Arizona Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy" width="300" height="200">
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/suva-fiji-temple.jpg" alt="Suva Fiji Temple" loading="lazy" width="300" height="200">
+        <figcaption>Suva Fiji Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/tokyo-japan-temple.jpg" alt="Tokyo Japan Temple" loading="lazy" width="300" height="200">
+        <figcaption>Tokyo Japan Temple</figcaption>
+      </figure>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Your Full Name</p>
-    <p id="lastModified"></p>
+    <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
+    <p id="last-modified"></p>
   </footer>
 </body>
 </html>

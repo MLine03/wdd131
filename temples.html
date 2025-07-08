@@ -6,23 +6,22 @@
   <title>Temple Album</title>
 
   <!-- Google Fonts example -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans&display=swap" rel="stylesheet" />
 
-  <!-- Mobile first CSS -->
+  <!-- Mobile-first CSS -->
   <link rel="stylesheet" href="styles/temples.css" />
-
   <!-- Larger screen CSS -->
   <link rel="stylesheet" href="styles/temples-large.css" />
 
-  <!-- Deferred JavaScript -->
+  <!-- Deferred JS -->
   <script defer src="scripts/temples.js"></script>
 </head>
 <body>
   <header>
-    <h1>Temple Album</h1>
+    <h2>Temple Album</h2>
 
-    <button id="hamburger" aria-label="Toggle menu">☰</button>
-
+    <button id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    
     <nav id="nav-menu" class="nav-menu">
       <a href="#">Home</a>
       <a href="#">Old</a>
@@ -33,21 +32,33 @@
   </header>
 
   <main>
-    <h1>Laie Hawaii Temple</h1>
+    <h1>Temple Album</h1>
 
     <figure>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Laie_Hawaii_Temple_2016.jpg"
-        alt="Laie Hawaii Temple"
-        loading="lazy"
-      />
-      <figcaption>Laie Hawaii Temple, Hawaii, USA</figcaption>
+      <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" />
+      <figcaption>Laie Hawaii Temple</figcaption>
     </figure>
+
+    <figure>
+      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" />
+      <figcaption>Salt Lake Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/cedar-city-temple.jpg" alt="Cedar City Temple" />
+      <figcaption>Cedar City Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/phoenix-temple.jpg" alt="Phoenix Arizona Temple" />
+      <figcaption>Phoenix Arizona Temple</figcaption>
+    </figure>
+
+    <!-- Add more figure blocks here if you want -->
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> My Temple Album</p>
-    <p>Last modified: <span id="lastModified"></span></p>
+    <p>&copy; <span id="year"></span> Your Name. Last updated: <span id="last-modified"></span></p>
   </footer>
 </body>
 </html>

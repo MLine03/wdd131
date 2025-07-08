@@ -1,0 +1,19 @@
+/* Larger screen styles */
+@media (min-width: 768px) {
+  /* Show nav menu horizontally and always visible */
+  #hamburger {
+    display: none;
+  }
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 0;
+  }
+
+  /* Main grid with 3 columns */
+  main {
+    max-width: 900px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

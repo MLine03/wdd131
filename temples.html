@@ -2,64 +2,73 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Temple Album - Picture Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A responsive picture album of temples including Laie, Salt Lake, Phoenix, Cedar City, Suva, and Tokyo temples.">
   <meta name="author" content="meline">
-
+  <title>Temple Album - Picture Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles/temples.css">
-  <link rel="stylesheet" href="styles/temples-large.css" media="screen and (min-width: 600px)">
-  
+  <link rel="stylesheet" href="styles/temples-large.css">
   <script src="scripts/temples.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Temple Gallery</h1>
-    <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
-    <nav id="nav-menu" class="nav-menu">
-      <a href="#">Home</a>
-      <a href="#">Old</a>
-      <a href="#">New</a>
-      <a href="#">Large</a>
-      <a href="#">Small</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="temples.html">Temples</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://mline03.github.io/wdd130/wwr">GitHub</a>
     </nav>
   </header>
 
   <main>
-    <h2>Our Temple Collection</h2>
-    <section class="album-grid">
+    <h2>Beautiful Temples Around the World</h2>
+
+    <section class="temple-gallery">
       <figure>
-        <img src="images/cedar-city-utah-temple.jpg" alt="Cedar City Utah Temple" loading="lazy" width="300" height="200">
-        <figcaption>Cedar City Utah Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" loading="lazy" width="300" height="200">
+        <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" loading="lazy">
         <figcaption>Laie Hawaii Temple</figcaption>
       </figure>
       <figure>
-        <img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple" loading="lazy" width="300" height="200">
-        <figcaption>Phoenix Arizona Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy" width="300" height="200">
+        <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy">
         <figcaption>Salt Lake Temple</figcaption>
       </figure>
       <figure>
-        <img src="images/suva-fiji-temple.jpg" alt="Suva Fiji Temple" loading="lazy" width="300" height="200">
+        <img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple" loading="lazy">
+        <figcaption>Phoenix Arizona Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/cedar-city-utah-temple.jpg" alt="Cedar City Utah Temple" loading="lazy">
+        <figcaption>Cedar City Utah Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/suva-fiji-temple.jpg" alt="Suva Fiji Temple" loading="lazy">
         <figcaption>Suva Fiji Temple</figcaption>
       </figure>
       <figure>
-        <img src="images/tokyo-japan-temple.jpg" alt="Tokyo Japan Temple" loading="lazy" width="300" height="200">
+        <img src="images/tokyo-japan-temple.jpg" alt="Tokyo Japan Temple" loading="lazy">
         <figcaption>Tokyo Japan Temple</figcaption>
+      </figure>
+      <!-- Add 3 more temples to reach 9 total -->
+      <figure>
+        <img src="images/new-york-temple.jpg" alt="New York Temple" loading="lazy">
+        <figcaption>New York Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/portland-temple.jpg" alt="Portland Oregon Temple" loading="lazy">
+        <figcaption>Portland Oregon Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/columbus-temple.jpg" alt="Columbus Ohio Temple" loading="lazy">
+        <figcaption>Columbus Ohio Temple</figcaption>
       </figure>
     </section>
   </main>
 
   <footer>
     <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
-    <p id="last-modified"></p>
   </footer>
 </body>
 </html>

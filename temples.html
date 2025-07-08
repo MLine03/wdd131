@@ -1,63 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temple Album</title>
-  <link rel="stylesheet" href="styles/temples.css">
-  <link rel="stylesheet" href="styles/temples-large.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Temple Album - Picture Gallery</title>
+  <meta name="description" content="A responsive picture album of temples including Laie, Salt Lake, Phoenix, Cedar City, and Tokyo temples." />
+  <meta name="author" content="Your Full Name" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <!-- Mobile First CSS -->
+  <link rel="stylesheet" href="styles/temples.css" />
+  <!-- Larger Screen CSS -->
+  <link rel="stylesheet" href="styles/temples-large.css" />
+  
   <script src="scripts/temples.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Temple Album</h1>
-    <button id="menu">&#9776;</button>
-    <nav id="nav">
-      <a href="#">Home</a>
-      <a href="#">Old</a>
-      <a href="#">New</a>
-      <a href="#">Large</a>
-      <a href="#">Small</a>
+    <h1>Temple Gallery</h1>
+    <nav id="nav-menu">
+      <button id="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
+      <ul id="nav-links" class="hidden">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Old</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Large</a></li>
+        <li><a href="#">Small</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Temple Gallery</h1>
-
+    <h2>Featured Temples</h2>
+    
     <figure>
-      <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple">
+      <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" loading="lazy" />
       <figcaption>Laie Hawaii Temple</figcaption>
     </figure>
-
+    
     <figure>
-      <img src="images/apia-temple.jpg" alt="Apia Samoa Temple">
-      <figcaption>Apia Samoa Temple</figcaption>
+      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy" />
+      <figcaption>Salt Lake Temple</figcaption>
     </figure>
-
+    
     <figure>
-      <img src="images/tokyo-temple.jpg" alt="Tokyo Japan Temple">
+      <img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple" loading="lazy" />
+      <figcaption>Phoenix Arizona Temple</figcaption>
+    </figure>
+    
+    <figure>
+      <img src="images/cedar-city-utah-temple.jpg" alt="Cedar City Utah Temple" loading="lazy" />
+      <figcaption>Cedar City Utah Temple</figcaption>
+    </figure>
+    
+    <figure>
+      <img src="images/tokyo-japan-temple.jpg" alt="Tokyo Japan Temple" loading="lazy" />
       <figcaption>Tokyo Japan Temple</figcaption>
     </figure>
 
     <figure>
-      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple">
-      <figcaption>Salt Lake Temple</figcaption>
+      <img src="images/suva-fiji-temple.jpg" alt="Suva Fiji Temple" loading="lazy" />
+      <figcaption>Suva Fiji Temple</figcaption>
+    </figure>
+
+    <!-- Add 3 more figures (use placeholder if needed) -->
+    <figure>
+      <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" loading="lazy" />
+      <figcaption>Laie Hawaii Temple (Duplicate)</figcaption>
     </figure>
 
     <figure>
-      <img src="images/phoenix-temple.jpg" alt="Phoenix Arizona Temple">
-      <figcaption>Phoenix Arizona Temple</figcaption>
+      <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy" />
+      <figcaption>Salt Lake Temple (Duplicate)</figcaption>
     </figure>
 
     <figure>
-      <img src="images/cedar-city-temple.jpg" alt="Cedar City Utah Temple">
-      <figcaption>Cedar City Utah Temple</figcaption>
+      <img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple" loading="lazy" />
+      <figcaption>Phoenix Arizona Temple (Duplicate)</figcaption>
     </figure>
+
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> | Your Name | WDD 131 | Last Modified: <span id="lastModified"></span></p>
+    <p>&copy; <span id="year"></span> Your Full Name</p>
+    <p id="lastModified"></p>
   </footer>
 </body>
 </html>

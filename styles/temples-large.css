@@ -1,13 +1,27 @@
+/* temples-large.css - Larger Screens */
 @media screen and (min-width: 768px) {
-  main {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
   #hamburger {
-    display: none; /* Hide hamburger on large screens */
+    display: none;
   }
 
-  nav ul {
+  nav {
     display: flex !important;
+    justify-content: center;
+    background-color: #4a5a6a;
+  }
+
+  nav a {
+    margin: 0 1rem;
+  }
+
+  .temple-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }

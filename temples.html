@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Responsive temple album gallery">
+  <meta charset="utf-8"> <!-- ✅ Fixed lowercase charset value -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive temple album gallery with nine beautiful temples from around the world.">
   <meta name="author" content="Meline">
   <title>Temple Album - Picture Gallery</title>
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/temples.css">
   <link rel="stylesheet" href="styles/temples-large.css">
+
+  <!-- JavaScript -->
   <script src="scripts/temples.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Temple Gallery</h1>
-    <button id="hamburger">&#9776;</button>
-    <nav id="navMenu">
+    <nav>
       <a href="index.html">Home</a>
       <a href="temples.html">Temples</a>
       <a href="about.html">About Us</a>
@@ -27,20 +32,48 @@
   <main>
     <h2>Beautiful Temples Around the World</h2>
     <section class="temple-gallery">
-      <figure><img src="images/laie-temple.jpg" alt="Laie Hawaii Temple"><figcaption>Laie Hawaii Temple</figcaption></figure>
-      <figure><img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple"><figcaption>Salt Lake Temple</figcaption></figure>
-      <figure><img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple"><figcaption>Phoenix Arizona Temple</figcaption></figure>
-      <figure><img src="images/cedar-city-utah-temple.jpg" alt="Cedar City Utah Temple"><figcaption>Cedar City Utah Temple</figcaption></figure>
-      <figure><img src="images/suva-fiji-temple.jpg" alt="Suva Fiji Temple"><figcaption>Suva Fiji Temple</figcaption></figure>
-      <figure><img src="images/tokyo-japan-temple.jpg" alt="Tokyo Japan Temple"><figcaption>Tokyo Japan Temple</figcaption></figure>
-      <figure><img src="images/new-york-temple.jpg" alt="New York Temple"><figcaption>New York Temple</figcaption></figure>
-      <figure><img src="images/portland-temple.jpg" alt="Portland Oregon Temple"><figcaption>Portland Oregon Temple</figcaption></figure>
-      <figure><img src="images/columbus-temple.jpg" alt="Columbus Ohio Temple"><figcaption>Columbus Ohio Temple</figcaption></figure>
+      <figure>
+        <img src="images/laie-temple.jpg" alt="Laie Hawaii Temple" loading="lazy">
+        <figcaption>Laie Hawaii Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy">
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/phoenix-arizona-temple.jpg" alt="Phoenix Arizona Temple" loading="lazy">
+        <figcaption>Phoenix Arizona Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/cedar-city-utah-temple.jpg" alt="Cedar City Utah Temple" loading="lazy">
+        <figcaption>Cedar City Utah Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/suva-fiji-temple.jpg" alt="Suva Fiji Temple" loading="lazy">
+        <figcaption>Suva Fiji Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/tokyo-japan-temple.jpg" alt="Tokyo Japan Temple" loading="lazy">
+        <figcaption>Tokyo Japan Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/new-york-temple.jpg" alt="New York Temple" loading="lazy">
+        <figcaption>New York Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/portland-temple.jpg" alt="Portland Oregon Temple" loading="lazy">
+        <figcaption>Portland Oregon Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/columbus-temple.jpg" alt="Columbus Ohio Temple" loading="lazy">
+        <figcaption>Columbus Ohio Temple</figcaption>
+      </figure>
     </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> | Meline | Last Modified: <span id="lastModified"></span></p>
+    <p>&copy; <span id="year"></span> Brigham Young University–Idaho | All rights reserved</p>
+    <p>Last modified: <span id="lastModified"></span></p>
   </footer>
 </body>
 </html>

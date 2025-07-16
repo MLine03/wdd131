@@ -1,12 +1,7 @@
-// Update footer year and last modified date
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
+// scripts/temples.js
 
-// Hamburger menu toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("hidden");
-  hamburger.textContent = navLinks.classList.contains("hidden") ? "☰" : "✕";
+// Example: Log when page is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Temple Gallery script loaded and running.');
 });
+

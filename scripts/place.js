@@ -1,33 +1,27 @@
-// Static values for temperature and wind speed
-const temperature = 8;  // Celsius
-const windSpeed = 10;   // km/h
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
 
-// Function to calculate wind chill in Celsius (one line)
-function calculateWindChill(temp, speed) {
-  return 13.12 + 0.6215 * temp - 11.37 * Math.pow(speed, 0.16) + 0.3965 * temp * Math.pow(speed, 0.16);
+// Set last modified date
+document.getElementById('lastModified').textContent = document.lastModified;
+
+// Calculate wind chill factor function
+function calculateWindChill(temp, windSpeed) {
+  // Conditions to apply wind chill formula (metric)
+  if (temp <= 10 && windSpeed > 4.8) {
+    return (
+      13.12 +
+      0.6215 * temp -
+      11.37 * Math.pow(windSpeed, 0.16) +
+      0.3965 * temp * Math.pow(windSpeed, 0.16)
+    ).toFixed(1);
+  } else {
+    return 'N/A';
+  }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  const windChillEl = document.getElementById('windChill');
-  const tempEl = document.getElementById('temp');
-  const windSpeedEl = document.getElementById('windSpeed');
-  const yearEl = document.getElementById('year');
-  const lastModifiedEl = document.getElementById('lastModified');
+// Get static temp and wind speed from HTML
+const temp = parseFloat(document.getElementById('temp').textContent);
+const windSpeed = parseFloat(document.getElementById('windSpeed').textContent);
 
-  // Display static temperature and wind speed
-  tempEl.textContent = temperature;
-  windSpeedEl.textContent = windSpeed;
-
-  // Check conditions for wind chill calculation (metric)
-  if (temperature <= 10 && windSpeed > 4.8) {
-    const chill = calculateWindChill(temperature, windSpeed);
-    windChillEl.textContent = chill.toFixed(1) + " °C";
-  } else {
-    windChillEl.textContent = "N/A";
-  }
-
-  // Footer date info
-  const today = new Date();
-  yearEl.textContent = today.getFullYear();
-  lastModifiedEl.textContent = document.lastModified;
-});
+// Calculate and display wind chill
+document.getElementById('windChill').textContent = calculateWindChill(temp, windSpeed);

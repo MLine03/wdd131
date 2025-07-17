@@ -1,85 +1,108 @@
-/* Global CSS Variables */
 :root {
-  --main-color: #003366;       /* Deep blue */
-  --accent-color: #ff6600;     /* Orange */
-  --background-color: #f9f9f9; /* Light gray */
+  --primary-color: #bc002d; /* Inspired by Japan's flag red */
+  --background-color: #fff;
+  --text-color: #222;
   --font-family: 'Roboto', sans-serif;
+  --weather-icon-color: #f5a623;
 }
 
-/* Base Styles */
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   font-family: var(--font-family);
   background-color: var(--background-color);
-  color: var(--main-color);
-  margin: 0;
-  padding: 0 1rem;
+  color: var(--text-color);
+  line-height: 1.5;
 }
 
 header {
-  text-align: center;
-  padding: 1rem 0;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   color: white;
+  padding: 1rem;
+  text-align: center;
 }
 
-h1, h2 {
-  margin: 0.5rem 0;
+h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
 main {
-  max-width: 900px;
-  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Hero Section */
+.hero picture,
 .hero img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 /* Weather Section */
 .weather {
-  background-color: white;
+  border: 2px solid var(--primary-color);
   padding: 1rem;
-  margin-top: 2rem;
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  max-width: 300px;
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+  background-color: #f9f9f9;
 }
 
 .weather-heading {
-  position: relative;
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  position: relative;
 }
 
-/* ::after pseudo-element for weather icon (wider view) */
-.weather-heading::after {
-  content: " ⛅";
-  font-size: 1.8rem;
+.weather-heading .weather-icon {
+  font-size: 1.5rem;
   margin-left: 0.5rem;
-  vertical-align: middle;
+  color: var(--weather-icon-color);
+}
+
+/* Hide the SVG icon on larger screens; shown on mobile */
+.weather-icon-svg {
   display: none;
 }
 
-/* Show emoticon instead of SVG icon on wider screens */
-@media (min-width: 768px) {
-  .weather-icon {
-    display: none;
-  }
-  .weather-heading::after {
-    display: inline;
-  }
+/* Paragraph styling */
+.weather p {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 /* Media Queries */
-@media (max-width: 767px) {
-  main {
-    padding: 0 1rem;
+@media (max-width: 599px) {
+  .weather-heading .weather-icon {
+    display: none;
   }
-  .weather {
-    max-width: 100%;
+  .weather-icon-svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
   }
 }

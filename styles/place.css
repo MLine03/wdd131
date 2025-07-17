@@ -1,5 +1,3 @@
-/* No @import for Google Fonts here! Just normal CSS */
-
 :root {
   --main-bg-color: #f9f9f9;
   --main-text-color: #333;
@@ -46,7 +44,7 @@ header {
   margin-right: 0.5rem;
 }
 
-/* Media queries example */
+/* Responsive font size for larger screens */
 @media (min-width: 600px) {
   body {
     font-size: 18px;

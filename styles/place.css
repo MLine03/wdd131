@@ -1,108 +1,57 @@
+/* ✅ Google Fonts via @import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* ✅ Global Variables */
 :root {
-  --primary-color: #bc002d; /* Inspired by Japan's flag red */
-  --background-color: #fff;
-  --text-color: #222;
-  --font-family: 'Roboto', sans-serif;
-  --weather-icon-color: #f5a623;
+  --primary-color: #d62828;
+  --secondary-color: #f77f00;
+  --background-color: #fefae0;
+  --font-color: #003049;
+  --padding: 1rem;
+  --max-width: 1200px;
 }
 
-/* Global Styles */
-* {
-  box-sizing: border-box;
-}
-
+/* ✅ Base Styles */
 body {
-  margin: 0;
-  font-family: var(--font-family);
+  font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.5;
+  color: var(--font-color);
+  margin: 0;
+  padding: 0;
 }
 
 header {
   background-color: var(--primary-color);
   color: white;
-  padding: 1rem;
+  padding: var(--padding);
   text-align: center;
 }
 
-h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
 main {
-  padding: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: var(--padding);
 }
 
-/* Hero Section */
-.hero picture,
 .hero img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
-  margin-bottom: 1rem;
 }
 
-/* Weather Section */
 .weather {
-  border: 2px solid var(--primary-color);
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 400px;
-  margin: 0 auto 2rem auto;
-  background-color: #f9f9f9;
+  margin-top: 2rem;
 }
 
-.weather-heading {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
-  position: relative;
+.weather-heading::after {
+  content: ' ⛅';
 }
 
-.weather-heading .weather-icon {
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
-  color: var(--weather-icon-color);
-}
-
-/* Hide the SVG icon on larger screens; shown on mobile */
-.weather-icon-svg {
-  display: none;
-}
-
-/* Paragraph styling */
-.weather p {
-  margin: 0.3rem 0;
-  font-size: 1.1rem;
-}
-
-/* Footer */
-footer {
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
-  padding: 0.75rem;
-  font-size: 0.9rem;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
-
-/* Media Queries */
-@media (max-width: 599px) {
-  .weather-heading .weather-icon {
-    display: none;
-  }
-  .weather-icon-svg {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
+/* ✅ Responsive Layout */
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 }

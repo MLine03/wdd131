@@ -1,30 +1,33 @@
-// Set current year in footer
-document.getElementById('currentYear').textContent = new Date().getFullYear();
+// Static values for temperature and wind speed
+const temperature = 8;  // Celsius
+const windSpeed = 10;   // km/h
 
-// Set last modified date in footer
-document.getElementById('lastModified').textContent = document.lastModified;
-
-// Static values matching the displayed weather info
-const temperatureC = 7;      // Celsius
-const windSpeedKmh = 10;     // km/h
-
-// Calculate wind chill based on Metric units formula
-// Formula valid if temp <= 10°C and windSpeed > 4.8 km/h
-function calculateWindChill(tempC, windKmh) {
-    return (
-        13.12 + 0.6215 * tempC - 11.37 * Math.pow(windKmh, 0.16) + 0.3965 * tempC * Math.pow(windKmh, 0.16)
-    ).toFixed(1);
+// Function to calculate wind chill in Celsius (one line)
+function calculateWindChill(temp, speed) {
+  return 13.12 + 0.6215 * temp - 11.37 * Math.pow(speed, 0.16) + 0.3965 * temp * Math.pow(speed, 0.16);
 }
 
-// Calculate and display wind chill or N/A if conditions not met
-function displayWindChill() {
-    let windChillText = "N/A";
+window.addEventListener('DOMContentLoaded', () => {
+  const windChillEl = document.getElementById('windChill');
+  const tempEl = document.getElementById('temp');
+  const windSpeedEl = document.getElementById('windSpeed');
+  const yearEl = document.getElementById('year');
+  const lastModifiedEl = document.getElementById('lastModified');
 
-    if (temperatureC <= 10 && windSpeedKmh > 4.8) {
-        windChillText = calculateWindChill(temperatureC, windSpeedKmh) + "°C";
-    }
+  // Display static temperature and wind speed
+  tempEl.textContent = temperature;
+  windSpeedEl.textContent = windSpeed;
 
-    document.getElementById('windChill').textContent = windChillText;
-}
+  // Check conditions for wind chill calculation (metric)
+  if (temperature <= 10 && windSpeed > 4.8) {
+    const chill = calculateWindChill(temperature, windSpeed);
+    windChillEl.textContent = chill.toFixed(1) + " °C";
+  } else {
+    windChillEl.textContent = "N/A";
+  }
 
-window.addEventListener('load', displayWindChill);
+  // Footer date info
+  const today = new Date();
+  yearEl.textContent = today.getFullYear();
+  lastModifiedEl.textContent = document.lastModified;
+});

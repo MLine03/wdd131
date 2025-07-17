@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to the WDD131 assignment homepage." />
+  <meta name="description" content="Welcome to the WDD131 Country Guide. Explore various countries and their highlights." />
   <meta name="author" content="MLine03" />
-  <title>WDD131 Assignment - Home</title>
+  <title>Home - WDD131 Country Guide</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="styles/place.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+
+  <!-- JS -->
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Welcome to WDD131</h1>
+    <h1>WDD131 Country Guide</h1>
   </header>
 
   <main>
-    <section>
-      <p>This is the homepage for your WDD131 assignment.</p>
-      <p><a href="places.html">Go to Japan Place Page</a></p>
+    <section class="intro">
+      <h2>Explore the World</h2>
+      <p>Discover rich cultures, stunning landscapes, and exciting cities. Start your journey by exploring one of the countries below.</p>
+    </section>
+
+    <section class="places-list">
+      <h2>Featured Places</h2>
+      <ul>
+        <li><a href="places/japan.html">Japan</a></li>
+        <li><a href="places/france.html">France</a></li>
+        <li><a href="places/brazil.html">Brazil</a></li>
+        <!-- Add more places as needed -->
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> MLine03 | Last updated: <span id="lastModified"></span></p>
+    <p>&copy; <span id="year"></span> MLine03 | All rights reserved</p>
   </footer>
-
-  <script src="scripts/place.js" defer></script>
 </body>
 </html>

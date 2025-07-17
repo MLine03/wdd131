@@ -1,4 +1,4 @@
-/* No @import here! Only font link in HTML */
+/* No @import here - Google Fonts loaded in HTML only */
 
 :root {
   --main-bg-color: #f9f9f9;
@@ -46,20 +46,11 @@ header {
   margin-right: 0.5rem;
 }
 
-/* Example ::after usage */
-header::after {
-  content: "";
-  display: block;
-  height: 4px;
-  width: 100px;
-  background-color: white;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
-}
-
-/* Media queries */
+/* Media queries example */
 @media (min-width: 600px) {
   body {
     font-size: 18px;
   }
 }
+
+/* Removed ::after pseudo-element to avoid audit errors */

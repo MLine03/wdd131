@@ -1,3 +1,5 @@
+/* No @import here! Only font link in HTML */
+
 :root {
   --main-bg-color: #f9f9f9;
   --main-text-color: #333;
@@ -44,7 +46,18 @@ header {
   margin-right: 0.5rem;
 }
 
-/* Responsive font size for larger screens */
+/* Example ::after usage */
+header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100px;
+  background-color: white;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Media queries */
 @media (min-width: 600px) {
   body {
     font-size: 18px;

@@ -1,34 +1,35 @@
-// scripts/place.js
+// Update year and last modified date in footer
+document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("year");
+  const lastModifiedSpan = document.getElementById("lastModified");
 
-// Update copyright year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Update last modified date
-document.getElementById('lastModified').textContent = document.lastModified;
-
-// Calculate wind chill if temperature and wind speed are valid
-function calculateWindChill(tempC, windSpeedKmh) {
-  if (tempC <= 10 && windSpeedKmh > 4.8) {
-    // Wind chill formula (Celsius)
-    const v = Math.pow(windSpeedKmh, 0.16);
-    return Math.round(
-      13.12 + 0.6215 * tempC - 11.37 * v + 0.3965 * tempC * v
-    );
-  } else {
-    return tempC; // No wind chill effect, return actual temp
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
   }
-}
 
-// Get elements
-const tempElem = document.getElementById('temp');
-const windSpeedElem = document.getElementById('windSpeed');
-const windChillElem = document.getElementById('windChill');
+  if (lastModifiedSpan) {
+    lastModifiedSpan.textContent = document.lastModified;
+  }
 
-if (tempElem && windSpeedElem && windChillElem) {
-  const temp = parseFloat(tempElem.textContent);
-  const windSpeed = parseFloat(windSpeedElem.textContent);
+  // Simple wind chill calculation example:
+  const temp = parseFloat(document.getElementById("temp").textContent);
+  const windSpeed = parseFloat(document.getElementById("windSpeed").textContent);
+  const windChillSpan = document.getElementById("windChill");
 
-  const windChill = calculateWindChill(temp, windSpeed);
+  if (temp !== null && windSpeed !== null && windChillSpan) {
+    let windChill = temp;
 
-  windChillElem.textContent = windChill === temp ? 'N/A' : `${windChill} °C`;
-}
+    if (temp <= 10 && windSpeed > 4.8) {
+      windChill =
+        13.12 +
+        0.6215 * temp -
+        11.37 * Math.pow(windSpeed, 0.16) +
+        0.3965 * temp * Math.pow(windSpeed, 0.16);
+      windChill = windChill.toFixed(1);
+    } else {
+      windChill = "N/A";
+    }
+
+    windChillSpan.textContent = windChill;
+  }
+});

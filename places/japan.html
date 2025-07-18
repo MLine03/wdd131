@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />  
+  <!-- Meta charset must be first -->
+  <meta charset="UTF-8" />
+
+  <!-- Responsive viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title -->
   <title>Japan - Country Page for WDD131 Assignment</title>
+
+  <!-- Meta description -->
   <meta name="description" content="Discover Japan's top attractions, cultural landmarks, and modern innovations in this interactive WDD131 country project." />
-  <meta name="author" content="MLine03" />
+
+  <!-- Meta author -->
+  <meta name="author" content="Meline" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../styles/place.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/place.css" />
 
-  <!-- JS -->
-  <script src="../scripts/place.js" defer></script>
+  <!-- JavaScript -->
+  <script src="scripts/place.js" defer></script>
 </head>
 <body>
   <header>
@@ -25,9 +34,9 @@
     <!-- Hero Image Section -->
     <section class="hero">
       <picture>
-        <source srcset="../images/hero-large.webp" media="(min-width: 1000px)" />
-        <source srcset="../images/hero-medium.webp" media="(min-width: 600px)" />
-        <img src="../images/hero-small.webp" alt="Scenic view of Japan" />
+        <source srcset="images/hero-large.webp" media="(min-width: 1000px)" />
+        <source srcset="images/hero-medium.webp" media="(min-width: 600px)" />
+        <img src="images/hero-small.webp" alt="Scenic view of Japan" />
       </picture>
     </section>
 
@@ -38,13 +47,13 @@
         <p>Temperature: <span id="temperature">32</span>°F</p>
         <p>Wind Speed: <span id="wind-speed">10</span> mph</p>
         <p>Wind Chill: <span id="windchill">Calculating...</span></p>
-        <img class="weather-icon-mobile" src="../images/weather-icon.svg" alt="Weather icon" />
+        <img class="weather-icon-mobile" src="images/weather-icon.svg" alt="Weather icon" />
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> | Last Updated: <span id="lastModified"></span></p>
+    <p>&copy; <span id="year"></span> Meline | Last Updated: <span id="lastModified"></span></p>
   </footer>
 </body>
 </html>

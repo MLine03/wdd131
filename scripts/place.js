@@ -1,31 +1,37 @@
 // scripts/place.js
 
+// Display current year in footer
+const yearElement = document.getElementById('year');
+yearElement.textContent = new Date().getFullYear();
+
+// Display last modified date of document in footer
+const lastModifiedElement = document.getElementById('lastModified');
+lastModifiedElement.textContent = document.lastModified;
+
+// Static temperature and wind speed values
+const temperature = 32; // °F
+const windSpeed = 10; // mph
+
+// Update temperature and wind speed spans
+document.getElementById('temperature').textContent = temperature;
+document.getElementById('wind-speed').textContent = windSpeed;
+
+// Function to calculate wind chill (imperial units)
+// Formula from NOAA: 
+// 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)
 function calculateWindChill(tempF, speedMph) {
-  return 35.74 + 0.6215 * tempF - 35.75 * Math.pow(speedMph, 0.16) + 0.4275 * tempF * Math.pow(speedMph, 0.16);
+  return (
+    35.74 +
+    0.6215 * tempF -
+    35.75 * Math.pow(speedMph, 0.16) +
+    0.4275 * tempF * Math.pow(speedMph, 0.16)
+  ).toFixed(1);
 }
 
-function displayWindChill() {
-  const temp = 32;
-  const windSpeed = 10;
-  const windChillElem = document.getElementById('windchill');
-
-  if (temp <= 50 && windSpeed > 3) {
-    const chill = calculateWindChill(temp, windSpeed);
-    windChillElem.textContent = chill.toFixed(1) + "°F";
-  } else {
-    windChillElem.textContent = "N/A";
-  }
+// Calculate and display wind chill if conditions met
+const windChillElement = document.getElementById('windchill');
+if (temperature <= 50 && windSpeed > 3) {
+  windChillElement.textContent = calculateWindChill(temperature, windSpeed) + ' °F';
+} else {
+  windChillElement.textContent = 'N/A';
 }
-
-function displayFooterDates() {
-  const yearElem = document.getElementById('year');
-  const lastModifiedElem = document.getElementById('lastModified');
-
-  yearElem.textContent = new Date().getFullYear();
-  lastModifiedElem.textContent = document.lastModified;
-}
-
-window.onload = () => {
-  displayWindChill();
-  displayFooterDates();
-};

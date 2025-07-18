@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #c8102e; /* Japanese flag red */
-  --secondary-color: #ffffff; /* white */
+  --primary-color: #c8102e;
+  --secondary-color: #ffffff;
   --font-family: 'Roboto', sans-serif;
   --background-color: #f9f9f9;
   --text-color: #333333;
@@ -54,7 +54,6 @@ main {
   position: relative;
 }
 
-/* ::after pseudo-element adds the weather emoticon in desktop view */
 .weather h2::after {
   content: " ⛅";
   margin-left: 0.5rem;
@@ -62,19 +61,15 @@ main {
   display: none;
 }
 
-/* Show ::after on desktop only */
 @media (min-width: 800px) {
   .weather h2::after {
     display: inline;
   }
-
-  /* Hide the mobile SVG icon on desktop */
   .weather-icon-mobile {
     display: none;
   }
 }
 
-/* Mobile weather icon shown only on mobile */
 .weather-icon-mobile {
   display: inline-block;
   width: 40px;

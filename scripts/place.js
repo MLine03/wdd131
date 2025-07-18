@@ -1,35 +1,29 @@
 // Display current year in footer
-const yearElement = document.getElementById('year');
-yearElement.textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-// Display last modified date of document in footer
-const lastModifiedElement = document.getElementById('lastModified');
-lastModifiedElement.textContent = document.lastModified;
+// Display last modified date in footer
+document.getElementById('lastModified').textContent = document.lastModified;
 
-// Static temperature and wind speed values
+// Static weather data
 const temperature = 32; // °F
-const windSpeed = 10; // mph
+const windSpeed = 10;   // mph
 
-// Update temperature and wind speed spans
+// Display temperature and wind speed
 document.getElementById('temperature').textContent = temperature;
 document.getElementById('wind-speed').textContent = windSpeed;
 
-// Function to calculate wind chill (imperial units)
-// Formula from NOAA: 
-// 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)
+// Wind Chill calculation (NOAA formula)
 function calculateWindChill(tempF, speedMph) {
-  return (
-    35.74 +
-    0.6215 * tempF -
-    35.75 * Math.pow(speedMph, 0.16) +
-    0.4275 * tempF * Math.pow(speedMph, 0.16)
-  ).toFixed(1);
+  if (tempF <= 50 && speedMph > 3) {
+    const chill =
+      35.74 +
+      0.6215 * tempF -
+      35.75 * Math.pow(speedMph, 0.16) +
+      0.4275 * tempF * Math.pow(speedMph, 0.16);
+    return `${chill.toFixed(1)} °F`;
+  }
+  return 'N/A';
 }
 
-// Calculate and display wind chill if conditions met
-const windChillElement = document.getElementById('windchill');
-if (temperature <= 50 && windSpeed > 3) {
-  windChillElement.textContent = calculateWindChill(temperature, windSpeed) + ' °F';
-} else {
-  windChillElement.textContent = 'N/A';
-}
+// Display wind chill
+document.getElementById('windchill').textContent = calculateWindChill(temperature, windSpeed);

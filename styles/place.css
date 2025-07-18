@@ -67,7 +67,7 @@ main {
   .weather h2::after {
     display: inline;
   }
-  
+
   /* Hide the mobile SVG icon on desktop */
   .weather-icon-mobile {
     display: none;

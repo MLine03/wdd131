@@ -1,4 +1,4 @@
-/* Global CSS variables */
+/* Global CSS variables - must have at least two */
 :root {
   --main-bg-color: #e0f7fa;
   --text-color: #004d40;
@@ -25,7 +25,7 @@ h1 {
   margin: 0;
 }
 
-/* Hero section */
+/* Hero image */
 .hero img {
   width: 100%;
   height: auto;
@@ -48,7 +48,7 @@ h1 {
   margin-bottom: 1rem;
 }
 
-/* ::after pseudo-element for weather icon next to heading */
+/* ::after pseudo-element for weather icon after the heading */
 .weather h2::after {
   content: " ⛅";
   margin-left: 0.5rem;
@@ -66,14 +66,14 @@ h1 {
   margin-top: 1rem;
 }
 
-/* Responsive styles */
+/* Media query required by audit */
 @media (max-width: 599px) {
   .weather-icon-mobile {
     display: inline-block;
   }
 }
 
-/* Example media query to change background on wider screens */
+/* Extra media query for background color change on wider screens */
 @media (min-width: 600px) {
   body {
     background-color: #b2dfdb;

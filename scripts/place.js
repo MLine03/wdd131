@@ -12,18 +12,20 @@ if (lastModifiedElement) {
   lastModifiedElement.textContent = document.lastModified;
 }
 
-// Static temperature and wind speed values (°F and mph)
-const temperature = 32;
-const windSpeed = 10;
+// Static temperature and wind speed values
+const temperature = 32; // °F
+const windSpeed = 10; // mph
 
-// Update temperature and wind speed in the DOM
+// Update temperature and wind speed spans
 const tempElement = document.getElementById('temperature');
-if (tempElement) tempElement.textContent = temperature;
-
 const windSpeedElement = document.getElementById('wind-speed');
+
+if (tempElement) tempElement.textContent = temperature;
 if (windSpeedElement) windSpeedElement.textContent = windSpeed;
 
-// Calculate wind chill using NOAA formula (imperial units)
+// Function to calculate wind chill (imperial units)
+// Formula from NOAA: 
+// 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)
 function calculateWindChill(tempF, speedMph) {
   return (
     35.74 +
@@ -33,7 +35,7 @@ function calculateWindChill(tempF, speedMph) {
   ).toFixed(1);
 }
 
-// Calculate and display wind chill or N/A if conditions not met
+// Calculate and display wind chill if conditions met
 const windChillElement = document.getElementById('windchill');
 if (windChillElement) {
   if (temperature <= 50 && windSpeed > 3) {

@@ -1,65 +1,81 @@
+/* Global CSS variables */
 :root {
-  --primary-color: #00416a;
-  --accent-color: #e63946;
-  --text-color: #ffffff;
-  --bg-color: #f9f9f9;
+  --main-bg-color: #e0f7fa;
+  --text-color: #004d40;
+  --accent-color: #00796b;
   --font-family: 'Roboto', sans-serif;
 }
 
 body {
-  font-family: var(--font-family);
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
-  color: #333;
+  font-family: var(--font-family);
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
 }
 
 header {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  text-align: center;
+  background-color: var(--accent-color);
+  color: white;
   padding: 1rem;
+  text-align: center;
 }
 
+h1 {
+  margin: 0;
+}
+
+/* Hero section */
 .hero img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+/* Weather section */
 .weather {
-  background-color: var(--primary-color);
-  color: var(--text-color);
+  max-width: 600px;
+  margin: 2rem auto;
   padding: 1rem;
-  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.weather h2 {
+  position: relative;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ::after pseudo-element for weather icon next to heading */
 .weather h2::after {
   content: " ⛅";
   margin-left: 0.5rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
 }
 
-.weather-box {
-  margin-top: 1rem;
+.weather-box p {
+  margin: 0.5rem 0;
 }
 
 .weather-icon-mobile {
+  display: none;
+  width: 50px;
   margin-top: 1rem;
-  width: 60px;
-  height: auto;
 }
 
-footer {
-  background-color: #222;
-  color: #ddd;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+/* Responsive styles */
+@media (max-width: 599px) {
+  .weather-icon-mobile {
+    display: inline-block;
+  }
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .weather h2::after {
-    content: "";
+/* Example media query to change background on wider screens */
+@media (min-width: 600px) {
+  body {
+    background-color: #b2dfdb;
   }
 }

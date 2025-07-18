@@ -1,56 +1,64 @@
-/* No @import here - Google Fonts loaded in HTML only */
-
 :root {
-  --main-bg-color: #f9f9f9;
-  --main-text-color: #333;
-  --primary-color: #007acc;
+  --primary-color: #00416a;
+  --accent-color: #e63946;
+  --text-color: #ffffff;
+  --bg-color: #f4f4f4;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
+  font-family: var(--font-family);
   margin: 0;
   padding: 0;
+  background-color: var(--bg-color);
+  color: #333;
 }
 
 header {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.weather {
+  background-color: var(--primary-color);
+  color: var(--text-color);
   padding: 1rem;
   text-align: center;
 }
 
-.hero img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+.weather h2::after {
+  content: " ⛅";
+  margin-left: 0.5rem;
 }
 
-.weather {
+.weather-box {
+  margin-top: 1rem;
+}
+
+.weather-icon-mobile {
+  margin-top: 1rem;
+  width: 60px;
+}
+
+footer {
+  background-color: #222;
+  color: #ddd;
+  text-align: center;
   padding: 1rem;
-  background-color: #e0f7fa;
-  margin: 1rem auto;
-  max-width: 600px;
-  border-radius: 8px;
+  font-size: 0.9rem;
 }
 
-.weather-heading {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.weather-icon {
-  vertical-align: middle;
-  margin-right: 0.5rem;
-}
-
-/* Media queries example */
-@media (min-width: 600px) {
-  body {
-    font-size: 18px;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .weather h2::after {
+    content: "";
   }
 }
-
-/* Removed ::after pseudo-element to avoid audit errors */

@@ -2,23 +2,28 @@
 
 // Display current year in footer
 const yearElement = document.getElementById('year');
-yearElement.textContent = new Date().getFullYear();
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
 // Display last modified date of document in footer
 const lastModifiedElement = document.getElementById('lastModified');
-lastModifiedElement.textContent = document.lastModified;
+if (lastModifiedElement) {
+  lastModifiedElement.textContent = document.lastModified;
+}
 
-// Static temperature and wind speed values
-const temperature = 32; // °F
-const windSpeed = 10; // mph
+// Static temperature and wind speed values (°F and mph)
+const temperature = 32;
+const windSpeed = 10;
 
-// Update temperature and wind speed spans
-document.getElementById('temperature').textContent = temperature;
-document.getElementById('wind-speed').textContent = windSpeed;
+// Update temperature and wind speed in the DOM
+const tempElement = document.getElementById('temperature');
+if (tempElement) tempElement.textContent = temperature;
 
-// Function to calculate wind chill (imperial units)
-// Formula from NOAA: 
-// 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)
+const windSpeedElement = document.getElementById('wind-speed');
+if (windSpeedElement) windSpeedElement.textContent = windSpeed;
+
+// Calculate wind chill using NOAA formula (imperial units)
 function calculateWindChill(tempF, speedMph) {
   return (
     35.74 +
@@ -28,10 +33,12 @@ function calculateWindChill(tempF, speedMph) {
   ).toFixed(1);
 }
 
-// Calculate and display wind chill if conditions met
+// Calculate and display wind chill or N/A if conditions not met
 const windChillElement = document.getElementById('windchill');
-if (temperature <= 50 && windSpeed > 3) {
-  windChillElement.textContent = calculateWindChill(temperature, windSpeed) + ' °F';
-} else {
-  windChillElement.textContent = 'N/A';
+if (windChillElement) {
+  if (temperature <= 50 && windSpeed > 3) {
+    windChillElement.textContent = calculateWindChill(temperature, windSpeed) + ' °F';
+  } else {
+    windChillElement.textContent = 'N/A';
+  }
 }

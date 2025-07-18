@@ -2,8 +2,8 @@
   --primary-color: #00416a;
   --accent-color: #e63946;
   --text-color: #ffffff;
-  --bg-color: #f4f4f4;
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --bg-color: #f9f9f9;
+  --font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -46,6 +46,7 @@ header {
 .weather-icon-mobile {
   margin-top: 1rem;
   width: 60px;
+  height: auto;
 }
 
 footer {
@@ -56,7 +57,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 600px) {
   .weather h2::after {
     content: "";

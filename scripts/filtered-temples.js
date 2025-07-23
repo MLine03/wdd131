@@ -25,7 +25,7 @@ function createTempleCard(t) {
   img.src = t.imageUrl;
   img.alt = `Image of ${t.name}`;
   img.loading = "lazy";
-  img.onerror = () => img.src = "https://via.placeholder.com/300x180?text=Image+Not+Found";
+  img.onerror = () => img.src = "https://via.placeholder.com/300x180?text=No+Image";
 
   const info = document.createElement("div");
   info.className = "temple-info";
@@ -49,12 +49,37 @@ function setActive(id) {
   document.querySelectorAll("nav a").forEach(a => a.classList.toggle("active", a.id === id));
 }
 
-document.getElementById("filter-home").addEventListener("click", e => { e.preventDefault(); setActive("filter-home"); displayTemples(temples); });
-document.getElementById("filter-old").addEventListener("click", e => { e.preventDefault(); setActive("filter-old"); displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() < 1900)); });
-document.getElementById("filter-new").addEventListener("click", e => { e.preventDefault(); setActive("filter-new"); displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() > 2000)); });
-document.getElementById("filter-large").addEventListener("click", e => { e.preventDefault(); setActive("filter-large"); displayTemples(temples.filter(t => t.area > 90000)); });
-document.getElementById("filter-small").addEventListener("click", e => { e.preventDefault(); setActive("filter-small"); displayTemples(temples.filter(t => t.area < 10000)); });
+document.getElementById("filter-home").addEventListener("click", e => {
+  e.preventDefault();
+  setActive("filter-home");
+  displayTemples(temples);
+});
 
+document.getElementById("filter-old").addEventListener("click", e => {
+  e.preventDefault();
+  setActive("filter-old");
+  displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() < 1900));
+});
+
+document.getElementById("filter-new").addEventListener("click", e => {
+  e.preventDefault();
+  setActive("filter-new");
+  displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() > 2000));
+});
+
+document.getElementById("filter-large").addEventListener("click", e => {
+  e.preventDefault();
+  setActive("filter-large");
+  displayTemples(temples.filter(t => t.area > 90000));
+});
+
+document.getElementById("filter-small").addEventListener("click", e => {
+  e.preventDefault();
+  setActive("filter-small");
+  displayTemples(temples.filter(t => t.area < 10000));
+});
+
+// Footer info
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
 document.getElementById("last-modified").textContent = document.lastModified;
 

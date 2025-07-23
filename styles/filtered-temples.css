@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Base reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +7,12 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f7f7f7;
+  background: #f4f4f4;
   padding: 20px;
   color: #333;
 }
 
-/* Header */
+/* Header & Nav */
 header {
   text-align: center;
   margin-bottom: 20px;
@@ -22,7 +22,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Nav styling with Flex */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -46,24 +45,24 @@ nav a.active {
   color: white;
 }
 
-/* Temple Grid */
+/* Temple grid layout */
 .temples-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
-/* Temple Card */
+/* Temple cards */
 .temple-card {
-  background-color: white;
+  background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
 }
 
 .temple-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px);
 }
 
 .temple-image {

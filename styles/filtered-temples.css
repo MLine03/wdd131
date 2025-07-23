@@ -1,4 +1,4 @@
-/* Basic Reset */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +7,12 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+  background-color: #f7f7f7;
   padding: 20px;
+  color: #333;
 }
 
+/* Header */
 header {
   text-align: center;
   margin-bottom: 20px;
@@ -22,46 +22,48 @@ h1 {
   margin-bottom: 10px;
 }
 
+/* Nav styling with Flex */
 nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   margin-bottom: 30px;
 }
 
 nav a {
   text-decoration: none;
-  color: #0066cc;
+  color: #0056b3;
   font-weight: bold;
-  padding: 8px 15px;
+  padding: 8px 16px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
-  background-color: #0066cc;
+  background-color: #0056b3;
   color: white;
 }
 
+/* Temple Grid */
 .temples-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
+/* Temple Card */
 .temple-card {
-  background: white;
+  background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
 
 .temple-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.02);
 }
 
 .temple-image {
@@ -75,17 +77,17 @@ nav a.active {
 }
 
 .temple-info h2 {
-  margin-bottom: 10px;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #004080;
+  margin-bottom: 10px;
 }
 
 .temple-info p {
-  margin-bottom: 6px;
   font-size: 0.95rem;
-  color: #555;
+  margin-bottom: 6px;
 }
 
+/* Footer */
 footer {
   text-align: center;
   margin-top: 40px;

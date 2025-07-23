@@ -94,7 +94,6 @@ const temples = [
 
 const templesContainer = document.getElementById("temples-container");
 
-// Create and display temple cards from an array of temple objects
 function displayTemples(templeList) {
   templesContainer.innerHTML = "";
 
@@ -103,12 +102,7 @@ function displayTemples(templeList) {
     card.classList.add("temple-card");
 
     card.innerHTML = `
-      <img
-        class="temple-image"
-        src="${temple.imageUrl}"
-        alt="Image of the ${temple.name}"
-        loading="lazy"
-      />
+      <img class="temple-image" src="${temple.imageUrl}" alt="Image of ${temple.name}" loading="lazy">
       <div class="temple-info">
         <h2>${temple.name}</h2>
         <p><strong>Location:</strong> ${temple.location}</p>
@@ -121,7 +115,6 @@ function displayTemples(templeList) {
   });
 }
 
-// Filter functions
 function filterOld() {
   return temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
 }
@@ -138,7 +131,12 @@ function filterSmall() {
   return temples.filter(t => t.area < 10000);
 }
 
-// Event listeners for filter buttons
+function setActiveFilter(id) {
+  document.querySelectorAll("nav a").forEach(link => {
+    link.classList.toggle("active", link.id === id);
+  });
+}
+
 document.getElementById("filter-home").addEventListener("click", e => {
   e.preventDefault();
   setActiveFilter("filter-home");
@@ -169,20 +167,9 @@ document.getElementById("filter-small").addEventListener("click", e => {
   displayTemples(filterSmall());
 });
 
-function setActiveFilter(id) {
-  document.querySelectorAll("nav a").forEach(link => {
-    if (link.id === id) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-}
-
-// Set copyright year and last modified date
+// Footer
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
 document.getElementById("last-modified").textContent = document.lastModified;
 
-// Initial display
+// Load all on first run
 displayTemples(temples);
-setActiveFilter("filter-home");

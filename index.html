@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />  
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to the WDD131 Country Guide. Explore various countries and their highlights." />
-  <meta name="author" content="MLine03" />
-  <title>Home - WDD131 Country Guide</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles/style.css" />
-
-  <!-- JS -->
-  <script src="scripts/main.js" defer></script>
+  <meta name="description" content="Homepage for LDS Temples Picture Albums." />
+  <meta name="author" content="Meline" />
+  <title>Home | LDS Temples</title>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
   <header>
-    <h1>WDD131 Country Guide</h1>
+    <h1>Welcome to the LDS Temples Album</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="filtered-temples.html">Filtered Temples</a>
+      <a href="temples.html">Original Temples</a>
+    </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <h2>Explore the World</h2>
-      <p>Discover rich cultures, stunning landscapes, and exciting cities. Start your journey by exploring one of the countries below.</p>
-    </section>
-
-    <section class="places-list">
-      <h2>Featured Places</h2>
-      <ul>
-        <li><a href="places/japan.html">Japan</a></li>
-        <li><a href="places/france.html">France</a></li>
-        <li><a href="places/brazil.html">Brazil</a></li>
-        <!-- Add more places as needed -->
-      </ul>
-    </section>
+    <p>This site showcases temples of The Church of Jesus Christ of Latter-day Saints.</p>
+    <p>Click the links above to explore different views of temple data.</p>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> MLine03 | All rights reserved</p>
+    <p>&copy; <span id="year"></span> Meline</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
 </body>
 </html>

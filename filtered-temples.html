@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <!-- Charset must come first -->
   <meta charset="UTF-8" />
+  <!-- Performance fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Filtered Temple Picture Album | LDS Temples W04</title>
-  <meta name="description" content="Explore an interactive gallery of LDS temples with filter options, lazy-loaded images, and detailed temple information." />
+  <meta name="description" content="Filtered LDS Temple gallery with native lazy loading, filters by age and size, and responsive layout." />
   <meta name="author" content="Meline" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/filtered-temples.css" />
-  <script src="scripts/filtered-temples.js" defer></script>
+  <script src="scripts/filtered-temples.min.js" defer></script>
 </head>
 <body>
   <header>
@@ -32,7 +36,7 @@
   </footer>
 
   <script>
-    // Footer info
+    // Footer year and last modified
     document.getElementById("year").textContent = new Date().getFullYear();
     document.getElementById("lastModified").textContent = document.lastModified;
   </script>

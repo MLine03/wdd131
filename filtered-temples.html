@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Filtered Temple Gallery | LDS Temples Picture Album</title>
-  
-  <meta name="description" content="Interactive gallery filtering LDS temples by dedication date and area size." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Filtered Temple Picture Album | LDS Temples W04</title>
+  <meta name="description" content="Interactive filtered gallery and picture album of LDS temples, showcasing temple details with lazy loading and responsive filtering." />
   <meta name="author" content="Meline" />
 
-  <!-- Google Fonts: Roboto -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
   <!-- External CSS -->
@@ -17,7 +15,6 @@
 </head>
 <body>
   <header>
-    <h1>Filtered Temple Gallery</h1>
     <nav>
       <a href="#" id="home">Home</a>
       <a href="#" id="old">Old</a>
@@ -28,14 +25,15 @@
   </header>
 
   <main>
-    <div id="temple-cards" class="card-container"></div>
+    <h1>Filtered Temple Gallery</h1>
+    <div id="temple-cards" class="temple-cards-container"></div>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
+    &copy; <span id="year"></span> | Last Modified: <span id="last-modified"></span>
   </footer>
 
-  <!-- External JavaScript with defer -->
+  <!-- External JS -->
   <script src="scripts/filtered-temples.js" defer></script>
 </body>
 </html>

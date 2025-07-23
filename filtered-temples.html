@@ -6,10 +6,17 @@
   <meta name="description" content="Explore an interactive gallery of LDS temples with filter options, lazy-loaded images, and detailed temple information.">
   <meta name="author" content="Meline">
   <title>Filtered Temple Picture Album | LDS Temples</title>
-  <link rel="stylesheet" href="styles/filtered-temples.css">
+
+  <!-- ✅ Google Font: Roboto (loaded before CSS) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- ✅ External CSS -->
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+
+  <!-- ✅ External JavaScript (deferred) -->
   <script src="scripts/filtered-temples.js" defer></script>
 </head>
+
 <body>
   <header>
     <nav>
@@ -32,11 +39,18 @@
       <option value="international">International</option>
     </select>
 
+    <!-- Temple cards will be dynamically inserted here -->
     <section id="temple-list" class="temple-grid"></section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Meline | LDS Temples Filtered Gallery</p>
+    <p>&copy; 2025 <span id="footerName">Meline</span> | LDS Temples Filtered Gallery</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
+
+  <script>
+    // Footer dynamic info
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
 </body>
 </html>

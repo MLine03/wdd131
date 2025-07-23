@@ -1,86 +1,53 @@
-/* Basic reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-  background: #004080;
+header nav {
+  background: #333;
   color: white;
-  padding: 10px 20px;
-  margin-bottom: 20px;
-}
-
-nav {
+  padding: 1rem;
   display: flex;
-  gap: 15px;
-  margin-bottom: 10px;
+  gap: 1rem;
+  justify-content: center;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
 }
 
-nav a:hover,
-nav a:focus {
-  text-decoration: underline;
+main {
+  padding: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
-.temple-list {
+.temple-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1rem;
   justify-content: center;
 }
 
 .temple {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  border: 1px solid #ccc;
+  padding: 0.5rem;
   width: 300px;
-  padding: 15px;
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.temple:hover {
-  transform: translateY(-5px);
+  background-color: #f9f9f9;
 }
 
 .temple img {
-  border-radius: 5px;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-}
-
-.temple h2 {
-  margin: 10px 0 5px;
-  font-size: 1.2rem;
-}
-
-.temple p {
-  font-size: 0.9rem;
-  color: #555;
 }
 
 footer {
   text-align: center;
-  margin-top: 40px;
-  color: #666;
-  font-size: 0.8rem;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  margin-top: 2rem;
 }

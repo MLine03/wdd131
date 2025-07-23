@@ -2,85 +2,107 @@ const temples = [
   {
     name: "Bern Switzerland Temple",
     img: "images/bern-switzerland.jpg",
-    description: "Located in Bern, Switzerland."
+    description: "Located in Bern, Switzerland.",
+    location: "international"
   },
   {
     name: "Cedar City Utah Temple",
     img: "images/cedar-city.jpg",
-    description: "Located in Cedar City, Utah."
+    description: "Located in Cedar City, Utah.",
+    location: "utah"
   },
   {
     name: "Columbus Ohio Temple",
     img: "images/columbus.jpg",
-    description: "Located in Columbus, Ohio."
+    description: "Located in Columbus, Ohio.",
+    location: "usa"
   },
   {
     name: "Laie Hawaii Temple",
     img: "images/laie-hawaii.jpg",
-    description: "Located in Laie, Hawaii."
+    description: "Located in Laie, Hawaii.",
+    location: "usa"
   },
   {
     name: "Logan Utah Temple",
     img: "images/logan-utah.jpg",
-    description: "Located in Logan, Utah."
+    description: "Located in Logan, Utah.",
+    location: "utah"
   },
   {
     name: "New York New York Temple",
     img: "images/new-york.jpg",
-    description: "Located in New York City, New York."
+    description: "Located in New York City, New York.",
+    location: "new-york"
   },
   {
     name: "Palmyra New York Temple",
     img: "images/palmyra-new-york.jpg",
-    description: "Located in Palmyra, New York."
+    description: "Located in Palmyra, New York.",
+    location: "new-york"
   },
   {
     name: "Phoenix Arizona Temple",
     img: "images/phoenix-arizona.jpg",
-    description: "Located in Phoenix, Arizona."
+    description: "Located in Phoenix, Arizona.",
+    location: "usa"
   },
   {
     name: "Rome Italy Temple",
     img: "images/rome-italy.jpg",
-    description: "Located in Rome, Italy."
+    description: "Located in Rome, Italy.",
+    location: "international"
   },
   {
     name: "Portland Oregon Temple",
     img: "images/portland-temple.jpg",
-    description: "Located in Portland, Oregon."
+    description: "Located in Portland, Oregon.",
+    location: "usa"
   },
   {
     name: "Salt Lake Temple",
     img: "images/salt-lake-temple.jpg",
-    description: "Located in Salt Lake City, Utah."
+    description: "Located in Salt Lake City, Utah.",
+    location: "utah"
   },
   {
     name: "Suva Fiji Temple",
     img: "images/suva-fiji.jpg",
-    description: "Located in Suva, Fiji."
+    description: "Located in Suva, Fiji.",
+    location: "international"
   },
   {
     name: "Tokyo Japan Temple",
     img: "images/tokyo-japan.jpg",
-    description: "Located in Tokyo, Japan."
+    description: "Located in Tokyo, Japan.",
+    location: "international"
   }
 ];
 
-// Render temples into the DOM
-function renderTemples() {
-  const templeContainer = document.getElementById("temple-list");
-  if (!templeContainer) {
-    console.error("Temple container element not found");
-    return;
-  }
+function renderTemples(filter = "all") {
+  const container = document.getElementById("temple-list");
+  if (!container) return;
 
-  templeContainer.innerHTML = temples.map(temple => `
+  const filteredTemples = filter === "all"
+    ? temples
+    : temples.filter(t => t.location === filter);
+
+  container.innerHTML = filteredTemples.map(t => `
     <article class="temple">
-      <img src="${temple.img}" alt="${temple.name}" width="300" height="200" loading="lazy" />
-      <h2>${temple.name}</h2>
-      <p>${temple.description}</p>
+      <img src="${t.img}" alt="${t.name}" width="300" height="200" loading="lazy">
+      <h2>${t.name}</h2>
+      <p>${t.description}</p>
     </article>
   `).join("");
 }
 
-document.addEventListener("DOMContentLoaded", renderTemples);
+document.addEventListener("DOMContentLoaded", () => {
+  renderTemples();
+
+  const filterSelect = document.getElementById("templeFilter");
+  if (filterSelect) {
+    filterSelect.addEventListener("change", e => {
+      renderTemples(e.target.value);
+    });
+  }
+});

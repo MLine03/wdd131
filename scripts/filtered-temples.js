@@ -1,120 +1,77 @@
-// Temple Data Array
 const temples = [
   {
     name: "Salt Lake Temple",
-    location: "Salt Lake City, Utah",
+    location: "Salt Lake City, Utah, USA",
     dedicated: "1893-04-06",
-    area: 253015,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/salt-lake-utah-temple-400x267.jpg"
-  },
-  {
-    name: "Laie Hawaii Temple",
-    location: "Laie, Hawaii",
-    dedicated: "1919-11-27",
-    area: 42300,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/laie-hawaii-temple-400x267.jpg"
+    area: 253000,
+    imageUrl: "images/salt-lake-temple.jpg"
   },
   {
     name: "Kirtland Temple",
-    location: "Kirtland, Ohio",
+    location: "Kirtland, Ohio, USA",
     dedicated: "1836-03-27",
-    area: 9500,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/kirtland-temple-400x267.jpg"
+    area: 7000,
+    imageUrl: "images/kirtland-temple.jpg"
   },
   {
     name: "Rome Italy Temple",
     location: "Rome, Italy",
     dedicated: "2019-03-10",
-    area: 62000,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/rome-italy-temple-400x267.jpg"
-  },
-  {
-    name: "Freiberg Germany Temple",
-    location: "Freiberg, Germany",
-    dedicated: "1985-06-29",
     area: 30000,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/freiberg-germany-temple-400x267.jpg"
+    imageUrl: "images/rome-temple.jpg"
   },
   {
-    name: "Cardston Alberta Temple",
-    location: "Cardston, Alberta, Canada",
-    dedicated: "1923-08-26",
-    area: 8600,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/cardston-alberta-temple-400x267.jpg"
+    name: "Tokyo Japan Temple",
+    location: "Tokyo, Japan",
+    dedicated: "1980-10-27",
+    area: 12000,
+    imageUrl: "images/tokyo-temple.jpg"
   },
   {
-    name: "Brigham City Utah Temple",
-    location: "Brigham City, Utah",
-    dedicated: "2012-01-08",
-    area: 11000,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/brigham-city-utah-temple-400x267.jpg"
+    name: "Denver Colorado Temple",
+    location: "Denver, Colorado, USA",
+    dedicated: "1986-10-24",
+    area: 46000,
+    imageUrl: "images/denver-temple.jpg"
   },
+  {
+    name: "San Diego California Temple",
+    location: "San Diego, California, USA",
+    dedicated: "1993-04-25",
+    area: 29000,
+    imageUrl: "images/sandiego-temple.jpg"
+  }
 ];
 
-// DOM Elements
-const container = document.getElementById("temple-cards");
-const navLinks = document.querySelectorAll("nav a");
+// Grab container
+const templeCardsContainer = document.getElementById('temple-cards');
 
-// Render temple cards
-function renderTemples(templeList) {
-  container.innerHTML = ""; // Clear existing cards
+function createTempleCard(temple) {
+  const card = document.createElement('section');
+  card.className = 'temple-card';
+  card.innerHTML = `
+    <h2>${temple.name}</h2>
+    <p><strong>Location:</strong> ${temple.location}</p>
+    <p><strong>Dedicated:</strong> ${new Date(temple.dedicated).toLocaleDateString()}</p>
+    <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+    <img src="${temple.imageUrl}" alt="Image of ${temple.name}" loading="lazy" />
+  `;
+  return card;
+}
 
-  if (templeList.length === 0) {
-    container.innerHTML = "<p>No temples match the selected criteria.</p>";
-    return;
-  }
-
-  templeList.forEach(temple => {
-    const card = document.createElement("section");
-    card.className = "temple-card";
-
-    card.innerHTML = `
-      <h2>${temple.name}</h2>
-      <img src="${temple.imageUrl}" loading="lazy" alt="${temple.name}" />
-      <p><strong>Location:</strong> ${temple.location}</p>
-      <p><strong>Dedicated:</strong> ${new Date(temple.dedicated).toLocaleDateString()}</p>
-      <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-    `;
-
-    container.appendChild(card);
+function displayTemples(list) {
+  templeCardsContainer.innerHTML = '';
+  list.forEach(temple => {
+    templeCardsContainer.appendChild(createTempleCard(temple));
   });
 }
 
-// Filter temples by criteria
-function filterTemples(criteria) {
-  let filtered = [];
+// Initially display all temples
+displayTemples(temples);
 
-  switch(criteria) {
-    case "old":
-      filtered = temples.filter(t => new Date(t.dedicated) < new Date("1900-01-01"));
-      break;
-    case "new":
-      filtered = temples.filter(t => new Date(t.dedicated) > new Date("2000-01-01"));
-      break;
-    case "large":
-      filtered = temples.filter(t => t.area > 90000);
-      break;
-    case "small":
-      filtered = temples.filter(t => t.area < 10000);
-      break;
-    default:
-      filtered = temples;
-  }
-
-  renderTemples(filtered);
-}
-
-// Event listeners for nav links
-navLinks.forEach(link => {
-  link.addEventListener("click", event => {
-    event.preventDefault();
-    filterTemples(link.id);
-  });
+// Filtering buttons
+document.getElementById('home').addEventListener('click', e => {
+  e.preventDefault();
+  displayTemples(temples);
 });
-
-// Footer date updates
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
-
-// Initial render all temples
-renderTemples(temples);
+document.getElementById('old').addE

@@ -1,4 +1,3 @@
-/* Use Roboto font */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -7,7 +6,6 @@ body {
   color: #333;
 }
 
-/* Navigation menu */
 nav {
   background-color: #005f73;
   padding: 1rem;
@@ -26,15 +24,13 @@ nav a:focus {
   text-decoration: underline;
 }
 
-/* Container for cards */
 .temple-cards-container {
-  display: block; /* No flex per assignment requirements */
+  display: block; /* No flex per requirements */
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* Temple card */
 .temple-card {
   background-color: white;
   border: 1px solid #ddd;
@@ -43,7 +39,6 @@ nav a:focus {
   margin-bottom: 2rem;
   padding: 1rem;
   max-width: 320px;
-  /* Use float layout instead of flexbox */
   float: left;
   margin-right: 2rem;
 }
@@ -70,14 +65,12 @@ nav a:focus {
   margin-top: 0.5rem;
 }
 
-/* Clear floats after container */
 .temple-cards-container::after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .temple-card {
     float: none;

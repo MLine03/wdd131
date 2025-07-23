@@ -1,53 +1,125 @@
+/* Import Roboto font - no @import needed if you added the Google Fonts <link> in HTML */
+
+/* Global styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
-header nav {
-  background: #333;
+header {
+  background-color: #00539C;
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
 }
 
 nav a {
   color: white;
+  margin-left: 1.2rem;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
+nav a:hover,
+nav a:focus {
+  color: #FFD700; /* gold color on hover/focus */
+  outline: none;
+}
+
+/* Main content styles */
 main {
-  padding: 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.temple-grid {
+#templeFilter {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Temple list container using flexbox */
+#temple-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
+/* Each temple card */
 .temple {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  width: 300px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  max-width: 320px;
   text-align: center;
-  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.temple:hover,
+.temple:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .temple img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
 }
 
+.temple h2 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #00539C;
+}
+
+.temple p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Footer styles */
 footer {
   text-align: center;
-  padding: 1rem;
-  background-color: #333;
+  padding: 1.2rem;
+  background-color: #00539C;
   color: white;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+  }
+  nav a {
+    margin-left: 0.8rem;
+    font-size: 0.9rem;
+  }
+  #temple-list {
+    justify-content: center;
+  }
+  .temple {
+    max-width: 100%;
+  }
 }

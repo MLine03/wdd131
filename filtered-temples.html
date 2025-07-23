@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filtered Temple Picture Album | LDS Temples W04</title>
-    <meta name="description" content="Interactive filtered gallery and picture album of LDS temples, showcasing temple details with lazy loading and responsive filtering." />
-    <meta name="author" content="Meline" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/filtered-temples.css" />
-    <script src="scripts/filtered-temples.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filtered Temple Picture Album | LDS Temples W04</title>
+  <meta name="description" content="Explore an interactive gallery of LDS temples with filter options, lazy-loaded images, and detailed temple information." />
+  <meta name="author" content="Meline" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/filtered-temples.css" />
+  <script src="scripts/filtered-temples.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#" data-filter="all" class="active">All</a>
-            <a href="#" data-filter="old">Old (Before 1950)</a>
-            <a href="#" data-filter="new">New (1950+)</a>
-            <a href="#" data-filter="small">Small</a>
-            <a href="#" data-filter="large">Large</a>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <a href="#" data-filter="all" class="active">Home</a>
+      <a href="#" data-filter="old">Old</a>
+      <a href="#" data-filter="new">New</a>
+      <a href="#" data-filter="large">Large</a>
+      <a href="#" data-filter="small">Small</a>
+    </nav>
+  </header>
 
-    <main>
-        <h1>Filtered Temple Gallery</h1>
-        <section id="gallery" class="gallery"></section>
-    </main>
+  <main>
+    <h1>Filtered Temple Gallery</h1>
+    <section id="gallery"></section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Meline</p>
-    </footer>
+  <footer>
+    <p>&copy; <span id="year"></span> Meline</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    // Footer info
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
 </body>
 </html>

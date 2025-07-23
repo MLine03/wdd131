@@ -1,115 +1,114 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.getElementById("gallery");
+    const filterButtons = document.querySelectorAll("nav a");
+
     const temples = [
         {
-            name: "Bern Switzerland",
+            name: "Bern",
             city: "Bern",
             state: "Switzerland",
-            image: "images/bern-switzerland.jpg",
             year: 1955,
-            size: "small"
+            size: "small",
+            image: "images/bern-switzerland.jpg"
         },
         {
             name: "Cedar City",
             city: "Cedar City",
             state: "Utah",
-            image: "images/cedar-city.jpg",
             year: 2017,
-            size: "small"
+            size: "small",
+            image: "images/cedar-city.jpg"
         },
         {
             name: "Columbus",
             city: "Columbus",
             state: "Ohio",
-            image: "images/columbus.jpg",
             year: 1999,
-            size: "large"
+            size: "large",
+            image: "images/columbus.jpg"
         },
         {
-            name: "Laie Hawaii",
+            name: "Laie",
             city: "Laie",
             state: "Hawaii",
-            image: "images/laie-hawaii.jpg",
             year: 1919,
-            size: "large"
+            size: "large",
+            image: "images/laie-hawaii.jpg"
         },
         {
-            name: "Logan Utah",
+            name: "Logan",
             city: "Logan",
             state: "Utah",
-            image: "images/logan-utah.jpg",
             year: 1884,
-            size: "large"
+            size: "small",
+            image: "images/logan-utah.jpg"
         },
         {
             name: "New York",
             city: "New York",
             state: "New York",
-            image: "images/new-york.jpg",
             year: 2004,
-            size: "large"
+            size: "large",
+            image: "images/new-york.jpg"
         },
         {
-            name: "Palmyra New York",
+            name: "Palmyra",
             city: "Palmyra",
             state: "New York",
-            image: "images/palmyra-new-york.jpg",
             year: 2000,
-            size: "small"
+            size: "small",
+            image: "images/palmyra-new-york.jpg"
         },
         {
-            name: "Phoenix Arizona",
+            name: "Phoenix",
             city: "Phoenix",
             state: "Arizona",
-            image: "images/phoenix-arizona.jpg",
             year: 2014,
-            size: "large"
+            size: "large",
+            image: "images/phoenix-arizona.jpg"
         },
         {
-            name: "Rome Italy",
+            name: "Rome",
             city: "Rome",
             state: "Italy",
-            image: "images/rome-italy.jpg",
             year: 2019,
-            size: "small"
+            size: "large",
+            image: "images/rome-italy.jpg"
         },
         {
-            name: "Portland Temple",
+            name: "Portland",
             city: "Portland",
             state: "Oregon",
-            image: "images/portland-temple.jpg",
             year: 1989,
-            size: "small"
+            size: "large",
+            image: "images/portland-temple.jpg"
         },
         {
-            name: "Salt Lake Temple",
+            name: "Salt Lake",
             city: "Salt Lake City",
             state: "Utah",
-            image: "images/salt-lake-temple.jpg",
             year: 1893,
-            size: "large"
+            size: "large",
+            image: "images/salt-lake-temple.jpg"
         },
         {
-            name: "Suva Fiji",
+            name: "Suva",
             city: "Suva",
             state: "Fiji",
-            image: "images/suva-fiji.jpg",
             year: 2000,
-            size: "small"
+            size: "small",
+            image: "images/suva-fiji.jpg"
         },
         {
-            name: "Tokyo Japan",
+            name: "Tokyo",
             city: "Tokyo",
             state: "Japan",
-            image: "images/tokyo-japan.jpg",
             year: 1980,
-            size: "large"
+            size: "small",
+            image: "images/tokyo-japan.jpg"
         }
     ];
 
-    const gallery = document.getElementById("temple-gallery");
-    const filterButtons = document.querySelectorAll("#filters button");
-
-    // Render temples function
     function renderTemples(filter = "all") {
         gallery.innerHTML = "";
 
@@ -141,9 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Filter button event listeners
     filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
             filterButtons.forEach(btn => btn.classList.remove("active"));
             button.classList.add("active");
 

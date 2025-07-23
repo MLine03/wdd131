@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Filtered Temple Picture Album | LDS Temples W04</title>
-  
-  <meta name="description" content="Interactive filtered gallery and picture album of LDS temples, showcasing temple details with lazy loading and responsive filtering." />
-  <meta name="author" content="Meline" />
-  
-  <!-- Google Fonts embed link -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  
-  <!-- CSS file -->
-  <link rel="stylesheet" href="styles/filtered-temples.css" />
-  
-  <!-- JS file with defer -->
-  <script src="scripts/filtered-temples.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtered Temple Picture Album | LDS Temples W04</title>
+    <meta name="description" content="Interactive filtered gallery and picture album of LDS temples, showcasing temple details with lazy loading and responsive filtering." />
+    <meta name="author" content="Meline" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/filtered-temples.css" />
+    <script src="scripts/filtered-temples.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="filtered-temples.html">Filtered Temples</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="gallery.html">Gallery</a>
-    </nav>
-  </header>
-  
-  <main>
-    <h1>Filtered Temple Gallery</h1>
-    <!-- Your gallery content here -->
-  </main>
-  
-  <footer>
-    <p>&copy; 2025 Meline</p>
-  </footer>
+    <header>
+        <nav>
+            <a href="#" data-filter="all" class="active">All</a>
+            <a href="#" data-filter="old">Old (Before 1950)</a>
+            <a href="#" data-filter="new">New (1950+)</a>
+            <a href="#" data-filter="small">Small</a>
+            <a href="#" data-filter="large">Large</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Filtered Temple Gallery</h1>
+        <section id="gallery" class="gallery"></section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Meline</p>
+    </footer>
 </body>
 </html>

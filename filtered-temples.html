@@ -2,57 +2,32 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Filtered Temple Picture Album | LDS Temples</title>
   <meta name="description" content="Explore an interactive gallery of LDS temples with filter options, lazy-loaded images, and detailed temple information." />
   <meta name="author" content="Meline" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/filtered-temples.css" />
-  <script src="scripts/filtered-temples.js" defer></script>
 </head>
 <body>
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="filtered-temples.html" aria-current="page">Filtered Gallery</a></li>
-        <li><a href="temples.html">All Temples</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="#">Home</a>
+      <a href="#">Temples</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Help</a>
     </nav>
-  </header>
-
-  <main>
     <h1>Filtered Temple Gallery</h1>
-    <section id="filter-controls" role="region" aria-label="Temple Filters">
-      <button type="button" data-filter="all">All</button>
-      <button type="button" data-filter="north-america">North America</button>
-      <button type="button" data-filter="south-america">South America</button>
-      <button type="button" data-filter="europe">Europe</button>
-      <button type="button" data-filter="asia">Asia</button>
-      <!-- Add other filters as needed -->
-    </section>
-
-    <section id="temple-gallery" aria-live="polite">
-      <article class="temple-item" data-region="north-america">
-        <img src="images/temple-north-america.jpg" alt="Salt Lake City Temple" width="300" height="200" loading="lazy" />
-        <h2>Salt Lake City Temple</h2>
-        <p>Located in Utah, USA.</p>
-      </article>
-
-      <article class="temple-item" data-region="asia">
-        <img src="images/temple-asia.jpg" alt="Tokyo Japan Temple" width="300" height="200" loading="lazy" />
-        <h2>Tokyo Japan Temple</h2>
-        <p>Located in Tokyo, Japan.</p>
-      </article>
-
-      <!-- Add more temple items with proper alt text, width, height, and lazy loading -->
+  </header>
+  <main>
+    <section id="temple-list" class="temple-list">
+      <!-- Temples rendered here -->
     </section>
   </main>
-
   <footer>
-    <p>&copy; 2025 Meline</p>
+    <p>&copy; 2025 LDS Temples Gallery</p>
   </footer>
+  <script src="scripts/filtered-temples.js" defer></script>
 </body>
 </html>

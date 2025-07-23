@@ -1,84 +1,96 @@
+// Temple Data Array
 const temples = [
   {
-    templeName: "Salt Lake Temple",
+    name: "Salt Lake Temple",
     location: "Salt Lake City, Utah",
-    dedicated: "April 6, 1893",
+    dedicated: "1893-04-06",
     area: 253015,
-    imageUrl: "images/salt-lake-temple.jpg"
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/salt-lake-utah-temple-400x267.jpg"
   },
   {
-    templeName: "Tokyo Japan Temple",
-    location: "Tokyo, Japan",
-    dedicated: "October 27, 1980",
-    area: 52590,
-    imageUrl: "images/tokyo-japan-temple.jpg"
-  },
-  {
-    templeName: "Rome Italy Temple",
-    location: "Rome, Italy",
-    dedicated: "March 10, 2019",
-    area: 41010,
-    imageUrl: "images/rome-italy-temple.jpg"
-  },
-  {
-    templeName: "Laie Hawaii Temple",
+    name: "Laie Hawaii Temple",
     location: "Laie, Hawaii",
-    dedicated: "November 27, 1919",
-    area: 42320,
-    imageUrl: "images/laie-temple.jpg"
+    dedicated: "1919-11-27",
+    area: 42300,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/laie-hawaii-temple-400x267.jpg"
   },
   {
-    templeName: "Columbus Ohio Temple",
-    location: "Columbus, Ohio",
-    dedicated: "September 4, 1999",
-    area: 10700,
-    imageUrl: "images/columbus-temple.jpg"
+    name: "Kirtland Temple",
+    location: "Kirtland, Ohio",
+    dedicated: "1836-03-27",
+    area: 9500,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/kirtland-temple-400x267.jpg"
+  },
+  // Added temples:
+  {
+    name: "Rome Italy Temple",
+    location: "Rome, Italy",
+    dedicated: "2019-03-10",
+    area: 62000,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/rome-italy-temple-400x267.jpg"
   },
   {
-    templeName: "Phoenix Arizona Temple",
-    location: "Phoenix, Arizona",
-    dedicated: "November 16, 2014",
-    area: 58000,
-    imageUrl: "images/phoenix-arizona-temple.jpg"
+    name: "Freiberg Germany Temple",
+    location: "Freiberg, Germany",
+    dedicated: "1985-06-29",
+    area: 30000,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/freiberg-germany-temple-400x267.jpg"
   },
   {
-    templeName: "Suva Fiji Temple",
-    location: "Suva, Fiji",
-    dedicated: "June 18, 2000",
-    area: 18523,
-    imageUrl: "images/suva-fiji-temple.jpg"
-  }
+    name: "Cardston Alberta Temple",
+    location: "Cardston, Alberta, Canada",
+    dedicated: "1923-08-26",
+    area: 8600,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/cardston-alberta-temple-400x267.jpg"
+  },
+  {
+    name: "Brigham City Utah Temple",
+    location: "Brigham City, Utah",
+    dedicated: "2012-01-08",
+    area: 11000,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/brigham-city-utah-temple-400x267.jpg"
+  },
 ];
 
+// DOM Elements
+const container = document.getElementById("temple-cards");
+const navLinks = document.querySelectorAll("nav a");
+
+// Render temple cards
 function renderTemples(templeList) {
-  const container = document.getElementById("temples");
-  container.innerHTML = "";
+  container.innerHTML = ""; // Clear existing cards
+
+  if (templeList.length === 0) {
+    container.innerHTML = "<p>No temples match the selected criteria.</p>";
+    return;
+  }
 
   templeList.forEach(temple => {
     const card = document.createElement("section");
-    card.classList.add("temple-card");
+    card.className = "temple-card";
 
     card.innerHTML = `
-      <h2>${temple.templeName}</h2>
+      <h2>${temple.name}</h2>
+      <img src="${temple.imageUrl}" loading="lazy" alt="${temple.name}" />
       <p><strong>Location:</strong> ${temple.location}</p>
-      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+      <p><strong>Dedicated:</strong> ${new Date(temple.dedicated).toLocaleDateString()}</p>
       <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
     `;
 
     container.appendChild(card);
   });
 }
 
+// Filter temples by criteria
 function filterTemples(criteria) {
-  let filtered = temples;
+  let filtered = [];
 
-  switch (criteria) {
+  switch(criteria) {
     case "old":
-      filtered = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+      filtered = temples.filter(t => new Date(t.dedicated) < new Date("1900-01-01"));
       break;
     case "new":
-      filtered = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
+      filtered = temples.filter(t => new Date(t.dedicated) > new Date("2000-01-01"));
       break;
     case "large":
       filtered = temples.filter(t => t.area > 90000);
@@ -86,14 +98,24 @@ function filterTemples(criteria) {
     case "small":
       filtered = temples.filter(t => t.area < 10000);
       break;
+    default:
+      filtered = temples;
   }
 
   renderTemples(filtered);
 }
 
-// Initial load
-renderTemples(temples);
+// Event listeners for nav links
+navLinks.forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    filterTemples(link.id);
+  });
+});
 
-// Footer dates
+// Footer date updates
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
+
+// Initial render all temples
+renderTemples(temples);

@@ -1,60 +1,81 @@
+/* Basic Reset & Font */
+* {
+    box-sizing: border-box;
+}
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  background-color: #f8f8f8;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0 1rem;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 header {
-  background-color: #004080;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+    padding: 1rem 0;
+    background-color: #004080;
+    color: white;
+    text-align: center;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0;
+header h1 {
+    margin: 0 0 0.5rem 0;
 }
 
-nav button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #0066cc;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
+nav a {
+    color: #aaddff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-nav button:hover {
-  background-color: #004c99;
+nav a:hover,
+nav a:focus {
+    background-color: #00264d;
+    color: white;
+    outline: none;
 }
 
-#temples {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0 2rem 0;
 }
 
 .temple-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .temple-card img {
-  width: 100%;
-  border-radius: 5px;
-  margin-top: 0.5rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.temple-card h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+.temple-card p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
 }
 
 footer {
-  text-align: center;
-  background-color: #e0e0e0;
-  padding: 1rem;
-  margin-top: 2rem;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+    font-size: 0.9rem;
+    color: #666;
 }

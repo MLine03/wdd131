@@ -1,86 +1,156 @@
-const temples = [
-  { name: "Bern Switzerland Temple", location: "Bern, Switzerland", dedicated: "1955-09-11", area: 16000, imageUrl: "images/bern-switzerland.jpg" },
-  { name: "Cedar City Utah Temple", location: "Cedar City, Utah, USA", dedicated: "2017-10-29", area: 11300, imageUrl: "images/cedar-city.jpg" },
-  { name: "Columbus Ohio Temple", location: "Columbus, Ohio, USA", dedicated: "1999-09-05", area: 20500, imageUrl: "images/columbus-ohio.jpg" },
-  { name: "Laie Hawaii Temple", location: "Laie, Hawaii, USA", dedicated: "1919-11-27", area: 19000, imageUrl: "images/laie-hawaii.jpg" },
-  { name: "Logan Utah Temple", location: "Logan, Utah, USA", dedicated: "1884-05-17", area: 26000, imageUrl: "images/logan-utah.jpg" },
-  { name: "New York New York Temple", location: "New York City, New York, USA", dedicated: "2004-06-13", area: 20000, imageUrl: "images/new-york-ny.jpg" },
-  { name: "Palmyra New York Temple", location: "Palmyra, New York, USA", dedicated: "2000-04-06", area: 25000, imageUrl: "images/palmyra-ny.jpg" },
-  { name: "Phoenix Arizona Temple", location: "Phoenix, Arizona, USA", dedicated: "2014-03-02", area: 28000, imageUrl: "images/phoenix-arizona.jpg" },
-  { name: "Rome Italy Temple", location: "Rome, Italy", dedicated: "2019-03-10", area: 30000, imageUrl: "images/rome-italy.jpg" },
-  { name: "Portland Oregon Temple", location: "Portland, Oregon, USA", dedicated: "1989-01-22", area: 22500, imageUrl: "images/portland-oregon.jpg" },
-  { name: "Salt Lake Temple", location: "Salt Lake City, Utah, USA", dedicated: "1893-04-06", area: 253000, imageUrl: "images/salt-lake-temple.jpg" },
-  { name: "Suva Fiji Temple", location: "Suva, Fiji", dedicated: "2000-08-21", area: 10000, imageUrl: "images/suva-fiji.jpg" },
-  { name: "Tokyo Japan Temple", location: "Tokyo, Japan", dedicated: "1980-10-27", area: 12000, imageUrl: "images/tokyo-japan.jpg" }
-];
+document.addEventListener("DOMContentLoaded", () => {
+    const temples = [
+        {
+            name: "Bern Switzerland",
+            city: "Bern",
+            state: "Switzerland",
+            image: "images/bern-switzerland.jpg",
+            year: 1955,
+            size: "small"
+        },
+        {
+            name: "Cedar City",
+            city: "Cedar City",
+            state: "Utah",
+            image: "images/cedar-city.jpg",
+            year: 2017,
+            size: "small"
+        },
+        {
+            name: "Columbus",
+            city: "Columbus",
+            state: "Ohio",
+            image: "images/columbus.jpg",
+            year: 1999,
+            size: "large"
+        },
+        {
+            name: "Laie Hawaii",
+            city: "Laie",
+            state: "Hawaii",
+            image: "images/laie-hawaii.jpg",
+            year: 1919,
+            size: "large"
+        },
+        {
+            name: "Logan Utah",
+            city: "Logan",
+            state: "Utah",
+            image: "images/logan-utah.jpg",
+            year: 1884,
+            size: "large"
+        },
+        {
+            name: "New York",
+            city: "New York",
+            state: "New York",
+            image: "images/new-york.jpg",
+            year: 2004,
+            size: "large"
+        },
+        {
+            name: "Palmyra New York",
+            city: "Palmyra",
+            state: "New York",
+            image: "images/palmyra-new-york.jpg",
+            year: 2000,
+            size: "small"
+        },
+        {
+            name: "Phoenix Arizona",
+            city: "Phoenix",
+            state: "Arizona",
+            image: "images/phoenix-arizona.jpg",
+            year: 2014,
+            size: "large"
+        },
+        {
+            name: "Rome Italy",
+            city: "Rome",
+            state: "Italy",
+            image: "images/rome-italy.jpg",
+            year: 2019,
+            size: "small"
+        },
+        {
+            name: "Portland Temple",
+            city: "Portland",
+            state: "Oregon",
+            image: "images/portland-temple.jpg",
+            year: 1989,
+            size: "small"
+        },
+        {
+            name: "Salt Lake Temple",
+            city: "Salt Lake City",
+            state: "Utah",
+            image: "images/salt-lake-temple.jpg",
+            year: 1893,
+            size: "large"
+        },
+        {
+            name: "Suva Fiji",
+            city: "Suva",
+            state: "Fiji",
+            image: "images/suva-fiji.jpg",
+            year: 2000,
+            size: "small"
+        },
+        {
+            name: "Tokyo Japan",
+            city: "Tokyo",
+            state: "Japan",
+            image: "images/tokyo-japan.jpg",
+            year: 1980,
+            size: "large"
+        }
+    ];
 
-const templesContainer = document.getElementById("temples-container");
+    const gallery = document.getElementById("temple-gallery");
+    const filterButtons = document.querySelectorAll("#filters button");
 
-function createTempleCard(t) {
-  const card = document.createElement("article");
-  card.className = "temple-card";
+    // Render temples function
+    function renderTemples(filter = "all") {
+        gallery.innerHTML = "";
 
-  const img = document.createElement("img");
-  img.className = "temple-image";
-  img.src = t.imageUrl;
-  img.alt = `Image of ${t.name}`;
-  img.loading = "lazy";
-  img.onerror = () => img.src = "https://via.placeholder.com/300x180?text=No+Image";
+        let filteredTemples = temples;
 
-  const info = document.createElement("div");
-  info.className = "temple-info";
-  info.innerHTML = `
-    <h2>${t.name}</h2>
-    <p><strong>Location:</strong> ${t.location}</p>
-    <p><strong>Dedicated:</strong> ${new Date(t.dedicated).toLocaleDateString()}</p>
-    <p><strong>Area:</strong> ${t.area.toLocaleString()} sq ft</p>
-  `;
+        if (filter === "old") {
+            filteredTemples = temples.filter(t => t.year < 1950);
+        } else if (filter === "new") {
+            filteredTemples = temples.filter(t => t.year >= 1950);
+        } else if (filter === "small") {
+            filteredTemples = temples.filter(t => t.size === "small");
+        } else if (filter === "large") {
+            filteredTemples = temples.filter(t => t.size === "large");
+        }
 
-  card.append(img, info);
-  return card;
-}
+        filteredTemples.forEach(temple => {
+            const card = document.createElement("article");
+            card.classList.add("temple-card");
 
-function displayTemples(list) {
-  templesContainer.innerHTML = "";
-  list.forEach(t => templesContainer.appendChild(createTempleCard(t)));
-}
+            card.innerHTML = `
+                <img src="${temple.image}" alt="${temple.name} Temple" loading="lazy" />
+                <h2>${temple.name} Temple</h2>
+                <p><strong>Location:</strong> ${temple.city}, ${temple.state}</p>
+                <p><strong>Dedicated Year:</strong> ${temple.year}</p>
+                <p><strong>Size:</strong> ${temple.size.charAt(0).toUpperCase() + temple.size.slice(1)}</p>
+            `;
 
-function setActive(id) {
-  document.querySelectorAll("nav a").forEach(a => a.classList.toggle("active", a.id === id));
-}
+            gallery.appendChild(card);
+        });
+    }
 
-document.getElementById("filter-home").addEventListener("click", e => {
-  e.preventDefault();
-  setActive("filter-home");
-  displayTemples(temples);
+    // Filter button event listeners
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            renderTemples(button.getAttribute("data-filter"));
+        });
+    });
+
+    // Initial render
+    renderTemples();
 });
-
-document.getElementById("filter-old").addEventListener("click", e => {
-  e.preventDefault();
-  setActive("filter-old");
-  displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() < 1900));
-});
-
-document.getElementById("filter-new").addEventListener("click", e => {
-  e.preventDefault();
-  setActive("filter-new");
-  displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() > 2000));
-});
-
-document.getElementById("filter-large").addEventListener("click", e => {
-  e.preventDefault();
-  setActive("filter-large");
-  displayTemples(temples.filter(t => t.area > 90000));
-});
-
-document.getElementById("filter-small").addEventListener("click", e => {
-  e.preventDefault();
-  setActive("filter-small");
-  displayTemples(temples.filter(t => t.area < 10000));
-});
-
-// Footer info
-document.getElementById("copyright-year").textContent = new Date().getFullYear();
-document.getElementById("last-modified").textContent = document.lastModified;
-
-displayTemples(temples);

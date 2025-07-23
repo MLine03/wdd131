@@ -87,6 +87,7 @@ nav button.nav-item:focus-visible {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
+  outline-offset: 3px;
 }
 
 .temple-card:hover,
@@ -117,6 +118,8 @@ nav button.nav-item:focus-visible {
   object-fit: cover;
   aspect-ratio: 4 / 3;
   /* Lazy loading handled by loading="lazy" attribute in HTML/JS */
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
 }
 
 /* Footer Styles */

@@ -2,38 +2,33 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Filtered Temple Picture Album | LDS Temples W04</title>
-  <meta name="description" content="Interactive filtered gallery and picture album of LDS temples, showcasing temple details with lazy loading and responsive filtering." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filtered Temple Album | W04 Assignment</title>
+  <meta name="description" content="Interactive gallery of LDS temples with filters by age and size." />
   <meta name="author" content="Meline" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="styles/filtered-temples.css" />
 </head>
 <body>
   <header>
+    <h1>Filtered Temple Gallery</h1>
     <nav>
-      <a href="#" id="home">Home</a>
-      <a href="#" id="old">Old</a>
-      <a href="#" id="new">New</a>
-      <a href="#" id="large">Large</a>
-      <a href="#" id="small">Small</a>
+      <a href="#" id="filter-home">Home</a>
+      <a href="#" id="filter-old">Old</a>
+      <a href="#" id="filter-new">New</a>
+      <a href="#" id="filter-large">Large</a>
+      <a href="#" id="filter-small">Small</a>
     </nav>
   </header>
 
   <main>
-    <h1>Filtered Temple Gallery</h1>
-    <div id="temple-cards" class="temple-cards-container"></div>
+    <section id="temples-container" class="temples-container"></section>
   </main>
 
   <footer>
-    &copy; <span id="year"></span> | Last Modified: <span id="last-modified"></span>
+    <p>&copy; <span id="copyright-year"></span> Meline</p>
+    <p>Last Modified: <span id="last-modified"></span></p>
   </footer>
 
-  <!-- External JS -->
   <script src="scripts/filtered-temples.js" defer></script>
 </body>
 </html>

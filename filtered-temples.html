@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filtered Temple Picture Album | LDS Temples W04</title>
-    <meta name="description" content="Interactive filtered gallery and picture album of LDS temples, showcasing temple details with lazy loading and responsive filtering." />
-    <meta name="author" content="Meline" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/filtered-temples.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Filtered Temple Picture Album | LDS Temples W04</title>
+  
+  <meta name="description" content="Interactive filtered gallery and picture album of LDS temples, showcasing temple details with lazy loading and responsive filtering." />
+  <meta name="author" content="Meline" />
+  
+  <!-- Google Fonts embed link -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" href="styles/filtered-temples.css" />
+  
+  <!-- JS file with defer -->
+  <script src="scripts/filtered-temples.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Gallery</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Help</a>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Filtered Temple Gallery</h1>
-
-        <section id="filters">
-            <button data-filter="all" class="active">All</button>
-            <button data-filter="old">Old</button>
-            <button data-filter="new">New</button>
-            <button data-filter="small">Small</button>
-            <button data-filter="large">Large</button>
-        </section>
-
-        <section id="temple-gallery" class="gallery"></section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 LDS Temples Gallery</p>
-    </footer>
-
-    <script src="scripts/filtered-temples.js" defer></script>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="filtered-temples.html">Filtered Temples</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>Filtered Temple Gallery</h1>
+    <!-- Your gallery content here -->
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Meline</p>
+  </footer>
 </body>
 </html>

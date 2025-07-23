@@ -1,125 +1,149 @@
-/* Import Roboto font - no @import needed if you added the Google Fonts <link> in HTML */
+/* styles/filtered-temples.css */
 
-/* Global styles */
+/* Import Google Font via HTML link - no @import here */
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   font-family: 'Roboto', sans-serif;
-  margin: 0;
-  background-color: #f8f9fa;
+  background-color: #fafafa;
   color: #333;
+  line-height: 1.6;
 }
 
-header {
-  background-color: #00539C;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.8rem;
-}
-
-nav a {
-  color: white;
-  margin-left: 1.2rem;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-nav a:hover,
-nav a:focus {
-  color: #FFD700; /* gold color on hover/focus */
-  outline: none;
-}
-
-/* Main content styles */
+/* Container for the whole page to add padding */
 main {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-#templeFilter {
-  padding: 0.5rem;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Navigation Styles */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Temple list container using flexbox */
-#temple-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-/* Each temple card */
-.temple {
-  background-color: white;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 1rem;
-  max-width: 320px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.temple:hover,
-.temple:focus-within {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.temple img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 0.8rem;
-}
-
-.temple h2 {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-  color: #00539C;
-}
-
-.temple p {
-  font-size: 0.95rem;
-  color: #555;
+nav ul {
+  list-style: none;
   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
-/* Footer styles */
+nav a, nav button.nav-item {
+  text-decoration: none;
+  color: #555;
+  padding: 0.75rem 1.25rem;
+  display: inline-block;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Accessible hover and focus styles */
+nav a:hover,
+nav button.nav-item:hover,
+nav a:focus-visible,
+nav button.nav-item:focus-visible {
+  background-color: #e0e0e0;
+  color: #222;
+  outline: none;
+  box-shadow: 0 0 0 3px #4a90e2;
+}
+
+/* Temple container grid */
+.temple-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Temple card styles */
+.temple-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.temple-card:hover,
+.temple-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Temple card text */
+.temple-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.temple-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Temple images */
+.temple-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 1rem;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  /* Lazy loading handled by loading="lazy" attribute in HTML/JS */
+}
+
+/* Footer Styles */
 footer {
   text-align: center;
-  padding: 1.2rem;
-  background-color: #00539C;
-  color: white;
-  margin-top: 3rem;
+  padding: 1rem 0;
+  background-color: #222;
+  color: #eee;
   font-size: 0.9rem;
+  margin-top: 3rem;
+  user-select: none;
+}
+
+footer p {
+  margin: 0.3rem 0;
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
-  header {
-    justify-content: center;
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-  nav a {
-    margin-left: 0.8rem;
-    font-size: 0.9rem;
-  }
-  #temple-list {
-    justify-content: center;
-  }
-  .temple {
-    max-width: 100%;
+
+  nav a, nav button.nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
   }
 }

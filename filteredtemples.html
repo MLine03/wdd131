@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filtered Temple Gallery | W04 Assignment</title>
+  <meta name="description" content="Interactive gallery of LDS temples with filters by age and size." />
+  <meta name="author" content="Meline" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      margin: 0 0.75rem;
+      text-decoration: none;
+      color: #007ACC;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #004a99;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .temple-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .temple-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .temple-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .temple-card h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1.2rem;
+    }
+
+    .temple-card p {
+      font-size: 0.9rem;
+      margin: 0.15rem 0;
+      color: #555;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Filtered Temple Gallery</h1>
+    <nav aria-label="Filter Temples">
+      <a href="#" data-filter="all" class="active">Home</a>
+      <a href="#" data-filter="old">Old</a>
+      <a href="#" data-filter="new">New</a>
+      <a href="#" data-filter="large">Large</a>
+      <a href="#" data-filter="small">Small</a>
+    </nav>
+  </header>
+
+  <main id="temple-cards" aria-live="polite" aria-label="Temple Cards Container">
+    <!-- Temple cards get generated here -->
+  </main>
+
+  <footer>
+    <p>&copy; Brigham Young University-Idaho <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    // Temple Data Array
+    const temples = [
+      {
+        name: "Laie Hawaii Temple",
+        location: "Laie, Hawaii, USA",
+        dedicated: 1919,
+        area: 47700,
+        imageUrl: "images/laie-temple.jpg",
+        alt: "Laie Hawaii Temple"
+      },
+      {
+        name: "Salt Lake Temple",
+        location: "Salt Lake City, Utah, USA",
+        dedicated: 1893,
+        area: 253000,
+        imageUrl: "images/salt-lake-temple.jpg",
+        alt: "Salt Lake Temple"
+      },
+      {
+        name: "Tokyo Japan Temple",
+        location: "Tokyo, Japan",
+        dedicated: 1980,
+        area: 38160,
+        imageUrl: "images/tokyo-japan-temple.jpg",
+        alt: "Tokyo Japan Temple"
+      },
+      {
+        name: "Phoenix Arizona Temple",
+        location: "Phoenix, Arizona, USA",
+        dedicated: 2014,
+        area: 19000,
+        imageUrl: "images/phoenix-arizona-temple.jpg",
+        alt: "Phoenix Arizona Temple"
+      },
+      {
+        name: "Columbus Ohio Temple",
+        location: "Columbus, Ohio, USA",
+        dedicated: 1999,
+        area: 8800,
+        imageUrl: "images/columbus-temple.jpg",
+        alt: "Columbus Ohio Temple"
+      },
+      // Added 3 more temples
+      {
+        name: "Rome Italy Temple",
+        location: "Rome, Italy",
+        dedicated: 2019,
+        area: 85000,
+        imageUrl: "images/rome-italy-temple.jpg",
+        alt: "Rome Italy Temple"
+      },
+      {
+        name: "Bern Switzerland Temple",
+        location: "Bern, Switzerland",
+        dedicated: 1955,
+        area: 10200,
+        imageUrl: "images/bern-switzerland-temple.jpg",
+        alt: "Bern Switzerland Temple"
+      },
+      {
+        name: "Logan Utah Temple",
+        location: "Logan, Utah, USA",
+        dedicated: 1884,
+        area: 16000,
+        imageUrl: "images/logan-utah-temple.jpg",
+        alt: "Logan Utah Temple"
+      },
+      {
+        name: "Palmyra New York Temple",
+        location: "Palmyra, New York, USA",
+        dedicated: 2000,
+        area: 13500,
+        imageUrl: "images/palmyra-ny-temple.jpg",
+        alt: "Palmyra New York Temple"
+      }
+    ];
+
+    const templeContainer = document.getElementById('temple-cards');
+    const navLinks = document.querySelectorAll('nav a');
+    
+    // Function to create and display temple cards
+    function displayTemples(filteredTemples) {
+      templeContainer.innerHTML = ''; // Clear existing cards
+
+      if (filteredTemples.length === 0) {
+        templeContainer.innerHTML = '<p>No temples found for this filter.</p>';
+        return;
+      }
+
+      filteredTemples.forEach(temple => {
+        const card = document.createElement('article');
+        card.classList.add('temple-card');
+
+        card.innerHTML = `
+          <img src="${temple.imageUrl}" alt="${temple.alt}" loading="lazy" />
+          <h3>${temple.name}</h3>
+          <p><strong>Location:</strong> ${temple.location}</p>
+          <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+          <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+        `;
+
+        templeContainer.appendChild(card);
+      });
+    }
+
+    // Filter functions
+    function filterTemples(filter) {
+      switch (filter) {
+        case 'old':
+          return temples.filter(t => t.dedicated < 1900);
+        case 'new':
+          return temples.filter(t => t.dedicated > 2000);
+        case 'large':
+          return temples.filter(t => t.area > 90000);
+        case 'small':
+          return temples.filter(t => t.area < 10000);
+        case 'all':
+        default:
+          return temples;
+      }
+    }
+
+    // Handle nav clicks and update display
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Remove active class from all
+        navLinks.forEach(nav => nav.classList.remove('active'));
+
+        // Add active class to clicked
+        link.classList.add('active');
+
+        // Filter temples based on clicked link
+        const filter = link.dataset.filter;
+        const filtered = filterTemples(filter);
+
+        displayTemples(filtered);
+      });
+    });
+
+    // Initialize page with all temples
+    displayTemples(temples);
+
+    // Dynamic footer year and last modified
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+  </script>
+</body>
+</html>

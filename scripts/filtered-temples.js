@@ -1,121 +1,111 @@
-// Temple Data Array
 const temples = [
   {
     name: "Salt Lake Temple",
     location: "Salt Lake City, Utah",
-    dedicated: "1893-04-06",
-    area: 253015,
+    dedicated: "April 6, 1893",
+    area: 253000,
     imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/salt-lake-utah-temple-400x267.jpg"
   },
   {
     name: "Laie Hawaii Temple",
     location: "Laie, Hawaii",
-    dedicated: "1919-11-27",
-    area: 42300,
+    dedicated: "November 27, 1919",
+    area: 45000,
     imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/laie-hawaii-temple-400x267.jpg"
   },
   {
-    name: "Kirtland Temple",
-    location: "Kirtland, Ohio",
-    dedicated: "1836-03-27",
-    area: 9500,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/kirtland-temple-400x267.jpg"
+    name: "Bern Switzerland Temple",
+    location: "Bern, Switzerland",
+    dedicated: "September 11, 1955",
+    area: 12560,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/bern-switzerland-temple-400x267.jpg"
   },
-  // Added temples:
+  // Add 3 more temples as per your assignment
   {
     name: "Rome Italy Temple",
     location: "Rome, Italy",
-    dedicated: "2019-03-10",
-    area: 62000,
+    dedicated: "March 10, 2019",
+    area: 90000,
     imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/rome-italy-temple-400x267.jpg"
   },
   {
-    name: "Freiberg Germany Temple",
-    location: "Freiberg, Germany",
-    dedicated: "1985-06-29",
-    area: 30000,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/freiberg-germany-temple-400x267.jpg"
+    name: "Palmyra New York Temple",
+    location: "Palmyra, New York",
+    dedicated: "April 6, 2000",
+    area: 10000,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/palmyra-new-york-temple-400x267.jpg"
   },
   {
-    name: "Cardston Alberta Temple",
-    location: "Cardston, Alberta, Canada",
-    dedicated: "1923-08-26",
-    area: 8600,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/cardston-alberta-temple-400x267.jpg"
-  },
-  {
-    name: "Brigham City Utah Temple",
-    location: "Brigham City, Utah",
-    dedicated: "2012-01-08",
-    area: 11000,
-    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/brigham-city-utah-temple-400x267.jpg"
-  },
+    name: "London England Temple",
+    location: "London, England",
+    dedicated: "September 7, 1958",
+    area: 15000,
+    imageUrl: "https://www.churchofjesuschrist.org/bc/content/shared/content/images/fhp/temples/london-england-temple-400x267.jpg"
+  }
 ];
 
-// DOM Elements
-const container = document.getElementById("temple-cards");
-const navLinks = document.querySelectorAll("nav a");
+const cardsContainer = document.getElementById("temple-cards");
 
-// Render temple cards
-function renderTemples(templeList) {
-  container.innerHTML = ""; // Clear existing cards
-
-  if (templeList.length === 0) {
-    container.innerHTML = "<p>No temples match the selected criteria.</p>";
-    return;
-  }
-
-  templeList.forEach(temple => {
-    const card = document.createElement("section");
-    card.className = "temple-card";
-
-    card.innerHTML = `
+// Function to create temple card HTML
+function createTempleCard(temple) {
+  return `
+    <div class="temple-card">
       <h2>${temple.name}</h2>
-      <img src="${temple.imageUrl}" loading="lazy" alt="${temple.name}" />
+      <img src="${temple.imageUrl}" alt="${temple.name}" loading="lazy" />
       <p><strong>Location:</strong> ${temple.location}</p>
-      <p><strong>Dedicated:</strong> ${new Date(temple.dedicated).toLocaleDateString()}</p>
+      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
       <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-    `;
-
-    container.appendChild(card);
-  });
+    </div>
+  `;
 }
 
-// Filter temples by criteria
-function filterTemples(criteria) {
-  let filtered = [];
-
-  switch(criteria) {
-    case "old":
-      filtered = temples.filter(t => new Date(t.dedicated) < new Date("1900-01-01"));
-      break;
-    case "new":
-      filtered = temples.filter(t => new Date(t.dedicated) > new Date("2000-01-01"));
-      break;
-    case "large":
-      filtered = temples.filter(t => t.area > 90000);
-      break;
-    case "small":
-      filtered = temples.filter(t => t.area < 10000);
-      break;
-    default:
-      filtered = temples;
-  }
-
-  renderTemples(filtered);
+// Function to display temples given an array
+function displayTemples(templesToShow) {
+  cardsContainer.innerHTML = templesToShow.map(createTempleCard).join('');
 }
 
-// Event listeners for nav links
-navLinks.forEach(link => {
-  link.addEventListener("click", event => {
-    event.preventDefault();
-    filterTemples(link.id);
-  });
+// Filter functions
+function filterOld() {
+  return temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+}
+
+function filterNew() {
+  return temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
+}
+
+function filterLarge() {
+  return temples.filter(t => t.area > 90000);
+}
+
+function filterSmall() {
+  return temples.filter(t => t.area < 10000);
+}
+
+// Initial display of all temples
+displayTemples(temples);
+
+// Navigation event listeners
+document.getElementById('home').addEventListener('click', (e) => {
+  e.preventDefault();
+  displayTemples(temples);
+});
+document.getElementById('old').addEventListener('click', (e) => {
+  e.preventDefault();
+  displayTemples(filterOld());
+});
+document.getElementById('new').addEventListener('click', (e) => {
+  e.preventDefault();
+  displayTemples(filterNew());
+});
+document.getElementById('large').addEventListener('click', (e) => {
+  e.preventDefault();
+  displayTemples(filterLarge());
+});
+document.getElementById('small').addEventListener('click', (e) => {
+  e.preventDefault();
+  displayTemples(filterSmall());
 });
 
-// Footer date updates
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
-
-// Initial render all temples
-renderTemples(temples);
+// Footer year and last modified
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;

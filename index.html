@@ -1,51 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Meline Levao - Menu</title>
-<link rel="stylesheet" href="styles/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Review Form | Aloha Soda</title>
+  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
+  <meta name="author" content="Meline" />
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles/styles.css" />
+  
+  <!-- Defer your JavaScript -->
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
-<header>
-  <img src="images/logo.png" alt="Meline Levao Logo" class="logo" />
-  <h1>Meline Levao Menu</h1>
-</header>
+  <h1>Product Review Form</h1>
+  <form method="get" action="review.html">
 
-<main>
-  <section>
-    <h2>Drinks</h2>
-    <ul class="menu-list">
-      <li>
-        Lilikoi
-        <ul>
-          <li>Small - $1.50</li>
-          <li>Medium - $2.75</li>
-          <li>Large - $3.75</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
 
-  <section>
-    <h2>Desserts</h2>
-    <ul class="menu-list">
-      <li>Koko Samoa Brownies - $5.00</li>
-      <li>Sweet Coconut Treat - $4.50</li>
-      <li>Macadamia Nut Cookies - $4.50</li>
-    </ul>
-  </section>
+    <label for="date-visit">Date of Visit:</label>
+    <input type="date" id="date-visit" name="date-visit" required />
 
-  <section class="location-hours">
-    <h3>Location</h3>
-    <p>Laie, Hawaii</p>
-    <h3>Hours</h3>
-    <p>Mon-Sat: 10am - 7pm</p>
-  </section>
+    <label for="flavor">Favorite Flavor:</label>
+    <select id="flavor" name="flavor" required>
+      <option value="">Select a flavor</option>
+      <!-- JavaScript will add more options here dynamically -->
+    </select>
 
-  <section class="review-offer">
-    <p><strong>Leave a review and get 10% off your order (one time only)!</strong></p>
-  </section>
-</main>
+    <fieldset>
+      <legend>Rate Your Experience</legend>
+      <label><input type="radio" name="rating" value="1" required /> 1</label>
+      <label><input type="radio" name="rating" value="2" /> 2</label>
+      <label><input type="radio" name="rating" value="3" /> 3</label>
+      <label><input type="radio" name="rating" value="4" /> 4</label>
+      <label><input type="radio" name="rating" value="5" /> 5</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>What did you enjoy? (Check all that apply)</legend>
+      <label><input type="checkbox" name="enjoy" value="taste" /> Taste</label>
+      <label><input type="checkbox" name="enjoy" value="service" /> Service</label>
+      <label><input type="checkbox" name="enjoy" value="ambiance" /> Ambiance</label>
+      <label><input type="checkbox" name="enjoy" value="price" /> Price</label>
+    </fieldset>
+
+    <label for="comments">Additional Comments:</label>
+    <textarea id="comments" name="comments" rows="4"></textarea>
+
+    <input type="submit" value="Submit" />
+  </form>
 </body>
 </html>

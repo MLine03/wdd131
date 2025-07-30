@@ -1,13 +1,16 @@
-/// scripts/main.js
 document.addEventListener('DOMContentLoaded', () => {
   const products = [
-    { id: 'aloha01', name: 'Pineapple Paradise' },
-    { id: 'aloha02', name: 'Mango Magic' },
-    { id: 'aloha03', name: 'Coconut Crush' },
-    { id: 'aloha04', name: 'Tropical Breeze' },
+    { id: 'pineapple', name: 'Pineapple Paradise' },
+    { id: 'mango', name: 'Mango Magic' },
+    { id: 'guava', name: 'Guava Delight' },
+    { id: 'passionfruit', name: 'Passionfruit Punch' },
   ];
 
-  const select = document.getElementById('product');
+  const select = document.getElementById('flavor');
+
+  // Optional: Clear existing options except the placeholder
+  select.querySelectorAll('option:not([value=""])').forEach(opt => opt.remove());
+
   products.forEach(product => {
     const option = document.createElement('option');
     option.value = product.id;

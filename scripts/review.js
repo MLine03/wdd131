@@ -1,13 +1,10 @@
-// scripts/review.js
-document.addEventListener('DOMContentLoaded', () => {
-  // Get current count from localStorage or start at 0
-  let count = localStorage.getItem('reviewCount');
-  if (!count) {
-    count = 0;
-  }
-  count = Number(count) + 1;
-  localStorage.setItem('reviewCount', count);
+window.addEventListener('DOMContentLoaded', () => {
+  let reviewCount = localStorage.getItem('reviewCount');
+  reviewCount = reviewCount ? Number(reviewCount) + 1 : 1;
+  localStorage.setItem('reviewCount', reviewCount);
 
-  // Update the page with count
-  document.getElementById('reviewCount').textContent = count;
+  const counterDisplay = document.getElementById('review-counter');
+  if (counterDisplay) {
+    counterDisplay.textContent = `You have submitted ${reviewCount} review${reviewCount > 1 ? 's' : ''}. Mahalo! 🌺`;
+  }
 });

@@ -2,78 +2,61 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback." />
-  <meta name="author" content="MLine03" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Review Form | Aloha Soda</title>
+  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
+  <meta name="author" content="MLine03" />
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/styles.css" />
-  <script src="scripts/script.js" defer></script>
 </head>
 <body>
   <h1>Product Review Form</h1>
 
   <form method="get" action="review.html">
-    <!-- Product Name Select -->
-    <label for="productName">Product Name:</label>
-    <select id="productName" name="productName" required>
-      <option value="" disabled selected>Select a Product ...</option>
-      <!-- Options populated by JS -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="visit-date">Date of Visit:</label>
+    <input type="date" id="visit-date" name="visit-date" required />
+
+    <label>Rate your experience:</label>
+    <input type="radio" id="rate1" name="rating" value="1" required />
+    <label for="rate1">1</label>
+    <input type="radio" id="rate2" name="rating" value="2" />
+    <label for="rate2">2</label>
+    <input type="radio" id="rate3" name="rating" value="3" />
+    <label for="rate3">3</label>
+    <input type="radio" id="rate4" name="rating" value="4" />
+    <label for="rate4">4</label>
+    <input type="radio" id="rate5" name="rating" value="5" />
+    <label for="rate5">5</label>
+
+    <label for="favorite-soda">Favorite Soda:</label>
+    <select id="favorite-soda" name="favorite-soda" required>
+      <option value="">Select one</option>
+      <option value="pineapple">Pineapple Paradise</option>
+      <option value="mango">Mango Breeze</option>
+      <option value="guava">Guava Glow</option>
+      <option value="coconut">Coconut Crush</option>
     </select>
 
-    <!-- Overall Rating Radios -->
-    <fieldset>
-      <legend>Overall Rating:</legend>
-      <input type="radio" id="rate1" name="rating" value="1" required />
-      <label for="rate1">1 Star</label>
+    <label>What snacks did you enjoy?</label>
+    <input type="checkbox" id="snack1" name="snacks" value="sweet-bread" />
+    <label for="snack1">Sweet Bread</label>
+    <input type="checkbox" id="snack2" name="snacks" value="poi" />
+    <label for="snack2">Poi</label>
+    <input type="checkbox" id="snack3" name="snacks" value="mochi" />
+    <label for="snack3">Mochi</label>
+    <input type="checkbox" id="snack4" name="snacks" value="fruit-bowl" />
+    <label for="snack4">Fruit Bowl</label>
 
-      <input type="radio" id="rate2" name="rating" value="2" />
-      <label for="rate2">2 Stars</label>
+    <label for="comments">Additional Comments:</label>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
 
-      <input type="radio" id="rate3" name="rating" value="3" />
-      <label for="rate3">3 Stars</label>
-
-      <input type="radio" id="rate4" name="rating" value="4" />
-      <label for="rate4">4 Stars</label>
-
-      <input type="radio" id="rate5" name="rating" value="5" />
-      <label for="rate5">5 Stars</label>
-    </fieldset>
-
-    <!-- Date of Installation -->
-    <label for="installDate">Date of Installation:</label>
-    <input type="date" id="installDate" name="installDate" required />
-
-    <!-- Useful Features Checkboxes -->
-    <fieldset>
-      <legend>Useful Features:</legend>
-      <input type="checkbox" id="feature1" name="features" value="Flavor" />
-      <label for="feature1">Flavor</label>
-
-      <input type="checkbox" id="feature2" name="features" value="Packaging" />
-      <label for="feature2">Packaging</label>
-
-      <input type="checkbox" id="feature3" name="features" value="Price" />
-      <label for="feature3">Price</label>
-
-      <input type="checkbox" id="feature4" name="features" value="Availability" />
-      <label for="feature4">Availability</label>
-    </fieldset>
-
-    <!-- Written Review Textarea -->
-    <label for="writtenReview">Written Review:</label>
-    <textarea id="writtenReview" name="writtenReview" rows="4" cols="40" placeholder="Write your review here..."></textarea>
-
-    <!-- User Name -->
-    <label for="userName">Your Name (optional):</label>
-    <input type="text" id="userName" name="userName" />
-
-    <!-- Submit Button -->
     <input type="submit" value="Submit" />
   </form>
 
-  <footer>
-    <p>&copy; 2025 Aloha Soda. All rights reserved.</p>
-  </footer>
+  <script src="scripts/form.js" defer></script>
 </body>
 </html>

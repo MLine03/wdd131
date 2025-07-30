@@ -3,8 +3,8 @@ window.addEventListener('DOMContentLoaded', () => {
   reviewCount = reviewCount ? Number(reviewCount) + 1 : 1;
   localStorage.setItem('reviewCount', reviewCount);
 
-  const counterDisplay = document.getElementById('review-counter');
+  const counterDisplay = document.getElementById('reviewCount');
   if (counterDisplay) {
-    counterDisplay.textContent = `You have submitted ${reviewCount} review${reviewCount > 1 ? 's' : ''}. Mahalo! 🌺`;
+    counterDisplay.textContent = `${reviewCount}`;
   }
 });

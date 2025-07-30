@@ -6,7 +6,8 @@
   <title>Product Review Form | Aloha Soda</title>
   <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
   <meta name="author" content="Meline" />
-  <!-- Removed Google Fonts link from here -->
+  <!-- Correct Google Fonts embed link -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -20,22 +21,26 @@
       <label for="product-name">Product Name<span aria-hidden="true">*</span>:</label>
       <select id="product-name" name="product-name" required>
         <option value="" disabled selected>Select a Product ...</option>
-        <!-- Options inserted dynamically -->
+        <!-- Options will be inserted dynamically by JS -->
       </select>
 
       <!-- Overall Rating -->
       <fieldset>
         <legend>Overall Rating<span aria-hidden="true">*</span>:</legend>
-        <label for="star1">1☆</label>
         <input type="radio" id="star1" name="rating" value="1" required />
-        <label for="star2">2☆</label>
+        <label for="star1">1☆</label>
+
         <input type="radio" id="star2" name="rating" value="2" />
-        <label for="star3">3☆</label>
+        <label for="star2">2☆</label>
+
         <input type="radio" id="star3" name="rating" value="3" />
-        <label for="star4">4☆</label>
+        <label for="star3">3☆</label>
+
         <input type="radio" id="star4" name="rating" value="4" />
-        <label for="star5">5☆</label>
+        <label for="star4">4☆</label>
+
         <input type="radio" id="star5" name="rating" value="5" />
+        <label for="star5">5☆</label>
       </fieldset>
 
       <!-- Date of Installation -->
@@ -45,10 +50,17 @@
       <!-- Useful Features -->
       <fieldset>
         <legend>Useful Features:</legend>
-        <label for="feature1"><input type="checkbox" id="feature1" name="features" value="easy_setup" /> Easy Setup</label>
-        <label for="feature2"><input type="checkbox" id="feature2" name="features" value="durability" /> Durability</label>
-        <label for="feature3"><input type="checkbox" id="feature3" name="features" value="design" /> Design</label>
-        <label for="feature4"><input type="checkbox" id="feature4" name="features" value="battery_life" /> Battery Life</label>
+        <input type="checkbox" id="feature1" name="features" value="easy_setup" />
+        <label for="feature1">Easy Setup</label>
+
+        <input type="checkbox" id="feature2" name="features" value="durability" />
+        <label for="feature2">Durability</label>
+
+        <input type="checkbox" id="feature3" name="features" value="design" />
+        <label for="feature3">Design</label>
+
+        <input type="checkbox" id="feature4" name="features" value="battery_life" />
+        <label for="feature4">Battery Life</label>
       </fieldset>
 
       <!-- Written Review -->
@@ -59,7 +71,7 @@
       <label for="user-name">Your Name:</label>
       <input type="text" id="user-name" name="user-name" placeholder="Optional" />
 
-      <!-- Submit -->
+      <!-- Submit Button -->
       <input type="submit" value="Submit" />
 
     </form>

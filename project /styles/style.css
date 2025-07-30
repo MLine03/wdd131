@@ -1,0 +1,96 @@
+
+/* Updated Reds and Pinks Color Palette */
+:root {
+  --red-dark: #b22222;       /* Firebrick red - strong headings */
+  --red-medium: #cc3333;     /* Warm red - main accents */
+  --red-light: #e57373;      /* Light coral - highlights/backgrounds */
+  --pink-bright: #ff6f91;    /* Bright pink - buttons and links */
+  --pink-soft: #ffc1cc;      /* Soft pink - subtle backgrounds/accents */
+  --background-color: #fff0f5; /* Lavender blush - overall background */
+  --text-color: #4b1a1a;     /* Dark reddish brown for body text */
+}
+
+/* General body and text */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 4px solid var(--red-medium);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+h1, h2 {
+  font-family: 'Meline Levao', cursive;
+  color: var(--red-dark);
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+/* Links and buttons */
+a, button {
+  color: white;
+  background-color: var(--pink-bright);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+a:hover, button:hover {
+  background-color: var(--red-medium);
+}
+
+/* Color sample boxes for site plan */
+.color-sample {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+
+.red-dark { background-color: var(--red-dark); }
+.red-medium { background-color: var(--red-medium); }
+.red-light { background-color: var(--red-light); }
+.pink-bright { background-color: var(--pink-bright); }
+.pink-soft { background-color: var(--pink-soft); }
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--red-dark);
+}

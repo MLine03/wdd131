@@ -1,65 +1,30 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aloha Soda - Home</title>
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-
   <header>
-    <h1>Aloha Soda</h1>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="menu.html">Menu</a> |
-      <a href="about.html">About</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
+    <img src="images/logo.png" alt="Aloha Soda Logo" class="logo" />
+    <h1>Welcome to Aloha Soda</h1>
   </header>
 
   <main>
-    <!-- Flavor of the Day -->
-    <div id="flavor-of-the-day">
-      Flavor of the Day: <span id="flavor-name">Loading...</span>
-    </div>
-
-    <!-- Hero Image placeholder -->
-    <section id="hero">
-      <img src="images/aloha-soda-hero.jpg" alt="Aloha Soda tropical flavors" style="width:100%; max-width:600px; border-radius: 8px;" />
-    </section>
-
-    <!-- Welcome message -->
-    <section id="welcome">
-      <h2>Welcome to Aloha Soda!</h2>
-      <p>Experience the joyful spirit of Polynesian culture through our unique tropical soda flavors and delicious sweet treats. Our sodas are inspired by traditional ingredients and the mana (energy) of our islands.</p>
+    <section>
+      <h2>Aloha & Welcome!</h2>
+      <p>Experience the tropical flavors and sweet treats inspired by Polynesian culture.</p>
+      <!-- Add vibrant images here -->
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Aloha Soda | 123 Island Way, Honolulu, HI | Open 9am - 9pm daily</p>
+    <p>&copy; 2025 Aloha Soda. All rights reserved.</p>
   </footer>
-
-  <script>
-    const flavors = [
-      "Tropical Pineapple Breeze",
-      "Mango Coconut Splash",
-      "Passionfruit Paradise",
-      "Guava Sunset Fizz",
-      "Lilikoi (Passionfruit) Twist"
-    ];
-
-    let index = 0;
-    const flavorName = document.getElementById('flavor-name');
-
-    function rotateFlavor() {
-      flavorName.textContent = flavors[index];
-      index = (index + 1) % flavors.length;
-    }
-
-    rotateFlavor();
-    setInterval(rotateFlavor, 5000);
-  </script>
-
 </body>
 </html>

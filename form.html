@@ -6,17 +6,19 @@
   <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats.">
   <meta name="author" content="MLine03">
   <title>Product Review Form | Aloha Soda</title>
+  <!-- Removed Google Fonts link to move to CSS file -->
   <link rel="stylesheet" href="styles/styles.css">
   <script src="scripts/form.js" defer></script>
 </head>
 <body>
   <h1>Product Review Form</h1>
   <form method="get" action="review.html">
+
     <label for="product">Product:</label>
     <select id="product" name="product">
-      <option value="pineapple-fizz">Pineapple Fizz</option>
-      <option value="guava-glow">Guava Glow</option>
-      <option value="mango-magic">Mango Magic</option>
+      <option value="pineapple">Pineapple Fizz</option>
+      <option value="guava">Guava Glow</option>
+      <option value="mango">Mango Magic</option>
     </select><br>
 
     <p>Rating:</p>
@@ -41,6 +43,7 @@
     <label for="username">Your Name:</label>
     <input type="text" id="username" name="username"><br>
 
+    <!-- ✅ Fixed: Added value="Submit" -->
     <input type="submit" value="Submit">
   </form>
 </body>

@@ -3,72 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Product Review Form | Aloha Soda</title>
   <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback." />
   <meta name="author" content="MLine03" />
-  
-  <!-- Google Fonts Link (no @import) -->
+  <title>Product Review Form | Aloha Soda</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
-  <!-- CSS file -->
   <link rel="stylesheet" href="styles/styles.css" />
-  
-  <!-- JavaScript file with defer -->
   <script src="scripts/script.js" defer></script>
 </head>
 <body>
-
   <h1>Product Review Form</h1>
 
   <form method="get" action="review.html">
-
     <!-- Product Name Select -->
-    <label for="product-name">Product Name:</label>
-    <select id="product-name" name="product" required>
+    <label for="productName">Product Name:</label>
+    <select id="productName" name="productName" required>
       <option value="" disabled selected>Select a Product ...</option>
-      <!-- Options added dynamically by JS -->
+      <!-- Options populated by JS -->
     </select>
 
-    <!-- Overall Rating -->
+    <!-- Overall Rating Radios -->
     <fieldset>
       <legend>Overall Rating:</legend>
-      <label><input type="radio" name="rating" id="rating1" value="1" required /> 1 ☆</label>
-      <label><input type="radio" name="rating" id="rating2" value="2" /> 2 ☆</label>
-      <label><input type="radio" name="rating" id="rating3" value="3" /> 3 ☆</label>
-      <label><input type="radio" name="rating" id="rating4" value="4" /> 4 ☆</label>
-      <label><input type="radio" name="rating" id="rating5" value="5" /> 5 ☆</label>
+      <input type="radio" id="rate1" name="rating" value="1" required />
+      <label for="rate1">1 Star</label>
+
+      <input type="radio" id="rate2" name="rating" value="2" />
+      <label for="rate2">2 Stars</label>
+
+      <input type="radio" id="rate3" name="rating" value="3" />
+      <label for="rate3">3 Stars</label>
+
+      <input type="radio" id="rate4" name="rating" value="4" />
+      <label for="rate4">4 Stars</label>
+
+      <input type="radio" id="rate5" name="rating" value="5" />
+      <label for="rate5">5 Stars</label>
     </fieldset>
 
     <!-- Date of Installation -->
-    <label for="install-date">Date of Installation:</label>
-    <input type="date" id="install-date" name="installDate" required />
+    <label for="installDate">Date of Installation:</label>
+    <input type="date" id="installDate" name="installDate" required />
 
-    <!-- Useful Features (checkboxes) -->
+    <!-- Useful Features Checkboxes -->
     <fieldset>
       <legend>Useful Features:</legend>
-      <label><input type="checkbox" id="feature1" name="features" value="Flavor" /> Flavor</label>
-      <label><input type="checkbox" id="feature2" name="features" value="Packaging" /> Packaging</label>
-      <label><input type="checkbox" id="feature3" name="features" value="Price" /> Price</label>
-      <label><input type="checkbox" id="feature4" name="features" value="Customer Service" /> Customer Service</label>
+      <input type="checkbox" id="feature1" name="features" value="Flavor" />
+      <label for="feature1">Flavor</label>
+
+      <input type="checkbox" id="feature2" name="features" value="Packaging" />
+      <label for="feature2">Packaging</label>
+
+      <input type="checkbox" id="feature3" name="features" value="Price" />
+      <label for="feature3">Price</label>
+
+      <input type="checkbox" id="feature4" name="features" value="Availability" />
+      <label for="feature4">Availability</label>
     </fieldset>
 
-    <!-- Written Review -->
-    <label for="review-text">Written Review:</label>
-    <textarea id="review-text" name="review" rows="5" cols="40"></textarea>
+    <!-- Written Review Textarea -->
+    <label for="writtenReview">Written Review:</label>
+    <textarea id="writtenReview" name="writtenReview" rows="4" cols="40" placeholder="Write your review here..."></textarea>
 
     <!-- User Name -->
-    <label for="user-name">Your Name (optional):</label>
-    <input type="text" id="user-name" name="userName" />
+    <label for="userName">Your Name (optional):</label>
+    <input type="text" id="userName" name="userName" />
 
     <!-- Submit Button -->
     <input type="submit" value="Submit" />
-
   </form>
 
-  <!-- Common footer content -->
   <footer>
-    <p>&copy; 2025 Aloha Soda</p>
+    <p>&copy; 2025 Aloha Soda. All rights reserved.</p>
   </footer>
-
 </body>
 </html>

@@ -1,44 +1,74 @@
-<form action="review.html" method="get" id="review-form">
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Review Form | Aloha Soda</title>
+  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
+  <meta name="author" content="Meline" />
+  <!-- Removed Google Fonts link from here -->
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Product Review Form</h1>
+  </header>
+  <main>
+    <form action="review.html" method="get" id="review-form">
 
-  <!-- Product Name -->
-  <label for="product-name">Product Name<span aria-hidden="true">*</span>:</label>
-  <select id="product-name" name="product-name" required>
-    <option value="" disabled selected>Select a Product ...</option>
-    <!-- Options inserted dynamically -->
-  </select>
+      <!-- Product Name -->
+      <label for="product-name">Product Name<span aria-hidden="true">*</span>:</label>
+      <select id="product-name" name="product-name" required>
+        <option value="" disabled selected>Select a Product ...</option>
+        <!-- Options inserted dynamically -->
+      </select>
 
-  <!-- Overall Rating -->
-  <fieldset>
-    <legend>Overall Rating<span aria-hidden="true">*</span>:</legend>
-    <label><input type="radio" id="star1" name="rating" value="1" required /> 1☆</label>
-    <label><input type="radio" id="star2" name="rating" value="2" /> 2☆</label>
-    <label><input type="radio" id="star3" name="rating" value="3" /> 3☆</label>
-    <label><input type="radio" id="star4" name="rating" value="4" /> 4☆</label>
-    <label><input type="radio" id="star5" name="rating" value="5" /> 5☆</label>
-  </fieldset>
+      <!-- Overall Rating -->
+      <fieldset>
+        <legend>Overall Rating<span aria-hidden="true">*</span>:</legend>
+        <label for="star1">1☆</label>
+        <input type="radio" id="star1" name="rating" value="1" required />
+        <label for="star2">2☆</label>
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star3">3☆</label>
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star4">4☆</label>
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star5">5☆</label>
+        <input type="radio" id="star5" name="rating" value="5" />
+      </fieldset>
 
-  <!-- Date of Installation -->
-  <label for="install-date">Date of Installation<span aria-hidden="true">*</span>:</label>
-  <input type="date" id="install-date" name="install-date" required />
+      <!-- Date of Installation -->
+      <label for="install-date">Date of Installation<span aria-hidden="true">*</span>:</label>
+      <input type="date" id="install-date" name="install-date" required />
 
-  <!-- Useful Features -->
-  <fieldset>
-    <legend>Useful Features:</legend>
-    <label><input type="checkbox" id="feature1" name="features" value="easy_setup" /> Easy Setup</label>
-    <label><input type="checkbox" id="feature2" name="features" value="durability" /> Durability</label>
-    <label><input type="checkbox" id="feature3" name="features" value="design" /> Design</label>
-    <label><input type="checkbox" id="feature4" name="features" value="battery_life" /> Battery Life</label>
-  </fieldset>
+      <!-- Useful Features -->
+      <fieldset>
+        <legend>Useful Features:</legend>
+        <label for="feature1"><input type="checkbox" id="feature1" name="features" value="easy_setup" /> Easy Setup</label>
+        <label for="feature2"><input type="checkbox" id="feature2" name="features" value="durability" /> Durability</label>
+        <label for="feature3"><input type="checkbox" id="feature3" name="features" value="design" /> Design</label>
+        <label for="feature4"><input type="checkbox" id="feature4" name="features" value="battery_life" /> Battery Life</label>
+      </fieldset>
 
-  <!-- Written Review -->
-  <label for="review-text">Written Review:</label>
-  <textarea id="review-text" name="review-text" rows="5" placeholder="Write your review here..."></textarea>
+      <!-- Written Review -->
+      <label for="review-text">Written Review:</label>
+      <textarea id="review-text" name="review-text" rows="5" placeholder="Write your review here..."></textarea>
 
-  <!-- User Name -->
-  <label for="user-name">Your Name:</label>
-  <input type="text" id="user-name" name="user-name" placeholder="Optional" />
+      <!-- User Name -->
+      <label for="user-name">Your Name:</label>
+      <input type="text" id="user-name" name="user-name" placeholder="Optional" />
 
-  <!-- Submit -->
-  <input type="submit" value="Submit Review" />
+      <!-- Submit -->
+      <input type="submit" value="Submit" />
 
-</form>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Meline - All Rights Reserved</p>
+  </footer>
+
+  <script src="scripts/scripts.js" defer></script>
+</body>
+</html>

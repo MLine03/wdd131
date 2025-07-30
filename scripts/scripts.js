@@ -1,17 +1,19 @@
-const products = [
-  { id: "prod1", name: "Smartphone X" },
-  { id: "prod2", name: "Bluetooth Headphones" },
-  { id: "prod3", name: "Wireless Charger" },
-  { id: "prod4", name: "Smartwatch Pro" },
-  { id: "prod5", name: "Laptop Ultra" }
-];
+document.addEventListener('DOMContentLoaded', () => {
+  const products = [
+    { id: 'lilikoi_juice', name: 'Lilikoi Juice' },
+    { id: 'guava_juice', name: 'Guava Juice' },
+    { id: 'macadamia_cookies', name: 'Macadamia Cookies' },
+    { id: 'haupia', name: 'Haupia' },
+    { id: 'lihing_mui_juice', name: 'Li Hing Mui Juice' },
+    { id: 'coco_puffs', name: 'Coco Puffs' }
+  ];
 
-window.addEventListener('DOMContentLoaded', () => {
-  const productSelect = document.getElementById('product-name');
+  const select = document.getElementById('product-name');
+
   products.forEach(product => {
     const option = document.createElement('option');
-    option.value = product.name;
+    option.value = product.id;
     option.textContent = product.name;
-    productSelect.appendChild(option);
+    select.appendChild(option);
   });
 });

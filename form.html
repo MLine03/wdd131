@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats.">
-  <meta name="author" content="MLine03">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Product Review Form | Aloha Soda</title>
-  <!-- Removed Google Fonts link to move to CSS file -->
-  <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/form.js" defer></script>
+  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
+  <meta name="author" content="MLine03" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
   <h1>Product Review Form</h1>
   <form method="get" action="review.html">
-
-    <label for="product">Product:</label>
-    <select id="product" name="product">
-      <option value="pineapple">Pineapple Fizz</option>
-      <option value="guava">Guava Glow</option>
-      <option value="mango">Mango Magic</option>
-    </select><br>
-
-    <p>Rating:</p>
-    <label><input type="radio" name="rating" value="1">1</label>
-    <label><input type="radio" name="rating" value="2">2</label>
-    <label><input type="radio" name="rating" value="3">3</label>
-    <label><input type="radio" name="rating" value="4">4</label>
-    <label><input type="radio" name="rating" value="5">5</label><br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
 
     <label for="visit-date">Date of Visit:</label>
-    <input type="date" id="visit-date" name="visit-date"><br>
+    <input type="date" id="visit-date" name="visit-date" required />
 
-    <p>Favorite Flavors:</p>
-    <label><input type="checkbox" name="flavors" value="pineapple">Pineapple</label>
-    <label><input type="checkbox" name="flavors" value="guava">Guava</label>
-    <label><input type="checkbox" name="flavors" value="mango">Mango</label>
-    <label><input type="checkbox" name="flavors" value="passionfruit">Passionfruit</label><br>
+    <fieldset>
+      <legend>How did you hear about us?</legend>
+      <label><input type="checkbox" name="referral" value="friend" /> Friend</label>
+      <label><input type="checkbox" name="referral" value="social" /> Social Media</label>
+      <label><input type="checkbox" name="referral" value="ad" /> Advertisement</label>
+      <label><input type="checkbox" name="referral" value="other" /> Other</label>
+    </fieldset>
 
-    <label for="comments">Comments:</label><br>
-    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br>
+    <label for="product-select">Select your favorite product:</label>
+    <select id="product-select" name="product-select" required>
+      <option value="">--Please choose an option--</option>
+      <option value="pineapple-soda">Pineapple Soda</option>
+      <option value="mango-soda">Mango Soda</option>
+      <option value="coconut-soda">Coconut Soda</option>
+    </select>
 
-    <label for="username">Your Name:</label>
-    <input type="text" id="username" name="username"><br>
+    <fieldset>
+      <legend>Rate your experience:</legend>
+      <label><input type="radio" name="rating" value="1" required /> 1</label>
+      <label><input type="radio" name="rating" value="2" /> 2</label>
+      <label><input type="radio" name="rating" value="3" /> 3</label>
+      <label><input type="radio" name="rating" value="4" /> 4</label>
+      <label><input type="radio" name="rating" value="5" /> 5</label>
+    </fieldset>
 
-    <!-- ✅ Fixed: Added value="Submit" -->
-    <input type="submit" value="Submit">
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" rows="4"></textarea>
+
+    <input type="submit" value="Submit" />
   </form>
 </body>
 </html>

@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Review Submitted</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review Confirmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Thank you for your review!</h1>
-  </header>
+    <h1>Thank You for Your Review!</h1>
 
-  <p>Your product review has been submitted successfully.</p>
+    <p>Your feedback has been submitted successfully.</p>
+    
+    <p id="reviewCount"></p>
 
-  <p id="reviewCount"></p>
+    <a href="form.html">Submit another review</a>
 
-  <footer>
-    <p>© 2025 Your Name - BYU-I WDD 131</p>
-  </footer>
+    <script>
+        // Increase review counter in localStorage
+        const countKey = 'reviewCount';
+        let count = localStorage.getItem(countKey);
 
-  <script>
-    // Track review count in localStorage
-    let count = localStorage.getItem('reviewCount') || 0;
-    count = Number(count) + 1;
-    localStorage.setItem('reviewCount', count);
+        if (!count) {
+            count = 0;
+        }
+        count = parseInt(count) + 1;
+        localStorage.setItem(countKey, count);
 
-    document.getElementById('reviewCount').textContent =
-      `Total reviews submitted: ${count}`;
-  </script>
+        // Display count message
+        const reviewCountElement = document.getElementById('reviewCount');
+        reviewCountElement.textContent = `You have submitted ${count} review${count > 1 ? 's' : ''}.`;
+    </script>
 </body>
 </html>

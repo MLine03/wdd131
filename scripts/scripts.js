@@ -1,17 +1,19 @@
-// Product Array - given in assignment
+// Product array example (you can update product names/ids)
 const products = [
-  { id: "prod1", name: "Super Widget" },
-  { id: "prod2", name: "Mega Gadget" },
-  { id: "prod3", name: "Ultra Tool" }
+    { id: 'prod1', name: 'Aloha Pineapple Soda' },
+    { id: 'prod2', name: 'Tropical Mango Fizz' },
+    { id: 'prod3', name: 'Coconut Breeze' },
+    { id: 'prod4', name: 'Hibiscus Delight' }
 ];
 
-// Dynamically populate product select options
-const productSelect = document.getElementById("product");
+// Populate product select options dynamically
+window.addEventListener('DOMContentLoaded', () => {
+    const select = document.getElementById('productName');
 
-products.forEach(product => {
-  const option = document.createElement("option");
-  option.value = product.id;      // product id as value
-  option.textContent = product.name;  // product name as visible text
-  productSelect.appendChild(option);
+    products.forEach(product => {
+        const option = document.createElement('option');
+        option.value = product.id;
+        option.textContent = product.name;
+        select.appendChild(option);
+    });
 });
-

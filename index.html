@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" /> <!-- Fixed meta charset -->
+  <meta charset="UTF-8" /> <!-- Fixed: Proper meta charset -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Review Form | Aloha Soda</title>
   <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
   <meta name="author" content="Meline" />
 
-  <!-- Proper Google Fonts Embed -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles/styles.css" />
   
-  <!-- JavaScript with defer -->
+  <!-- Defer your JavaScript -->
   <script src="scripts/main.js" defer></script>
 </head>
 <body>
@@ -31,10 +26,7 @@
     <label for="flavor">Favorite Flavor:</label>
     <select id="flavor" name="flavor" required>
       <option value="">Select a flavor</option>
-      <option value="pineapple">Pineapple</option>
-      <option value="mango">Mango</option>
-      <option value="guava">Guava</option>
-      <option value="passionfruit">Passionfruit</option>
+      <!-- Options will be dynamically inserted here -->
     </select>
 
     <fieldset>
@@ -51,14 +43,4 @@
       <label><input type="checkbox" name="enjoy" value="taste" /> Taste</label>
       <label><input type="checkbox" name="enjoy" value="service" /> Service</label>
       <label><input type="checkbox" name="enjoy" value="ambiance" /> Ambiance</label>
-      <label><input type="checkbox" name="enjoy" value="price" /> Price</label>
-    </fieldset>
-
-    <label for="comments">Additional Comments:</label>
-    <textarea id="comments" name="comments" rows="4"></textarea>
-
-    <!-- Added missing value attribute -->
-    <input type="submit" value="Submit" />
-  </form>
-</body>
-</html>
+      <label><input type="checkbox" name="enjoy" value=

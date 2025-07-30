@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const select = document.getElementById('flavor');
 
-  // Optional: Clear existing options except the placeholder
+  // Clear existing options except the placeholder
   select.querySelectorAll('option:not([value=""])').forEach(opt => opt.remove());
 
+  // Add product options dynamically
   products.forEach(product => {
     const option = document.createElement('option');
     option.value = product.id;

@@ -7,44 +7,39 @@
   <meta name="author" content="MLine03">
   <title>Product Review Form | Aloha Soda</title>
   <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/script.js" defer></script>
+  <script src="scripts/form.js" defer></script>
 </head>
 <body>
   <h1>Product Review Form</h1>
   <form method="get" action="review.html">
-    <label for="product">Choose a product:</label>
+    <label for="product">Product:</label>
     <select id="product" name="product">
-      <option value="pineapple">Pineapple Fizz</option>
-      <option value="mango">Mango Mist</option>
-      <option value="guava">Guava Glow</option>
-      <option value="lychee">Lychee Dream</option>
-    </select>
+      <option value="pineapple-fizz">Pineapple Fizz</option>
+      <option value="guava-glow">Guava Glow</option>
+      <option value="mango-magic">Mango Magic</option>
+    </select><br>
 
-    <fieldset>
-      <legend>Rate our product</legend>
-      <label><input type="radio" name="rating" value="1"> 1</label>
-      <label><input type="radio" name="rating" value="2"> 2</label>
-      <label><input type="radio" name="rating" value="3"> 3</label>
-      <label><input type="radio" name="rating" value="4"> 4</label>
-      <label><input type="radio" name="rating" value="5"> 5</label>
-    </fieldset>
+    <p>Rating:</p>
+    <label><input type="radio" name="rating" value="1">1</label>
+    <label><input type="radio" name="rating" value="2">2</label>
+    <label><input type="radio" name="rating" value="3">3</label>
+    <label><input type="radio" name="rating" value="4">4</label>
+    <label><input type="radio" name="rating" value="5">5</label><br>
 
-    <label for="purchase-date">Purchase Date:</label>
-    <input type="date" id="purchase-date" name="purchase-date">
+    <label for="visit-date">Date of Visit:</label>
+    <input type="date" id="visit-date" name="visit-date"><br>
 
-    <fieldset>
-      <legend>Which flavors have you tried?</legend>
-      <label><input type="checkbox" name="flavors" value="pineapple"> Pineapple</label>
-      <label><input type="checkbox" name="flavors" value="mango"> Mango</label>
-      <label><input type="checkbox" name="flavors" value="guava"> Guava</label>
-      <label><input type="checkbox" name="flavors" value="lychee"> Lychee</label>
-    </fieldset>
+    <p>Favorite Flavors:</p>
+    <label><input type="checkbox" name="flavors" value="pineapple">Pineapple</label>
+    <label><input type="checkbox" name="flavors" value="guava">Guava</label>
+    <label><input type="checkbox" name="flavors" value="mango">Mango</label>
+    <label><input type="checkbox" name="flavors" value="passionfruit">Passionfruit</label><br>
 
-    <label for="comments">Additional Comments:</label>
-    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+    <label for="comments">Comments:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br>
 
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" name="name">
+    <label for="username">Your Name:</label>
+    <input type="text" id="username" name="username"><br>
 
     <input type="submit" value="Submit">
   </form>

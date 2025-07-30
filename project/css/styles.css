@@ -1,0 +1,88 @@
+/* Reset some basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf6f0;
+  color: #2c3e50;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  font-family: 'Pacifico', cursive;
+  color: #f18f01;
+  margin-bottom: 10px;
+}
+
+h2, h3 {
+  font-size: 1.6em;
+}
+
+p, ul {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Links */
+a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #f18f01;
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Pacifico', cursive;
+}
+
+/* Buttons */
+button {
+  background-color: #f18f01;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #d87a00;
+}
+
+/* Flavor of the Day */
+#flavor-of-the-day {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+  background-color: #4a90e2;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  margin-top: 40px;
+}

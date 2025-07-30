@@ -1,36 +1,65 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Homepage for LDS Temples Picture Albums." />
-  <meta name="author" content="Meline" />
-  <title>Home | LDS Temples</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aloha Soda - Home</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header>
-    <h1>Welcome to the LDS Temples Album</h1>
+    <h1>Aloha Soda</h1>
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="filtered-temples.html">Filtered Temples</a>
-      <a href="temples.html">Original Temples</a>
+      <a href="index.html">Home</a> |
+      <a href="menu.html">Menu</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <p>This site showcases temples of The Church of Jesus Christ of Latter-day Saints.</p>
-    <p>Click the links above to explore different views of temple data.</p>
+    <!-- Flavor of the Day -->
+    <div id="flavor-of-the-day">
+      Flavor of the Day: <span id="flavor-name">Loading...</span>
+    </div>
+
+    <!-- Hero Image placeholder -->
+    <section id="hero">
+      <img src="images/aloha-soda-hero.jpg" alt="Aloha Soda tropical flavors" style="width:100%; max-width:600px; border-radius: 8px;" />
+    </section>
+
+    <!-- Welcome message -->
+    <section id="welcome">
+      <h2>Welcome to Aloha Soda!</h2>
+      <p>Experience the joyful spirit of Polynesian culture through our unique tropical soda flavors and delicious sweet treats. Our sodas are inspired by traditional ingredients and the mana (energy) of our islands.</p>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Meline</p>
-    <p>Last Modified: <span id="lastModified"></span></p>
+    <p>&copy; 2025 Aloha Soda | 123 Island Way, Honolulu, HI | Open 9am - 9pm daily</p>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = document.lastModified;
+    const flavors = [
+      "Tropical Pineapple Breeze",
+      "Mango Coconut Splash",
+      "Passionfruit Paradise",
+      "Guava Sunset Fizz",
+      "Lilikoi (Passionfruit) Twist"
+    ];
+
+    let index = 0;
+    const flavorName = document.getElementById('flavor-name');
+
+    function rotateFlavor() {
+      flavorName.textContent = flavors[index];
+      index = (index + 1) % flavors.length;
+    }
+
+    rotateFlavor();
+    setInterval(rotateFlavor, 5000);
   </script>
+
 </body>
 </html>

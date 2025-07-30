@@ -1,89 +1,77 @@
-/* styles/style.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+/* Simple, clean font */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #ffe6f0; /* very soft pink */
-  color: #880022; /* dark red text */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff0f5; /* very light pink */
+  color: #660033; /* dark red */
   margin: 0;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 header {
   text-align: center;
-  background-color: #ff4d79; /* bright pink-red */
-  padding: 20px 10px;
+  background: #ff3366; /* bright pink */
   color: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 8px rgba(255, 51, 102, 0.6);
 }
 
 .logo {
-  width: 100px;
+  max-width: 150px;
   display: block;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 10px;
 }
 
-h1, h2 {
-  font-weight: 700;
-  color: #b3003b; /* deep pink/red */
+h1, h2, h3 {
+  font-weight: normal;
+  margin-bottom: 10px;
 }
 
-main {
-  max-width: 900px;
-  margin: 30px auto;
-  background: #fff0f6; /* lighter pink background for main */
-  padding: 20px;
+.menu-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.menu-list > li {
+  background: #ff6699; /* pink */
+  margin: 10px 0;
+  padding: 10px 15px;
   border-radius: 8px;
-  box-shadow: 0 0 10px #ff99bb88;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.5;
-}
-
-form label {
-  font-weight: 600;
-  margin-top: 15px;
-  display: block;
-  color: #cc0055;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 2px solid #ff4d79;
-  border-radius: 5px;
-  font-size: 1em;
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #cc0055;
+  box-shadow: 0 2px 5px rgba(255, 102, 153, 0.5);
   color: white;
-  padding: 12px 25px;
-  margin-top: 20px;
-  border: none;
+}
+
+.menu-list li ul {
+  margin-top: 5px;
+  list-style-type: disc;
+  padding-left: 20px;
+  background: #ff99bb; /* lighter pink */
   border-radius: 5px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: #330022; /* dark maroon */
 }
 
-button:hover {
-  background-color: #ff3366;
+.menu-list li ul li {
+  margin: 3px 0;
+  font-weight: bold;
 }
 
-footer {
+.location-hours {
+  background: #ffccd9; /* very soft pink */
+  border-radius: 10px;
+  padding: 15px;
+  margin: 30px 0 10px;
+  color: #660033;
   text-align: center;
-  margin-top: 40px;
-  padding: 10px;
-  font-size: 0.9em;
-  color: #aa0044;
+  box-shadow: 0 0 10px #ff6699;
 }
 
-/* Add styles for other pages as needed */
+.review-offer {
+  background: #ff4d88; /* strong pink */
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px #ff3366;
+}

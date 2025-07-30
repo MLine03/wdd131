@@ -2,40 +2,42 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Review Form | Aloha Soda</title>
   <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
-  <meta name="author" content="MLine03" />
+  <meta name="author" content="Meline" />
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles/styles.css" />
+  
+  <!-- Defer your JavaScript -->
   <script src="scripts/main.js" defer></script>
 </head>
 <body>
   <h1>Product Review Form</h1>
   <form method="get" action="review.html">
+
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required />
 
-    <label for="visit-date">Date of Visit:</label>
-    <input type="date" id="visit-date" name="visit-date" required />
+    <label for="date-visit">Date of Visit:</label>
+    <input type="date" id="date-visit" name="date-visit" required />
 
-    <fieldset>
-      <legend>How did you hear about us?</legend>
-      <label><input type="checkbox" name="referral" value="friend" /> Friend</label>
-      <label><input type="checkbox" name="referral" value="social" /> Social Media</label>
-      <label><input type="checkbox" name="referral" value="ad" /> Advertisement</label>
-      <label><input type="checkbox" name="referral" value="other" /> Other</label>
-    </fieldset>
-
-    <label for="product-select">Select your favorite product:</label>
-    <select id="product-select" name="product-select" required>
-      <option value="">--Please choose an option--</option>
-      <option value="pineapple-soda">Pineapple Soda</option>
-      <option value="mango-soda">Mango Soda</option>
-      <option value="coconut-soda">Coconut Soda</option>
+    <label for="flavor">Favorite Flavor:</label>
+    <select id="flavor" name="flavor" required>
+      <option value="">Select a flavor</option>
+      <option value="pineapple">Pineapple</option>
+      <option value="mango">Mango</option>
+      <option value="guava">Guava</option>
+      <option value="passionfruit">Passionfruit</option>
     </select>
 
     <fieldset>
-      <legend>Rate your experience:</legend>
+      <legend>Rate Your Experience</legend>
       <label><input type="radio" name="rating" value="1" required /> 1</label>
       <label><input type="radio" name="rating" value="2" /> 2</label>
       <label><input type="radio" name="rating" value="3" /> 3</label>
@@ -43,7 +45,15 @@
       <label><input type="radio" name="rating" value="5" /> 5</label>
     </fieldset>
 
-    <label for="comments">Comments:</label>
+    <fieldset>
+      <legend>What did you enjoy? (Check all that apply)</legend>
+      <label><input type="checkbox" name="enjoy" value="taste" /> Taste</label>
+      <label><input type="checkbox" name="enjoy" value="service" /> Service</label>
+      <label><input type="checkbox" name="enjoy" value="ambiance" /> Ambiance</label>
+      <label><input type="checkbox" name="enjoy" value="price" /> Price</label>
+    </fieldset>
+
+    <label for="comments">Additional Comments:</label>
     <textarea id="comments" name="comments" rows="4"></textarea>
 
     <input type="submit" value="Submit" />

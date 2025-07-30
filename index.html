@@ -1,90 +1,44 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Review Form | Aloha Soda</title>
-  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
-  <meta name="author" content="Meline" />
-
-  <!-- Google Fonts embed link -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
-  <!-- Your external CSS file -->
-  <link rel="stylesheet" href="styles/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aloha Soda - Welcome</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Product Review Form</h1>
+    <h1>🌺 Aloha Soda 🌺</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="references.html">References</a>
+    </nav>
   </header>
 
   <main>
-    <form action="review.html" method="get" id="review-form">
+    <section class="welcome">
+      <h2>Welcome to Aloha Soda!</h2>
+      <p>Experience the joyful spirit and sweet flavors inspired by Polynesian culture. Sip on tropical sodas and enjoy delicious treats filled with aloha and mana.</p>
+    </section>
 
-      <!-- Product Name -->
-      <label for="product-name">Product Name<span aria-hidden="true">*</span>:</label>
-      <select id="product-name" name="product-name" required>
-        <option value="" disabled selected>Select a Product ...</option>
-        <!-- options populated by JS -->
-      </select>
-
-      <!-- Overall Rating -->
-      <fieldset>
-        <legend>Overall Rating<span aria-hidden="true">*</span>:</legend>
-        <input type="radio" id="star1" name="rating" value="1" required />
-        <label for="star1">1☆</label>
-
-        <input type="radio" id="star2" name="rating" value="2" />
-        <label for="star2">2☆</label>
-
-        <input type="radio" id="star3" name="rating" value="3" />
-        <label for="star3">3☆</label>
-
-        <input type="radio" id="star4" name="rating" value="4" />
-        <label for="star4">4☆</label>
-
-        <input type="radio" id="star5" name="rating" value="5" />
-        <label for="star5">5☆</label>
-      </fieldset>
-
-      <!-- Date of Installation -->
-      <label for="install-date">Date of Installation<span aria-hidden="true">*</span>:</label>
-      <input type="date" id="install-date" name="install-date" required />
-
-      <!-- Useful Features -->
-      <fieldset>
-        <legend>Useful Features:</legend>
-        <input type="checkbox" id="feature1" name="features" value="easy_setup" />
-        <label for="feature1">Easy Setup</label>
-
-        <input type="checkbox" id="feature2" name="features" value="durability" />
-        <label for="feature2">Durability</label>
-
-        <input type="checkbox" id="feature3" name="features" value="design" />
-        <label for="feature3">Design</label>
-
-        <input type="checkbox" id="feature4" name="features" value="battery_life" />
-        <label for="feature4">Battery Life</label>
-      </fieldset>
-
-      <!-- Written Review -->
-      <label for="review-text">Written Review:</label>
-      <textarea id="review-text" name="review-text" rows="5" placeholder="Write your review here..."></textarea>
-
-      <!-- User Name -->
-      <label for="user-name">Your Name:</label>
-      <input type="text" id="user-name" name="user-name" placeholder="Optional" />
-
-      <!-- Submit Button with value attribute -->
-      <input type="submit" value="Submit" />
-
-    </form>
+    <section class="flavor-of-the-day">
+      <h3>Flavor of the Day 🌴</h3>
+      <div id="flavor-container">
+        <img id="flavor-img" src="" alt="Flavor of the Day" />
+        <h4 id="flavor-name"></h4>
+        <p id="flavor-desc"></p>
+      </div>
+      <button id="next-flavor">Next Flavor</button>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Meline - All Rights Reserved</p>
+    <p>&copy; 2025 Aloha Soda — Bringing Polynesian Mana to Your Sip!</p>
   </footer>
 
-  <script src="scripts/scripts.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

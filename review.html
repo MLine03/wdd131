@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review Submitted</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Thank you for your review!</h1>
+  </header>
+
+  <p>Your product review has been submitted successfully.</p>
+
+  <p id="reviewCount"></p>
+
+  <footer>
+    <p>© 2025 Your Name - BYU-I WDD 131</p>
+  </footer>
+
+  <script>
+    // Track review count in localStorage
+    let count = localStorage.getItem('reviewCount') || 0;
+    count = Number(count) + 1;
+    localStorage.setItem('reviewCount', count);
+
+    document.getElementById('reviewCount').textContent =
+      `Total reviews submitted: ${count}`;
+  </script>
+</body>
+</html>

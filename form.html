@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Review Form</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Product Review Form</h1>
+  </header>
+
+  <form method="get" action="review.html" id="reviewForm">
+    <!-- Product Name -->
+    <label for="product">Product Name:</label>
+    <select id="product" name="product" required>
+      <option disabled selected>Select a Product ...</option>
+      <!-- Options populated dynamically by JS -->
+    </select>
+
+    <!-- Overall Rating -->
+    <fieldset>
+      <legend>Overall Rating:</legend>
+      <label><input type="radio" name="rating" id="rate1" value="1" required> 1 ☆</label>
+      <label><input type="radio" name="rating" id="rate2" value="2"> 2 ☆☆</label>
+      <label><input type="radio" name="rating" id="rate3" value="3"> 3 ☆☆☆</label>
+      <label><input type="radio" name="rating" id="rate4" value="4"> 4 ☆☆☆☆</label>
+      <label><input type="radio" name="rating" id="rate5" value="5"> 5 ☆☆☆☆☆</label>
+    </fieldset>
+
+    <!-- Date of Installation -->
+    <label for="installDate">Date of Installation:</label>
+    <input type="date" id="installDate" name="installDate" required>
+
+    <!-- Useful Features -->
+    <fieldset>
+      <legend>Useful Features (Check all that apply):</legend>
+      <label><input type="checkbox" name="features" id="feature1" value="Feature1"> Feature 1</label>
+      <label><input type="checkbox" name="features" id="feature2" value="Feature2"> Feature 2</label>
+      <label><input type="checkbox" name="features" id="feature3" value="Feature3"> Feature 3</label>
+    </fieldset>
+
+    <!-- Written Review -->
+    <label for="reviewText">Written Review:</label>
+    <textarea id="reviewText" name="reviewText" rows="5" cols="30" placeholder="Write your review here..."></textarea>
+
+    <!-- User Name -->
+    <label for="userName">User Name:</label>
+    <input type="text" id="userName" name="userName" placeholder="Optional">
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit Review">
+  </form>
+
+  <footer>
+    <p>© 2025 Your Name - BYU-I WDD 131</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

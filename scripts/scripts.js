@@ -1,22 +1,17 @@
-function calculateWindChill(tempF, speed) {
-  return (
-    35.74 + 0.6215 * tempF - 35.75 * Math.pow(speed, 0.16) +
-    0.4275 * tempF * Math.pow(speed, 0.16)
-  ).toFixed(1);
-}
+// Product Array - given in assignment
+const products = [
+  { id: "prod1", name: "Super Widget" },
+  { id: "prod2", name: "Mega Gadget" },
+  { id: "prod3", name: "Ultra Tool" }
+];
 
-document.addEventListener('DOMContentLoaded', () => {
-  const temp = parseFloat(document.getElementById('temp').textContent);
-  const speed = parseFloat(document.getElementById('speed').textContent);
-  const chillSpan = document.getElementById('chill');
+// Dynamically populate product select options
+const productSelect = document.getElementById("product");
 
-  let chill = 'N/A';
-  if (temp <= 50 && speed > 3) {
-    chill = calculateWindChill(temp, speed) + ' °F';
-  }
-
-  chillSpan.textContent = chill;
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('modified').textContent = document.lastModified;
+products.forEach(product => {
+  const option = document.createElement("option");
+  option.value = product.id;      // product id as value
+  option.textContent = product.name;  // product name as visible text
+  productSelect.appendChild(option);
 });
+

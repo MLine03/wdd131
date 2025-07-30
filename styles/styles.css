@@ -1,88 +1,88 @@
-/* Simple form styling */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #fff8f0;
-  color: #333;
+  line-height: 1.5;
   margin: 0;
-  padding: 0 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  color: #222;
 }
 
 header, footer {
   text-align: center;
-  background-color: #ff7043;
-  color: white;
   padding: 1rem 0;
+  background-color: #004d40; /* Darker teal for contrast */
+  color: #e0f2f1; /* Light teal text for better contrast */
 }
 
 h1 {
   margin: 0;
-}
-
-main {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255,112,67,0.3);
+  font-size: 2rem;
+  color: #ffffff; /* white text for strong contrast */
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-label {
-  margin-top: 1rem;
+label, legend {
   font-weight: 600;
+  display: block;
+  margin-top: 1rem;
+  color: #000; /* black for best contrast */
 }
 
-select, input[type="date"], input[type="text"], textarea {
-  margin-top: 0.5rem;
+select, input[type="text"], input[type="date"], textarea {
+  width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ff7043;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  width: 100%;
   box-sizing: border-box;
 }
 
 fieldset {
-  margin-top: 1rem;
-  border: 1px solid #ff7043;
-  padding: 1rem;
-  border-radius: 6px;
+  border: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
 }
 
-legend {
-  font-weight: 700;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
+input[type="radio"], input[type="checkbox"] {
   margin-right: 0.5rem;
+  transform: scale(1.5); /* Larger touch targets */
+  vertical-align: middle;
 }
 
 input[type="submit"] {
-  margin-top: 2rem;
-  background-color: #ff7043;
+  background-color: #00796b;
   color: white;
+  font-size: 1.1rem;
   border: none;
-  padding: 0.75rem;
-  font-size: 1.2rem;
-  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  margin-top: 2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  background-color: #e65c2e;
+  background-color: #004d40;
   outline: none;
 }
 
+label span[aria-hidden="true"] {
+  color: red;
+  margin-left: 0.25rem;
+}
+
 @media (max-width: 600px) {
-  main {
+  form {
     margin: 1rem;
     padding: 1rem;
   }

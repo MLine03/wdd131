@@ -7,13 +7,8 @@
   <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
   <meta name="author" content="Meline" />
   
-  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  
-  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -23,14 +18,12 @@
   <main>
     <form action="review.html" method="get" id="review-form">
 
-      <!-- Product Name -->
       <label for="product-name">Product Name<span aria-hidden="true">*</span>:</label>
       <select id="product-name" name="product-name" required>
         <option value="" disabled selected>Select a Product ...</option>
-        <!-- Options inserted dynamically -->
+        <!-- Options dynamically inserted -->
       </select>
 
-      <!-- Overall Rating -->
       <fieldset>
         <legend>Overall Rating<span aria-hidden="true">*</span>:</legend>
         <input type="radio" id="star1" name="rating" value="1" required />
@@ -45,11 +38,9 @@
         <label for="star5">5☆</label>
       </fieldset>
 
-      <!-- Date of Installation -->
       <label for="install-date">Date of Installation<span aria-hidden="true">*</span>:</label>
       <input type="date" id="install-date" name="install-date" required />
 
-      <!-- Useful Features -->
       <fieldset>
         <legend>Useful Features:</legend>
         <input type="checkbox" id="feature1" name="features" value="easy_setup" />
@@ -65,15 +56,12 @@
         <label for="feature4">Battery Life</label>
       </fieldset>
 
-      <!-- Written Review -->
       <label for="review-text">Written Review:</label>
       <textarea id="review-text" name="review-text" rows="5" placeholder="Write your review here..."></textarea>
 
-      <!-- User Name -->
       <label for="user-name">Your Name:</label>
       <input type="text" id="user-name" name="user-name" placeholder="Optional" />
 
-      <!-- Submit Button -->
       <input type="submit" value="Submit" />
 
     </form>

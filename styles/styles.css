@@ -1,28 +1,33 @@
-/* styles/styles.css */
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
   margin: 20px;
-  background-color: #f0f8ff;
+  background-color: #fff9f0;
   color: #333;
 }
 
 h1 {
-  color: #2e8b57;
+  text-align: center;
+  color: #e26a2c;
 }
 
 form {
   max-width: 600px;
-  background-color: #fff;
-  padding: 1rem 2rem;
+  margin: 0 auto;
+  background-color: #fef6e4;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px #ccc;
+  border: 2px solid #e26a2c;
 }
 
 label {
   display: block;
-  margin-top: 1rem;
-  font-weight: bold;
+  margin-top: 15px;
+  font-weight: 600;
 }
 
 input[type="text"],
@@ -30,42 +35,50 @@ input[type="date"],
 select,
 textarea {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
+  padding: 8px;
+  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  font-size: 1rem;
 }
 
 fieldset {
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #e26a2c;
   border-radius: 4px;
+  padding: 10px;
+  margin-top: 15px;
 }
 
 legend {
-  font-weight: bold;
+  font-weight: 700;
+  color: #e26a2c;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
 }
 
 input[type="submit"] {
-  margin-top: 1.5rem;
-  padding: 0.8rem 2rem;
-  background-color: #2e8b57;
+  margin-top: 20px;
+  background-color: #e26a2c;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 12px 20px;
+  font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-  background-color: #246b45;
+  background-color: #b34e21;
 }
 
 footer {
-  margin-top: 2rem;
   text-align: center;
+  margin-top: 40px;
   font-size: 0.9rem;
-  color: #666;
+  color: #999;
 }

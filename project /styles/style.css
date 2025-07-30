@@ -1,77 +1,89 @@
-/* Simple, clean font */
+/* Basic reset and typography */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fff0f5; /* very light pink */
-  color: #660033; /* dark red */
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
   margin: 0;
-  padding: 0 20px;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  color: #222;
 }
 
-header {
+header, footer {
   text-align: center;
-  background: #ff3366; /* bright pink */
+  padding: 1rem 0;
+  background-color: #00796b; /* Dark teal */
   color: white;
-  padding: 20px 0;
-  box-shadow: 0 2px 8px rgba(255, 51, 102, 0.6);
 }
 
-.logo {
-  max-width: 150px;
-  display: block;
-  margin: 0 auto 10px;
+h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
-h1, h2, h3 {
-  font-weight: normal;
-  margin-bottom: 10px;
-}
-
-.menu-list {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.menu-list > li {
-  background: #ff6699; /* pink */
-  margin: 10px 0;
-  padding: 10px 15px;
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(255, 102, 153, 0.5);
-  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.menu-list li ul {
-  margin-top: 5px;
-  list-style-type: disc;
-  padding-left: 20px;
-  background: #ff99bb; /* lighter pink */
+label, legend {
+  font-weight: 600;
+  display: block;
+  margin-top: 1rem;
+}
+
+select, input[type="text"], input[type="date"], textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+
+input[type="submit"] {
+  background-color: #00796b;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.75rem 1.5rem;
   border-radius: 5px;
-  color: #330022; /* dark maroon */
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.menu-list li ul li {
-  margin: 3px 0;
-  font-weight: bold;
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #004d40;
+  outline: none;
 }
 
-.location-hours {
-  background: #ffccd9; /* very soft pink */
-  border-radius: 10px;
-  padding: 15px;
-  margin: 30px 0 10px;
-  color: #660033;
-  text-align: center;
-  box-shadow: 0 0 10px #ff6699;
+/* Accessibility: Ensure good contrast */
+label span[aria-hidden="true"] {
+  color: red;
+  margin-left: 0.25rem;
 }
 
-.review-offer {
-  background: #ff4d88; /* strong pink */
-  padding: 15px;
-  border-radius: 10px;
-  color: white;
-  font-size: 1.2em;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 30px;
-  box-shadow: 0 0 15px #ff3366;
+@media (max-width: 600px) {
+  form {
+    margin: 1rem;
+    padding: 1rem;
+  }
 }

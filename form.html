@@ -13,6 +13,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -20,13 +21,13 @@
     <h1>Product Review Form</h1>
   </header>
   <main>
-    <form action="review.html" method="get" id="review-form" novalidate>
+    <form action="review.html" method="get" id="review-form">
 
       <!-- Product Name -->
       <label for="product-name">Product Name<span aria-hidden="true">*</span>:</label>
       <select id="product-name" name="product-name" required>
         <option value="" disabled selected>Select a Product ...</option>
-        <!-- Options inserted dynamically by JS -->
+        <!-- Options inserted dynamically -->
       </select>
 
       <!-- Overall Rating -->
@@ -51,18 +52,17 @@
       <!-- Useful Features -->
       <fieldset>
         <legend>Useful Features:</legend>
-        <input type="checkbox" id="feature1" name="features" value="lilikoi_juice" />
-        <label for="feature1">Lilikoi Juice</label>
-        <input type="checkbox" id="feature2" name="features" value="guava_juice" />
-        <label for="feature2">Guava Juice</label>
-        <input type="checkbox" id="feature3" name="features" value="macadamia_cookies" />
-        <label for="feature3">Macadamia Cookies</label>
-        <input type="checkbox" id="feature4" name="features" value="haupia" />
-        <label for="feature4">Haupia</label>
-        <input type="checkbox" id="feature5" name="features" value="lihing_mui_juice" />
-        <label for="feature5">Li Hing Mui Juice</label>
-        <input type="checkbox" id="feature6" name="features" value="coco_puffs" />
-        <label for="feature6">Coco Puffs</label>
+        <input type="checkbox" id="feature1" name="features" value="easy_setup" />
+        <label for="feature1">Easy Setup</label>
+
+        <input type="checkbox" id="feature2" name="features" value="durability" />
+        <label for="feature2">Durability</label>
+
+        <input type="checkbox" id="feature3" name="features" value="design" />
+        <label for="feature3">Design</label>
+
+        <input type="checkbox" id="feature4" name="features" value="battery_life" />
+        <label for="feature4">Battery Life</label>
       </fieldset>
 
       <!-- Written Review -->
@@ -74,7 +74,7 @@
       <input type="text" id="user-name" name="user-name" placeholder="Optional" />
 
       <!-- Submit Button -->
-      <input type="submit" value="Submit Review" />
+      <input type="submit" value="Submit" />
 
     </form>
   </main>

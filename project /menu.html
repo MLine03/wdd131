@@ -3,36 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aloha Soda - Menu</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Aloha Soda – Menu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fefefe;
+      color: #222;
+      max-width: 700px;
+      margin: auto;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #00796b;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 0.8rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.4rem;
+    }
+    button.favorite-btn {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    button.favorite-btn.active {
+      background-color: #004d40;
+    }
+    #favorite-section {
+      margin-top: 2rem;
+      border-top: 2px solid #00796b;
+      padding-top: 1rem;
+    }
+    #favorite-section h2 {
+      color: #004d40;
+    }
+    nav a {
+      color: #00796b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>🌺 Aloha Soda Menu 🌺</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="references.html">References</a>
-    </nav>
-  </header>
+  <h1>Aloha Soda Menu</h1>
 
-  <main>
-    <section>
-      <h2>Our Unique Soda Flavors</h2>
-      <ul id="soda-list"></ul>
-    </section>
+  <section aria-label="All products">
+    <ul id="soda-list">
+      <!-- JS will populate this -->
+    </ul>
+  </section>
 
-    <section>
-      <h3>Your Favorite Sodas</h3>
-      <ul id="favorite-list"></ul>
-    </section>
-  </main>
+  <section id="favorite-section" aria-label="Favorite products">
+    <h2>Your Favorites</h2>
+    <ul id="favorite-list">
+      <li>No favorites selected yet.</li>
+    </ul>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Aloha Soda — Bringing Polynesian Mana to Your Sip!</p>
-  </footer>
+  <nav>
+    <a href="index.html">Back to Home</a>
+  </nav>
 
   <script src="js/main.js"></script>
 </body>

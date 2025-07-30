@@ -1,60 +1,36 @@
-/* Reset and basic styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 20px;
-  background-color: #f0f8ff;
+  background-color: #f9f9f9;
   color: #333;
 }
 
-h1 {
-  text-align: center;
-  color: #006400;
-}
-
 form {
-  max-width: 500px;
-  margin: auto;
-  background: white;
+  background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 6px;
+  max-width: 600px;
+  margin: 0 auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-label {
+label, fieldset, legend, input, textarea, select {
   display: block;
-  margin-top: 15px;
-  font-weight: 600;
-}
-
-input[type="text"],
-input[type="date"],
-select,
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  margin-right: 5px;
+  margin-bottom: 12px;
 }
 
 input[type="submit"] {
-  margin-top: 20px;
-  background-color: #006400;
+  background-color: #ff6666;
   color: white;
   border: none;
   padding: 10px 20px;
-  font-weight: 700;
+  font-size: 16px;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
 }
 
 input[type="submit"]:hover {
-  background-color: #004d00;
+  background-color: #cc3333;
 }

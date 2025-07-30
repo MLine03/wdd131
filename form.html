@@ -1,62 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats.">
+  <meta name="author" content="MLine03">
   <title>Product Review Form | Aloha Soda</title>
-  <meta name="description" content="Product Review Form for Aloha Soda, allowing customers to submit their feedback on our tropical soda flavors and treats." />
-  <meta name="author" content="MLine03" />
-  <!-- Google Fonts: full link -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
 </head>
 <body>
   <h1>Product Review Form</h1>
-
   <form method="get" action="review.html">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required />
-
-    <label for="visit-date">Date of Visit:</label>
-    <input type="date" id="visit-date" name="visit-date" required />
-
-    <label>Rate your experience:</label>
-    <input type="radio" id="rate1" name="rating" value="1" required />
-    <label for="rate1">1</label>
-    <input type="radio" id="rate2" name="rating" value="2" />
-    <label for="rate2">2</label>
-    <input type="radio" id="rate3" name="rating" value="3" />
-    <label for="rate3">3</label>
-    <input type="radio" id="rate4" name="rating" value="4" />
-    <label for="rate4">4</label>
-    <input type="radio" id="rate5" name="rating" value="5" />
-    <label for="rate5">5</label>
-
-    <label for="favorite-soda">Favorite Soda:</label>
-    <select id="favorite-soda" name="favorite-soda" required>
-      <option value="">Select one</option>
-      <option value="pineapple">Pineapple Paradise</option>
-      <option value="mango">Mango Breeze</option>
+    <label for="product">Choose a product:</label>
+    <select id="product" name="product">
+      <option value="pineapple">Pineapple Fizz</option>
+      <option value="mango">Mango Mist</option>
       <option value="guava">Guava Glow</option>
-      <option value="coconut">Coconut Crush</option>
+      <option value="lychee">Lychee Dream</option>
     </select>
 
-    <label>What snacks did you enjoy?</label>
-    <input type="checkbox" id="snack1" name="snacks" value="sweet-bread" />
-    <label for="snack1">Sweet Bread</label>
-    <input type="checkbox" id="snack2" name="snacks" value="poi" />
-    <label for="snack2">Poi</label>
-    <input type="checkbox" id="snack3" name="snacks" value="mochi" />
-    <label for="snack3">Mochi</label>
-    <input type="checkbox" id="snack4" name="snacks" value="fruit-bowl" />
-    <label for="snack4">Fruit Bowl</label>
+    <fieldset>
+      <legend>Rate our product</legend>
+      <label><input type="radio" name="rating" value="1"> 1</label>
+      <label><input type="radio" name="rating" value="2"> 2</label>
+      <label><input type="radio" name="rating" value="3"> 3</label>
+      <label><input type="radio" name="rating" value="4"> 4</label>
+      <label><input type="radio" name="rating" value="5"> 5</label>
+    </fieldset>
+
+    <label for="purchase-date">Purchase Date:</label>
+    <input type="date" id="purchase-date" name="purchase-date">
+
+    <fieldset>
+      <legend>Which flavors have you tried?</legend>
+      <label><input type="checkbox" name="flavors" value="pineapple"> Pineapple</label>
+      <label><input type="checkbox" name="flavors" value="mango"> Mango</label>
+      <label><input type="checkbox" name="flavors" value="guava"> Guava</label>
+      <label><input type="checkbox" name="flavors" value="lychee"> Lychee</label>
+    </fieldset>
 
     <label for="comments">Additional Comments:</label>
     <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
 
-    <input type="submit" value="Submit" />
-  </form>
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name">
 
-  <script src="scripts/form.js" defer></script>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 </html>

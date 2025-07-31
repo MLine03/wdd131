@@ -2,83 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aloha Soda – Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aloha Soda Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fefefe;
-      color: #222;
-      max-width: 700px;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      margin: 0;
+      padding: 1rem;
+    }
+    header {
+      background-color: #e63946;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Lobster', cursive;
+      margin: 0;
+    }
+    main {
+      max-width: 900px;
       margin: auto;
       padding: 1rem;
     }
-    h1 {
-      text-align: center;
-      color: #00796b;
+    h2 {
+      font-family: 'Lobster', cursive;
+      color: #e63946;
+      border-bottom: 2px solid #ffb6c1;
+      padding-bottom: 0.5rem;
     }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
+    .menu-section {
+      margin-bottom: 2rem;
     }
-    li {
-      margin: 0.8rem 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.4rem;
+    .menu-item {
+      margin-bottom: 1rem;
     }
-    button.favorite-btn {
-      background-color: #00796b;
-      color: white;
-      border: none;
-      padding: 0.3rem 0.7rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9rem;
+    .menu-item h3 {
+      margin: 0;
+      color: #e63946;
     }
-    button.favorite-btn.active {
-      background-color: #004d40;
-    }
-    #favorite-section {
-      margin-top: 2rem;
-      border-top: 2px solid #00796b;
-      padding-top: 1rem;
-    }
-    #favorite-section h2 {
-      color: #004d40;
-    }
-    nav a {
-      color: #00796b;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
+    .menu-item p {
+      margin: 0.3rem 0 0 0;
     }
   </style>
 </head>
 <body>
-  <h1>Aloha Soda Menu</h1>
+  <header>
+    <h1>Aloha Soda Menu</h1>
+  </header>
 
-  <section aria-label="All products">
-    <ul id="soda-list">
-      <!-- JS will populate this -->
-    </ul>
-  </section>
+  <main>
+    <section class="menu-section">
+      <h2>Soda Flavors</h2>
 
-  <section id="favorite-section" aria-label="Favorite products">
-    <h2>Your Favorites</h2>
-    <ul id="favorite-list">
-      <li>No favorites selected yet.</li>
-    </ul>
-  </section>
+      <div class="menu-item">
+        <h3>Lilikoi Fizz</h3>
+        <p>Sweet passion fruit soda with a tropical twist.</p>
+      </div>
 
-  <nav>
-    <a href="index.html">Back to Home</a>
-  </nav>
+      <div class="menu-item">
+        <h3>Guava Lava</h3>
+        <p>Bright guava soda with hints of lime and pineapple.</p>
+      </div>
 
-  <script src="js/main.js"></script>
+      <div class="menu-item">
+        <h3>Hibiscus Breeze</h3>
+        <p>Floral and fruity with a gentle fizz — island refreshment!</p>
+      </div>
+
+      <div class="menu-item">
+        <h3>Laie Breeze</h3>
+        <p>Coconut and lime soda that captures the calming tradewinds of Laie.</p>
+      </div>
+
+      <div class="menu-item">
+        <h3>Aloha Dew</h3>
+        <p>A sweet blend of melon and honeydew inspired by island mornings.</p>
+      </div>
+
+      <div class="menu-item">
+        <h3>Pineapple Beach</h3>
+        <p>Fresh pineapple soda with a salty-sweet rim — like sipping sunshine.</p>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Sweet Treats</h2>
+
+      <div class="menu-item">
+        <h3>Macadamia Blondie</h3>
+        <p>Buttery, chewy, and packed with local mac nuts.</p>
+      </div>
+
+      <div class="menu-item">
+        <h3>Toasted Coconut Donuts</h3>
+        <p>Glazed donuts with toasted coconut topping and aloha spirit.</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

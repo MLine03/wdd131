@@ -2,90 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aloha Soda - Website Plan</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Meline+Levao&family=Roboto&display=swap" rel="stylesheet" />
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="styles/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aloha Soda - Site Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      margin: 2rem;
+      padding: 1rem;
+    }
+    h1, h2 {
+      font-family: 'Lobster', cursive;
+      color: #e63946;
+    }
+    h1 {
+      font-size: 2.5rem;
+      border-bottom: 2px solid #e63946;
+      padding-bottom: 0.5rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .color-box {
+      width: 150px;
+      height: 30px;
+      display: inline-block;
+      margin-right: 1rem;
+      border: 1px solid #ccc;
+    }
+    .color1 { background-color: #e63946; }
+    .color2 { background-color: #ffb6c1; }
+    svg {
+      width: 100%;
+      max-width: 600px;
+      border: 1px solid #ddd;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="Aloha Soda Logo" class="logo" />
-    <h1>Aloha Soda</h1>
-  </header>
+  <h1>Site Plan: Aloha Soda</h1>
 
   <section>
     <h2>Site Name</h2>
-    <p><strong>Aloha Soda</strong></p>
-    <p>
-      The name "Aloha Soda" reflects the warm hospitality and joyful spirit of Polynesian culture, celebrated through a local soda shop offering tropical flavors and sweet treats.
-    </p>
+    <p><strong>Name:</strong> Aloha Soda – Local Soda Shop</p>
+    <p><strong>Description:</strong> Aloha Soda brings tropical vibes and sweet Polynesian energy through handcrafted sodas and treats. The name reflects the warm spirit of “aloha” and the fun, colorful experience of enjoying soda with community and joy.</p>
+    <p><strong>Optional Domain Availability:</strong> <em>alohasoda.com</em></p>
   </section>
 
   <section>
     <h2>Site Purpose</h2>
-    <p>
-      The site serves as an online presence for Aloha Soda, featuring a welcoming homepage, a menu showcasing unique Polynesian-inspired soda flavors and snacks, an about page sharing the story and spirit of the brand, a contact page with location and hours, and a references page.
-    </p>
+    <p>The website will celebrate Polynesian culture through vibrant soda flavors, inviting visuals, and community storytelling. It includes a menu, shop story, interactive flavor features, and a contact form.</p>
   </section>
 
   <section>
     <h2>Scenarios</h2>
     <ul>
-      <li>What unique Polynesian soda flavors does Aloha Soda offer?</li>
-      <li>Where is Aloha Soda located, and what are the store hours?</li>
+      <li>What tropical soda flavors are available this week?</li>
+      <li>Where is Aloha Soda located and what are the shop hours?</li>
     </ul>
   </section>
 
   <section>
     <h2>Color Schema</h2>
+    <p>The website uses bright, fruity colors to match the fun soda-shop vibe:</p>
     <ul>
-      <li><span class="color-sample red-dark"></span> Dark Red: Strong headings, important accents.</li>
-      <li><span class="color-sample red-medium"></span> Medium Red: Main headings and borders.</li>
-      <li><span class="color-sample red-light"></span> Light Red: Highlights and backgrounds.</li>
-      <li><span class="color-sample pink-bright"></span> Bright Pink: Buttons and links.</li>
-      <li><span class="color-sample pink-soft"></span> Soft Pink: Subtle backgrounds and accents.</li>
+      <li><strong>Strawberry Red (#e63946)</strong> – Headings, buttons</li>
+      <li><strong>Cotton Candy Pink (#ffb6c1)</strong> – Backgrounds, highlights</li>
     </ul>
+    <div class="color-box color1"></div>
+    <div class="color-box color2"></div>
   </section>
 
   <section>
     <h2>Typography</h2>
     <ul>
-      <li><strong>Meline Levao:</strong> Used for main headings and branding to reflect Polynesian style.</li>
-      <li><strong>Roboto:</strong> Used for body text and general content for readability and modern look.</li>
+      <li><strong>Lobster</strong> – Used for site logo and headings</li>
+      <li><strong>Open Sans</strong> – Used for all body text and navigation</li>
     </ul>
   </section>
 
   <section>
     <h2>Wireframe</h2>
-    <p>
-      The homepage will feature a top navigation bar with the logo and site name, a hero section with a warm Aloha welcome and tropical images, a menu preview section, an about snippet, and footer with contact info.
-    </p>
-    <p>
-      Mobile view wireframe: vertical stacking with logo on top, then welcome message, menu highlights, and contact info below.
-    </p>
-    <p>
-      Desktop view wireframe: horizontal layout with navigation on top, hero banner center, menu section side by side with about snippet, and footer below.
-    </p>
+
+    <h3>Mobile View</h3>
+    <svg viewBox="0 0 300 600">
+      <rect x="0" y="0" width="300" height="600" fill="#fff" />
+      <rect x="0" y="0" width="300" height="60" fill="#e63946" />
+      <text x="20" y="40" font-size="20" fill="white">Logo</text>
+
+      <rect x="10" y="80" width="280" height="150" fill="#ddd" />
+      <text x="20" y="110" font-size="14">Hero Image</text>
+
+      <rect x="10" y="250" width="280" height="100" fill="#ffb6c1" />
+      <text x="20" y="280" font-size="14">Flavor of the Day</text>
+
+      <rect x="10" y="370" width="280" height="200" fill="#eee" />
+      <text x="20" y="400" font-size="14">Menu / Content</text>
+    </svg>
+
+    <h3>Desktop View</h3>
+    <svg viewBox="0 0 900 600">
+      <rect x="0" y="0" width="900" height="600" fill="#fff" />
+      <rect x="0" y="0" width="900" height="80" fill="#e63946" />
+      <text x="20" y="50" font-size="24" fill="white">Logo | Nav</text>
+
+      <rect x="20" y="100" width="860" height="200" fill="#ddd" />
+      <text x="30" y="130" font-size="16">Hero Banner</text>
+
+      <rect x="20" y="320" width="420" height="120" fill="#ffb6c1" />
+      <text x="30" y="350" font-size="14">Flavor of the Day</text>
+
+      <rect x="460" y="320" width="420" height="120" fill="#eee" />
+      <text x="470" y="350" font-size="14">Featured Menu</text>
+    </svg>
   </section>
 
   <section>
-    <h2>CSS</h2>
-    <p>
-      External CSS will style the site with the red and pink color scheme, using the 'Meline Levao' and 'Roboto' fonts. Layout will be responsive with flexbox for desktop and stacked for mobile.
-    </p>
+    <h2>Planned Pages & Features</h2>
+    <ul>
+      <li><strong>Home:</strong> Welcoming message with tropical visuals.</li>
+      <li><strong>Menu:</strong> Full list of sodas and snacks with descriptions.</li>
+      <li><strong>About:</strong> History and cultural story of Aloha Soda.</li>
+      <li><strong>Contact:</strong> Store info, map, and feedback form.</li>
+      <li><strong>References:</strong> Citations for all media and external resources.</li>
+    </ul>
   </section>
 
   <section>
-    <h2>Testing</h2>
-    <p>
-      The website will be tested for accessibility, color contrast, SEO, responsiveness, and validated for HTML and CSS standards.
-    </p>
+    <h2>JavaScript Features</h2>
+    <ul>
+      <li>Rotating “Flavor of the Day”</li>
+      <li>Save favorite sodas in localStorage</li>
+      <li>Click-to-reveal promotional offers</li>
+    </ul>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Aloha Soda. All rights reserved.</p>
-  </footer>
+  <section>
+    <h2>Testing & Validation</h2>
+    <ul>
+      <li>W3C validation for HTML/CSS</li>
+      <li>Color contrast accessibility tests</li>
+      <li>Mobile-first responsive layout tests</li>
+      <li>Lighthouse audit for SEO & performance</li>
+    </ul>
+  </section>
 </body>
 </html>

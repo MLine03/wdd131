@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aloha Soda - A Polynesian-inspired soda shop. Discover vibrant flavors and refreshing drinks.">
-    <title>Aloha Soda - Home</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Aloha Soda - Welcome</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="assets/images/logo.png" alt="Aloha Soda Logo">
+            <!-- Updated logo file name -->
+            <img src="images/logo.png" alt="Aloha Soda Logo">
         </div>
         <nav>
             <ul>
@@ -22,22 +22,38 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <main>
         <h1>Welcome to Aloha Soda!</h1>
-        <p>Your tropical escape for vibrant and refreshing sodas.</p>
-        <div id="flavorOfTheDay"></div>
-    </section>
+        <p>Discover a world of tropical sodas inspired by Polynesian flavors.</p>
+        
+        <h2>Featured Drinks</h2>
+        <section class="featured-drinks">
+            <!-- Drink 1: Aloha Dew -->
+            <div class="drink">
+                <img src="images/aloha-dew.jpg" alt="Aloha Dew" loading="lazy">
+                <h3>Aloha Dew</h3>
+                <p>A refreshing soda with a tropical citrus blend. Perfect for any day!</p>
+            </div>
 
-    <section class="intro">
-        <h2>Our Story</h2>
-        <p>We bring you a taste of the tropics with every sip. Aloha Soda is inspired by Polynesian hospitality, bringing flavors that remind you of sunny beaches and warm breezes.</p>
-    </section>
+            <!-- Drink 2: Lilikoi Fizz -->
+            <div class="drink">
+                <img src="images/lilikoi-fizz.jpg" alt="Lilikoi Fizz" loading="lazy">
+                <h3>Lilikoi Fizz</h3>
+                <p>A sweet and tangy passionfruit soda with a fizzy twist.</p>
+            </div>
+
+            <!-- Add more drinks here -->
+        </section>
+
+        <h2>Flavor of the Day</h2>
+        <p id="flavor-of-the-day">Today's Flavor: Pineapple Bliss!</p>
+        <button id="change-flavor">Change Flavor</button>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Aloha Soda. All Rights Reserved.</p>
-        <p><a href="references.html">References</a></p>
+        <p>&copy; 2025 Aloha Soda | <a href="references.html">References</a></p>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,14 +1,25 @@
+/* CSS Variables for Colors */
+:root {
+  --color-red: #e63946;
+  --color-red-dark: #b32c36;
+  --color-teal: #1fbfb8;
+  --color-light-pink: #fcd5ce;
+  --color-text-dark: #333333;
+  --color-text-muted: #555555;
+  --color-white: #ffffff;
+}
+
 /* Global Styles */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background-color: #fcd5ce; /* Light Pink background */
-  color: #333333;
+  background-color: var(--color-light-pink);
+  color: var(--color-text-dark);
   line-height: 1.6;
 }
 
 header {
-  background-color: #1fbfb8; /* Teal */
+  background-color: var(--color-teal);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -33,18 +44,24 @@ nav ul {
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
+  color: var(--color-white);
+  font-weight: 700;
   font-size: 1rem;
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
-  background-color: #e63946; /* Red */
+  background-color: #d6333e; /* slightly darker red */
+  color: var(--color-white);
+}
+
+nav a:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 3px;
 }
 
 main {
@@ -55,13 +72,13 @@ main {
 
 h1, h2 {
   font-family: 'Lobster', cursive;
-  color: #e63946; /* Red */
+  color: var(--color-red);
   margin-bottom: 1rem;
 }
 
 p {
   font-size: 1rem;
-  color: #333333;
+  color: var(--color-text-dark);
   margin-bottom: 1.25rem;
 }
 
@@ -79,17 +96,17 @@ p {
 
 /* Flavor of the Day */
 .flavor-day {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   text-align: center;
   margin-bottom: 3rem;
-  color: #1fbfb8; /* Teal text */
+  color: var(--color-teal);
 }
 
 .flavor-day h2 {
-  color: #e63946; /* Red */
+  color: var(--color-red);
 }
 
 /* Menu List */
@@ -100,7 +117,7 @@ p {
 }
 
 .menu-list li {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0,0,0,0.07);
@@ -113,10 +130,12 @@ p {
 
 .menu-list img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  border-radius: 12px 12px 0 0;
 }
 
+/* Menu item info */
 .menu-item-info {
   padding: 1.5rem;
 }
@@ -124,11 +143,11 @@ p {
 .menu-item-info h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #e63946; /* Red */
+  color: var(--color-red);
 }
 
 .menu-item-info p {
-  color: #555555;
+  color: var(--color-text-muted);
   font-size: 1rem;
 }
 
@@ -136,7 +155,7 @@ p {
 form {
   max-width: 600px;
   margin: 0 auto;
-  background: #ffffff;
+  background: var(--color-white);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -146,7 +165,7 @@ label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #333333;
+  color: var(--color-text-dark);
 }
 
 input[type="text"],
@@ -164,7 +183,7 @@ textarea {
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-  border-color: #e63946; /* Red focus border */
+  border-color: var(--color-red);
   outline: none;
 }
 
@@ -174,8 +193,8 @@ textarea {
 }
 
 button {
-  background-color: #e63946; /* Red */
-  color: white;
+  background-color: var(--color-red);
+  color: var(--color-white);
   border: none;
   padding: 0.75rem 2rem;
   border-radius: 8px;
@@ -186,13 +205,18 @@ button {
 }
 
 button:hover {
-  background-color: #b32c36; /* Darker red on hover */
+  background-color: var(--color-red-dark);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 3px;
 }
 
 /* Footer */
 footer {
-  background-color: #1fbfb8; /* Teal */
-  color: white;
+  background-color: var(--color-teal);
+  color: var(--color-white);
   text-align: center;
   padding: 1rem 0;
   margin-top: 3rem;
@@ -200,7 +224,7 @@ footer {
 }
 
 footer a {
-  color: #e63946; /* Red */
+  color: var(--color-red);
   text-decoration: none;
 }
 

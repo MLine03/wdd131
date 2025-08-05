@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Aloha Soda offers tropical, handcrafted sodas with island flavors. Refresh yourself with our unique soda menu and tropical vibes." />
   <title>Aloha Soda</title>
 
@@ -15,11 +15,11 @@
 <body>
   <header>
     <div class="logo-container">
-      <img src="images/logo.png" alt="Aloha Soda Logo" class="logo" />
+      <img src="images/logo.png" alt="Aloha Soda Logo" class="logo" width="120" height="auto" />
     </div>
     <nav aria-label="Main navigation">
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -28,15 +28,22 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Welcome to Aloha Soda!</h1>
+    <section class="hero" role="region" aria-labelledby="hero-title">
+      <h1 id="hero-title">Welcome to Aloha Soda!</h1>
       <p class="tagline">Tropical flavors. Island vibes. Local love. 🍹</p>
-      <img src="images/lilikoi-fizz.jpg" alt="Lilikoi Fizz soda in a glass with tropical garnish" class="hero-image" loading="lazy" />
+      <img
+        src="images/lilikoi-fizz.jpg"
+        alt="Lilikoi Fizz soda in a glass with tropical garnish"
+        class="hero-image"
+        loading="lazy"
+        width="800"
+        height="450"
+      />
     </section>
 
-    <section class="flavor-day">
-      <h2>🌴 Flavor of the Day 🌴</h2>
-      <p id="flavorText">Loading today's flavor...</p>
+    <section class="flavor-day" role="region" aria-labelledby="flavor-day-title">
+      <h2 id="flavor-day-title">🌴 Flavor of the Day 🌴</h2>
+      <p id="flavorText" aria-live="polite">Loading today's flavor...</p>
     </section>
   </main>
 

@@ -1,0 +1,58 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloha Soda - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Aloha Soda Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact Us</h2>
+        <section class="contact-info">
+            <h3>Hours of Operation</h3>
+            <p><strong>Monday - Saturday:</strong> 10:00 AM - 7:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
+
+            <h3>Contact Information</h3>
+            <p><strong>Phone:</strong> <a href="tel:+18089093789">808-909-3789</a></p>
+            <p><strong>Email:</strong> <a href="mailto:alohasoda@gmail.com">alohasoda@gmail.com</a></p>
+
+            <h3>Location</h3>
+            <p><strong>Address:</strong> 55-511 Kamehameha Highway, Suite 19, Laie, Hawaii, 96762</p>
+        </section>
+
+        <h3>Send Us a Message</h3>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aloha Soda | <a href="references.html">References</a></p>
+    </footer>
+</body>
+</html>

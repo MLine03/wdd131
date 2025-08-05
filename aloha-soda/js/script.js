@@ -1,45 +1,44 @@
-// Flavor of the Day Feature
-const flavorOfTheDay = [
-    "Laie Breeze", 
-    "Hukilau Dream", 
-    "Sunset Swell", 
-    "Sunshine Girl", 
-    "Aloha Fizz", 
-    "Lilikoi Fizz"
-];
+// js/script.js
 
-// Randomly select the flavor of the day
-const flavorElement = document.getElementById('flavor-of-the-day');
-flavorElement.innerHTML = `Today's Flavor of the Day is: ${flavorOfTheDay[Math.floor(Math.random() * flavorOfTheDay.length)]}`;
+document.addEventListener('DOMContentLoaded', () => {
+  // Flavor of the Day
+  const flavorText = document.getElementById('flavorText');
+  const flavors = [
+    'Lilikoi Fizz - a tropical passionfruit delight!',
+    'Sunshine Girl - citrusy and bright!',
+    'Furikake Popcorn Soda - savory and sweet!',
+    'Sugar Cookie Soda - creamy sweetness!',
+    'Sunset Swell - smooth fruity flavor!',
+    'Aloha Fizz - our signature tropical soda!'
+  ];Add flavor of the day feature and contact form validation in script.js
 
-// Save Favorite Soda to LocalStorage
-const favoriteButton = document.getElementById('save-favorite-button');
-const favoriteSodaElement = document.getElementById('favorite-soda');
 
-favoriteButton.addEventListener('click', () => {
-    const favoriteSoda = prompt("Enter the name of your favorite soda:");
-    if (favoriteSoda) {
-        localStorage.setItem('favoriteSoda', favoriteSoda);
-        favoriteSodaElement.innerHTML = `Your favorite soda is: ${favoriteSoda}`;
-    }
-});
+  if (flavorText) {
+    const dayIndex = new Date().getDay(); // 0=Sunday, 1=Monday, etc.
+    const flavorOfTheDay = flavors[dayIndex % flavors.length];
+    flavorText.textContent = flavorOfTheDay;
+  }
 
-// Check if user has a saved favorite soda
-const savedFavoriteSoda = localStorage.getItem('favoriteSoda');
-if (savedFavoriteSoda) {
-    favoriteSodaElement.innerHTML = `Your favorite soda is: ${savedFavoriteSoda}`;
-} else {
-    favoriteSodaElement.innerHTML = "You have not saved a favorite soda yet.";
-}
+  // Contact form validation
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
 
-// Example Contact Form Validation (just a basic one)
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (event) => {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-
-    if (!name || !email) {
+      if (!name || !email || !message) {
+        alert('Please fill in all fields before submitting.');
         event.preventDefault();
-        alert("Please fill in all the fields!");
-    }
+        return;
+      }
+
+      // Simple email format check
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+      }
+    });
+  }
 });

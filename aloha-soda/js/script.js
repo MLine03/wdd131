@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Sugar Cookie Soda - creamy sweetness!',
     'Sunset Swell - smooth fruity flavor!',
     'Aloha Fizz - our signature tropical soda!'
-  ];Add flavor of the day feature and contact form validation in script.js
-
+  ];
 
   if (flavorText) {
     const dayIndex = new Date().getDay(); // 0=Sunday, 1=Monday, etc.

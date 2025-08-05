@@ -1,35 +1,25 @@
-// Flavor of the Day options
+// js/flavor.js
+
 const flavors = [
-  {
-    name: "Lilikoi Fizz",
-    image: "images/lilikoi-fizz.jpg",
-    description: "Try our tropical Lilikoi Fizz soda today!"
-  },
-  {
-    name: "Laie Breeze",
-    image: "images/laie-breeze.jpg",
-    description: "A bold fusion of Dr Pepper, coconut cream, and lime — fizzy and tropical with island edge."
-  },
-  {
-    name: "Hukilau Dream",
-    image: "images/hukilau-dream.jpg",
-    description: "A Diet Coke base with creamy vanilla and cherry — a light island twist on a classic beach dream."
-  },
-  {
-    name: "Aloha Dew",
-    image: "images/aloha-dew.jpg",
-    description: "A sweet blend of melon and honeydew inspired by island mornings."
-  }
+  "Lilikoi Fizz",
+  "Mango Madness",
+  "Pineapple Breeze",
+  "Coconut Lime",
+  "Guava Blast"
 ];
 
-// Select elements
-const flavorImg = document.getElementById('flavor-img');
-const flavorDesc = document.getElementById('flavor-description');
+function getRandomFlavor() {
+  const index = Math.floor(Math.random() * flavors.length);
+  return flavors[index];
+}
 
-// Randomly pick a flavor
-const randomFlavor = flavors[Math.floor(Math.random() * flavors.length)];
+function displayFlavorOfTheDay() {
+  const flavorElement = document.getElementById("flavorText");
+  const flavor = getRandomFlavor();
+  flavorElement.textContent = `Today's flavor is: ${flavor}! 🍹`;
 
-// Update the page content
-flavorImg.src = randomFlavor.image;
-flavorImg.alt = `Flavor of the Day: ${randomFlavor.name}`;
-flavorDesc.textContent = randomFlavor.description;
+  // Save to localStorage
+  localStorage.setItem("flavorOfTheDay", flavor);
+}
+
+document.addEventListener("DOMContentLoaded", displayFlavorOfTheDay);

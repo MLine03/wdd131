@@ -1,0 +1,53 @@
+/* css/styles.css */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fcd5ce;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: 'Lobster', cursive;
+  color: #e63946;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  background-color: #1fbfb8;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+header img {
+  max-width: 150px;
+  display: block;
+  margin: auto;
+}
+
+main {
+  padding: 1rem;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1fbfb8;
+  color: white;
+}

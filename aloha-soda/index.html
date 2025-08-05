@@ -4,14 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aloha Soda</title>
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Aloha Soda Logo" />
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Aloha Soda Logo" class="logo" />
+    </div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="about.html">About</a></li>
@@ -21,21 +27,23 @@
   </header>
 
   <main>
-    <h1>Welcome to Aloha Soda!</h1>
-    <p>Experience tropical flavor like never before.</p>
-
-    <section id="flavor-of-the-day">
-      <h2>Flavor of the Day</h2>
-      <p id="flavorText">Loading flavor...</p>
+    <section class="hero">
+      <h1>Welcome to Aloha Soda!</h1>
+      <p class="tagline">Tropical flavors. Island vibes. Local love. 🍹</p>
+      <img src="images/lilikoi-fizz.jpg" alt="Lilikoi Fizz" class="hero-image" loading="lazy">
     </section>
 
-    <img src="images/lilikoi-fizz.jpg" alt="Lilikoi Fizz" loading="lazy" />
+    <section class="flavor-day">
+      <h2>🌴 Flavor of the Day 🌴</h2>
+      <p id="flavorText">Loading today's flavor...</p>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Aloha Soda | <a href="references.html">References</a></p>
   </footer>
 
+  <!-- JavaScript -->
   <script src="js/flavor.js" defer></script>
 </body>
 </html>

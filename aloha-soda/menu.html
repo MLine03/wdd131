@@ -1,91 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aloha Soda - Menu</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aloha Soda - Menu</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Aloha Soda Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Aloha Soda Logo" class="logo" />
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <h2>Our Menu</h2>
-        <section class="menu">
-            <!-- Drink 1: Aloha Dew -->
-            <div class="soda">
-                <img src="images/aloha-dew.jpg" alt="Aloha Dew" loading="lazy">
-                <h3>Aloha Dew</h3>
-                <p>A refreshing soda with a tropical citrus blend. Perfect for any day!</p>
-            </div>
+  <main>
+    <section class="menu-section">
+      <h1>Our Menu</h1>
+      <ul class="menu-list">
+        <li>
+          <img src="images/lilikoi-fizz.jpg" alt="Lilikoi Fizz" loading="lazy" />
+          <div class="menu-item-info">
+            <h2>Lilikoi Fizz</h2>
+            <p>A refreshing passionfruit soda with a tropical twist.</p>
+          </div>
+        </li>
+        <li>
+          <img src="images/sunshine-girl.jpg" alt="Sunshine Girl" loading="lazy" />
+          <div class="menu-item-info">
+            <h2>Sunshine Girl</h2>
+            <p>A bright and citrusy soda that lifts your spirits.</p>
+          </div>
+        </li>
+        <li>
+          <img src="images/furikake-popcorn.jpg" alt="Furikake Popcorn Soda" loading="lazy" />
+          <div class="menu-item-info">
+            <h2>Furikake Popcorn Soda</h2>
+            <p>A unique blend with savory furikake and sweet soda fizz.</p>
+          </div>
+        </li>
+        <li>
+          <img src="images/sugar-cookie.jpg" alt="Sugar Cookie Soda" loading="lazy" />
+          <div class="menu-item-info">
+            <h2>Sugar Cookie Soda</h2>
+            <p>Sweet, creamy soda reminiscent of fresh-baked cookies.</p>
+          </div>
+        </li>
+        <li>
+          <img src="images/sunset-swell.jpg" alt="Sunset Swell" loading="lazy" />
+          <div class="menu-item-info">
+            <h2>Sunset Swell</h2>
+            <p>A smooth, fruity soda with a sunset-hued flavor profile.</p>
+          </div>
+        </li>
+        <li>
+          <img src="images/aloha-fizz.jpg" alt="Aloha Fizz" loading="lazy" />
+          <div class="menu-item-info">
+            <h2>Aloha Fizz</h2>
+            <p>The signature tropical soda that captures the Aloha spirit.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-            <!-- Drink 2: Lilikoi Fizz -->
-            <div class="soda">
-                <img src="images/lilikoi-fizz.jpg" alt="Lilikoi Fizz" loading="lazy">
-                <h3>Lilikoi Fizz</h3>
-                <p>A sweet and tangy passionfruit soda with a fizzy twist.</p>
-            </div>
-
-            <!-- Drink 3: Sunset Swell -->
-            <div class="soda">
-                <img src="images/sunset-swell.jpg" alt="Sunset Swell" loading="lazy">
-                <h3>Sunset Swell</h3>
-                <p>A blend of tropical fruits and sunset colors, bursting with flavor!</p>
-            </div>
-
-            <!-- Drink 4: Aloha Fizz -->
-            <div class="soda">
-                <img src="images/aloha-fizz.jpg" alt="Aloha Fizz" loading="lazy">
-                <h3>Aloha Fizz</h3>
-                <p>A fizzy mix of tropical soda with a sweet and tangy aftertaste.</p>
-            </div>
-
-            <!-- Drink 5: Laie Breeze -->
-            <div class="soda">
-                <img src="images/laie-breeze.jpg" alt="Laie Breeze" loading="lazy">
-                <h3>Laie Breeze</h3>
-                <p>A cool and refreshing coconut-lime soda that makes you feel like you're at the beach.</p>
-            </div>
-
-            <!-- Drink 6: Hukilau Dream -->
-            <div class="soda">
-                <img src="images/hukilau-dream.jpg" alt="Hukilau Dream" loading="lazy">
-                <h3>Hukilau Dream</h3>
-                <p>A dreamy combination of guava and passionfruit flavors, a taste of paradise.</p>
-            </div>
-
-            <!-- Drink 7: Sunshine Girl -->
-            <div class="soda">
-                <img src="images/sunshine-girl.jpg" alt="Sunshine Girl" loading="lazy">
-                <h3>Sunshine Girl</h3>
-                <p>A vibrant mango-strawberry soda to brighten your day!</p>
-            </div>
-
-            <!-- Drink 8: Aloha Fizz -->
-            <div class="soda">
-                <img src="images/aloha-fizz.jpg" alt="Aloha Fizz" loading="lazy">
-                <h3>Aloha Fizz</h3>
-                <p>A fizzy mix of tropical soda with a sweet and tangy aftertaste.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Aloha Soda | <a href="references.html">References</a></p>
-    </footer>
-
-    <script src="js/script.js"></script>
+  <footer>
+    <p>&copy; 2025 Aloha Soda | <a href="references.html">References</a></p>
+  </footer>
 </body>
 </html>

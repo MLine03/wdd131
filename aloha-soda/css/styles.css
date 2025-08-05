@@ -1,53 +1,168 @@
-/* css/styles.css */
+/* ===== Global Styles ===== */
 
 body {
+  margin: 0;
   font-family: 'Open Sans', sans-serif;
   background-color: #fcd5ce;
   color: #333;
-  margin: 0;
-  padding: 0;
 }
 
-h1, h2 {
+header {
+  background-color: #1fbfb8;
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.nav-links a.active {
+  color: #e63946;
+  text-decoration: underline;
+}
+
+/* ===== Homepage Styles ===== */
+
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero h1 {
+  font-family: 'Lobster', cursive;
+  color: #e63946;
+  font-size: 2.5rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.flavor-day {
+  background-color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #1fbfb8;
+}
+
+.flavor-day h2 {
   font-family: 'Lobster', cursive;
   color: #e63946;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  background-color: #1fbfb8;
-  padding: 1rem;
-}
+/* ===== Menu Page Styles ===== */
 
-nav a {
-  color: white;
-  text-decoration: none;
-}
-
-header img {
-  max-width: 150px;
-  display: block;
-  margin: auto;
-}
-
-main {
-  padding: 1rem;
+.menu-section {
+  background-color: #fcd5ce;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
+  color: #333;
 }
 
-img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 1rem;
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
+
+.menu-list li {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.menu-list li:hover {
+  transform: scale(1.03);
+}
+
+.menu-list img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-item-info {
+  padding: 1rem;
+}
+
+.menu-item-info h2 {
+  font-family: 'Lobster', cursive;
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== About Page Styles ===== */
+
+.about-section {
+  background-color: #fcd5ce;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  color: #333;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-section h1 {
+  font-family: 'Lobster', cursive;
+  color: #e63946;
+  margin-bottom: 1rem;
+}
+
+.about-image {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Footer ===== */
 
 footer {
-  text-align: center;
-  padding: 1rem;
   background-color: #1fbfb8;
   color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }

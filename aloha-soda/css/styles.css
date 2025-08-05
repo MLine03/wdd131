@@ -1,168 +1,68 @@
-/* ===== Global Styles ===== */
+/* Contact page specific styles */
 
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #fcd5ce;
-  color: #333;
-}
-
-header {
-  background-color: #1fbfb8;
-  padding: 1rem;
-  text-align: center;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-}
-
-.nav-links {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.nav-links a.active {
-  color: #e63946;
-  text-decoration: underline;
-}
-
-/* ===== Homepage Styles ===== */
-
-.hero {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.hero h1 {
-  font-family: 'Lobster', cursive;
-  color: #e63946;
-  font-size: 2.5rem;
-}
-
-.tagline {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.hero-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-.flavor-day {
-  background-color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-  color: #1fbfb8;
-}
-
-.flavor-day h2 {
-  font-family: 'Lobster', cursive;
-  color: #e63946;
-}
-
-/* ===== Menu Page Styles ===== */
-
-.menu-section {
-  background-color: #fcd5ce;
-  padding: 2rem 1rem;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  color: #333;
-}
-
-.menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.menu-list li {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.menu-list li:hover {
-  transform: scale(1.03);
-}
-
-.menu-list img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-.menu-item-info {
-  padding: 1rem;
-}
-
-.menu-item-info h2 {
-  font-family: 'Lobster', cursive;
-  color: #e63946;
-  margin-bottom: 0.5rem;
-}
-
-.menu-item-info p {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* ===== About Page Styles ===== */
-
-.about-section {
-  background-color: #fcd5ce;
-  max-width: 800px;
+main {
+  max-width: 600px;
   margin: 2rem auto;
-  padding: 1rem 2rem;
+  padding: 0 1rem;
+  font-family: 'Open Sans', sans-serif;
   color: #333;
-  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1fbfb8;
+  box-shadow: 0 0 5px #1fbfb8;
+}
+
+button[type="submit"] {
+  background-color: #e63946;
+  color: white;
+  font-weight: bold;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
   font-size: 1.1rem;
-  line-height: 1.6;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.about-section h1 {
-  font-family: 'Lobster', cursive;
-  color: #e63946;
-  margin-bottom: 1rem;
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: #d62828;
+  outline: none;
 }
 
-.about-image {
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* ===== Footer ===== */
-
-footer {
+#confirmation {
   background-color: #1fbfb8;
   color: white;
-  text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  display: none;
+  text-align: center;
+  font-weight: bold;
 }
